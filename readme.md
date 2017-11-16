@@ -4,5 +4,6 @@ Each tool will be in his own repository.
 
 Following repositories can been found:
 - `sublimetext`
+- `atom`
 
 There will be more branches pretty soon!
