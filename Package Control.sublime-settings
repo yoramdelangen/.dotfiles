@@ -1,0 +1,45 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Agila Theme",
+		"All Autocomplete",
+		"Base16 Color Schemes",
+		"Bulma CSS Framework autocomplete",
+		"DocBlockr",
+		"Emmet",
+		"FileDiffs",
+		"Flatron",
+		"GitGutter",
+		"gruvbox",
+		"Inspired GitHub Color Scheme",
+		"Laravel 5 Artisan",
+		"Laravel Blade Highlighter",
+		"Laravel Blade Spacer",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"Marked App Menu",
+		"Material Theme",
+		"Package Control",
+		"PackageResourceViewer",
+		"PHP Companion",
+		"PhpNamespace",
+		"Pue Syntax Highlight",
+		"Sass",
+		"SassBeautify",
+		"SideBarEnhancements",
+		"SilverStripe",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-php",
+		"SublimeLinter-phpcs",
+		"SublimeLinter-phplint",
+		"Vue Syntax Highlight",
+		"VueFormatter",
+		"Xdebug Client"
+	]
+}
