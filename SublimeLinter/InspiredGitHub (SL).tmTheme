@@ -1506,7 +1506,7 @@
                 <key>name</key>
                 <string>Punctuation</string>
                 <key>scope</key>
-                <string>punctuation.definition.heading.markdown, punctuation.definition.italic.markdown, punctuation.definition.bold.markdown, punctuation.definition.string.begin.markdown, punctuation.definition.string.end.markdown, punctuation.definition.metadata.markdown, punctuation.definition.link.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.raw.markdown</string>
+                <string>text.html.markdown punctuation.definition</string>
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
@@ -1646,6 +1646,16 @@
             </dict>
         <dict>
             <key>name</key>
+            <string>SublimeLinter Error</string>
+            <key>scope</key>
+            <string>sublimelinter.mark.error</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#D02000</string>
+            </dict>
+        </dict><dict>
+            <key>name</key>
             <string>SublimeLinter Warning</string>
             <key>scope</key>
             <string>sublimelinter.mark.warning</string>
@@ -1663,16 +1673,6 @@
             <dict>
                 <key>foreground</key>
                 <string>#FFFFFF</string>
-            </dict>
-        </dict><dict>
-            <key>name</key>
-            <string>SublimeLinter Error</string>
-            <key>scope</key>
-            <string>sublimelinter.mark.error</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#D02000</string>
             </dict>
         </dict></array>
     </dict>

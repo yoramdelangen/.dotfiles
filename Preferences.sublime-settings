@@ -18,7 +18,7 @@
 		"node_modules/**"
 	],
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/SublimeLinter/base16-solarflare (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/base16-unikitty-dark (SL).tmTheme",
 	"disable_formatted_linebreak": true,
 	"drag_text": false,
 	"draw_minimap_border": false,
@@ -36,8 +36,10 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Bulma CSS Framework autocomplete",
 		"ignore_vcs_packages",
-		"SilverStripe"
+		"SilverStripe",
+		"Vintage"
 	],
 	"line_padding_bottom": 5,
 	"line_padding_top": 5,
@@ -51,7 +53,7 @@
 	"show_full_path": true,
 	"show_panel_on_build": false,
 	"show_tab_close_buttons": false,
-	"theme": "Material-Theme.sublime-theme",
+	"theme": "gruvbox (Dark) (Soft).sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true
 }
