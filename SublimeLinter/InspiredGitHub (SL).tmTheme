@@ -7,11 +7,11 @@
         <key>settings</key>
         <array>
 
-            
+
             <dict>
                 <key>settings</key>
                 <dict>
-                    
+
                     <key>background</key>
                     <string>#ffffff</string>
                     <key>foreground</key>
@@ -21,13 +21,13 @@
                     <key>caret</key>
                     <string>#323232</string>
 
-                    
+
                     <key>gutter</key>
                     <string>#ffffff</string>
                     <key>gutterForeground</key>
                     <string>#b3b3b3</string>
 
-                    
+
                     <key>guide</key>
                     <string>#e8e8e8</string>
                     <key>stackGuide</key>
@@ -35,7 +35,7 @@
                     <key>activeGuide</key>
                     <string>#b3b3b3</string>
 
-                    
+
                     <key>lineHighlight</key>
                     <string>#f5f5f5</string>
                     <key>findHighlight</key>
@@ -47,7 +47,7 @@
                     <key>selectionBorder</key>
                     <string>#ffffff</string>
 
-                    
+
                     <key>bracketsForeground</key>
                     <string>#63a35c</string>
                     <key>bracketsOptions</key>
@@ -57,7 +57,7 @@
                     <key>bracketContentsOptions</key>
                     <string>underline</string>
 
-                    
+
                     <key>tagsForeground</key>
                     <string>#63a35c</string>
                     <key>tagsOptions</key>
@@ -65,7 +65,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Comment</string>
@@ -80,7 +80,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>String</string>
@@ -93,7 +93,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>RegExp Operator</string>
@@ -106,7 +106,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>RegExp Character Class</string>
@@ -119,7 +119,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Number</string>
@@ -132,7 +132,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Built-in Constant</string>
@@ -145,7 +145,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>User-defined Constant</string>
@@ -158,7 +158,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Variable</string>
@@ -171,7 +171,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Keyword</string>
@@ -186,7 +186,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Bitwise</string>
@@ -201,7 +201,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Storage</string>
@@ -216,7 +216,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Storage Type</string>
@@ -231,7 +231,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Class Name</string>
@@ -244,7 +244,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Inherited Class</string>
@@ -257,7 +257,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Function Name</string>
@@ -272,7 +272,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Function Argument</string>
@@ -285,7 +285,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Tag Name</string>
@@ -298,7 +298,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Tag Attribute</string>
@@ -311,7 +311,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Library Function</string>
@@ -324,7 +324,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Library Constant</string>
@@ -337,7 +337,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Library Class</string>
@@ -350,7 +350,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Library Variable</string>
@@ -363,7 +363,7 @@
                 </dict>
             </dict>
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Invalid</string>
@@ -383,7 +383,7 @@
 
 
 
-            
+
             <dict>
                 <key>name</key>
                 <string>Find-in-files Filename</string>
@@ -412,8 +412,8 @@
 
 
 
-            
-            
+
+
             <dict>
                 <key>name</key>
                 <string>Diff Header</string>
@@ -429,7 +429,7 @@
                     <string>italic</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Diff Header</string>
@@ -445,7 +445,7 @@
                     <string>italic bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Diff Header</string>
@@ -461,7 +461,7 @@
                     <string>italic bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Diff Range</string>
@@ -475,7 +475,7 @@
                     <string>italic bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Diff Deleted</string>
@@ -487,7 +487,7 @@
                     <string>#ffecec</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Diff Deleted Punctuation</string>
@@ -501,7 +501,7 @@
                     <string>bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Diff Inserted</string>
@@ -513,7 +513,7 @@
                     <string>#eaffea</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Diff Inserted Punctuation</string>
@@ -531,8 +531,8 @@
 
 
 
-            
-            
+
+
             <dict>
                 <key>name</key>
                 <string>GitGutter Deleted</string>
@@ -544,7 +544,7 @@
                     <string>#bd2c00</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>GitGutter Inserted</string>
@@ -556,7 +556,7 @@
                     <string>#55a532</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>GitGutter Modified</string>
@@ -568,7 +568,7 @@
                     <string>#0086B3</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>GitGutter Ignored</string>
@@ -580,7 +580,7 @@
                     <string>#b3b3b3</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>GitGutter Untracked</string>
@@ -596,8 +596,8 @@
 
 
 
-            
-            
+
+
             <dict>
                 <key>name</key>
                 <string>Entity Punctuation</string>
@@ -609,7 +609,7 @@
                     <string>#323232</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Pseudo Selector</string>
@@ -621,7 +621,7 @@
                     <string>#a71d5d</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Property Value</string>
@@ -633,7 +633,7 @@
                     <string>#323232</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Color</string>
@@ -649,8 +649,8 @@
 
 
 
-            
-            
+
+
             <dict>
                 <key>name</key>
                 <string>Entity Punctuation</string>
@@ -662,7 +662,7 @@
                     <string>#323232</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Pseudo Selector</string>
@@ -674,7 +674,7 @@
                     <string>#a71d5d</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Color</string>
@@ -686,7 +686,7 @@
                     <string>#323232</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Variable</string>
@@ -702,8 +702,8 @@
 
 
 
-            
-            
+
+
             <dict>
                 <key>name</key>
                 <string>this</string>
@@ -715,7 +715,7 @@
                     <string>#ed6a43</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Function</string>
@@ -729,7 +729,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Function Definition</string>
@@ -743,7 +743,7 @@
                     <string>bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>New Function</string>
@@ -755,7 +755,7 @@
                     <string>#795da3</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Function Prototype</string>
@@ -767,7 +767,7 @@
                     <string>#0086b3</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Support Function</string>
@@ -779,7 +779,7 @@
                     <string>#0086b3</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Function Prototype</string>
@@ -795,8 +795,8 @@
 
 
 
-            
-            
+
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 20 Deep</string>
@@ -823,7 +823,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 19 Deep</string>
@@ -850,7 +850,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 18 Deep</string>
@@ -877,7 +877,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 17 Deep</string>
@@ -904,7 +904,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 16 Deep</string>
@@ -931,7 +931,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 15 Deep</string>
@@ -958,7 +958,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 14 Deep</string>
@@ -985,7 +985,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 13 Deep</string>
@@ -1012,7 +1012,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 12 Deep</string>
@@ -1039,7 +1039,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 11 Deep</string>
@@ -1066,7 +1066,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 10 Deep</string>
@@ -1093,7 +1093,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 9 Deep</string>
@@ -1120,7 +1120,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 8 Deep</string>
@@ -1147,7 +1147,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 7 Deep</string>
@@ -1174,7 +1174,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 6 Deep</string>
@@ -1201,7 +1201,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 5 Deep</string>
@@ -1228,7 +1228,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 4 Deep</string>
@@ -1255,7 +1255,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 3 Deep</string>
@@ -1282,7 +1282,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 2 Deep</string>
@@ -1309,7 +1309,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property - 1 Deep</string>
@@ -1336,7 +1336,7 @@
                     <string>regular</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>JSON Property</string>
@@ -1367,8 +1367,8 @@
 
 
 
-            
-            
+
+
             <dict>
                 <key>name</key>
                 <string>Keyword</string>
@@ -1380,7 +1380,7 @@
                     <string>bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Storage</string>
@@ -1392,7 +1392,7 @@
                     <string>bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Storage Type</string>
@@ -1404,7 +1404,7 @@
                     <string>bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Function</string>
@@ -1422,8 +1422,8 @@
 
 
 
-            
-            
+
+
             <dict>
                 <key>name</key>
                 <string>Class</string>
@@ -1441,8 +1441,8 @@
 
 
 
-            
-            
+
+
             <dict>
                 <key>name</key>
                 <string>Language Variable</string>
@@ -1454,7 +1454,7 @@
                     <string>#ed6a43</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Module Name</string>
@@ -1468,7 +1468,7 @@
                     <string>bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Class Name</string>
@@ -1482,7 +1482,7 @@
                     <string>bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Inherited Class</string>
@@ -1500,8 +1500,8 @@
 
 
 
-            
-            
+
+
             <dict>
                 <key>name</key>
                 <string>Punctuation</string>
@@ -1513,7 +1513,7 @@
                     <string>#a71d5d</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Separator</string>
@@ -1525,7 +1525,7 @@
                     <string>#b3b3b3</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Heading</string>
@@ -1537,7 +1537,7 @@
                     <string>bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Code Block</string>
@@ -1549,7 +1549,7 @@
                     <string>#323232</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Inline Code</string>
@@ -1561,7 +1561,7 @@
                     <string>#323232</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Link and Image</string>
@@ -1584,7 +1584,7 @@
                     <string>italic</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>List</string>
@@ -1596,7 +1596,7 @@
                     <string>#ed6a43</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Bold</string>
@@ -1608,7 +1608,7 @@
                     <string>bold</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Italic</string>
@@ -1620,7 +1620,7 @@
                     <string>italic</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Bold Italic</string>
@@ -1632,7 +1632,7 @@
                     <string>bold italic</string>
                 </dict>
             </dict>
-            
+
             <dict>
                 <key>name</key>
                 <string>Italic Bold</string>

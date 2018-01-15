@@ -39,7 +39,8 @@
 		"Bulma CSS Framework autocomplete",
 		"ignore_vcs_packages",
 		"SilverStripe",
-		"Vintage"
+		"Vintage",
+		"Markdown"
 	],
 	"line_padding_bottom": 5,
 	"line_padding_top": 5,

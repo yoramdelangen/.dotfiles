@@ -814,7 +814,7 @@
             </dict>
         </dict>
 
-        
+
         <dict>
             <key>name</key>
             <string>WordHighlight</string>
@@ -841,7 +841,7 @@
                 <string>#FF420077</string>
             </dict>
         </dict>
-        
+
         <dict>
             <key>name</key>
             <string>GitGutter deleted</string>

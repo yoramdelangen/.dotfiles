@@ -39,7 +39,6 @@
 		"SublimeLinter-phpcs",
 		"SublimeLinter-phplint",
 		"Vue Syntax Highlight",
-		"VueFormatter",
-		"Xdebug Client"
+		"VueFormatter"
 	]
 }
