@@ -7,3 +7,4 @@ Following repositories can been found:
 - ~~`atom`~~
 - `composer`
 - `bash`
+- ~~`vim`~~
