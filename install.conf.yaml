@@ -2,26 +2,22 @@
   link:
     create: true
     relink: true
-
 - clean: ['~']
-
 - link:
-  ~/.gitconfig: null
-  ~/.scripts: null
-  ~/.bash_aliases: null
-  ~/.bash_exports: null
+  ~/.ssh/config:
+    path: ssh/config
+    create: true
+  ~/.scripts:
+    create: true
+    path: scripts
+  ~/.bash_aliases: bash_aliases
+  ~/.bash_exports: bash_exports
   ~/.vim: vim
-  ~/.vimrc:
-    relink: true
-    path: vimrc
-  ~/.zshrc:
-    force: true
-    path: zshrc
-  ~/.vscode:
-    relink: true
-    path: vscode
-  ~/.composer/composer.json: null
-  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User: null
+  ~/.vimrc: vimrc
+  ~/.zshrc: zshrc
+  ~/.vscode: vscode
+  ~/.composer/composer.json:
+  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User: SublimeText3
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
