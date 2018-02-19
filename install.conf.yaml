@@ -1,8 +1,7 @@
 - defaults:
     link:
         create: true
-        relink: true
-- clean: ['~']
+- clean: ['~', '~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User']
 - link:
     ~/.ssh/config:
         path: ssh/config
@@ -17,9 +16,9 @@
     ~/.zshrc: zshrc
     #    ~/.vscode: vscode
     ~/.composer/composer.json:
-    ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User:
-        path: SublimeText3
-        create: true
+    "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User":
+        force: true
+        path: sublime3-conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
