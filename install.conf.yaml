@@ -17,7 +17,9 @@
     ~/.zshrc: zshrc
     #    ~/.vscode: vscode
     ~/.composer/composer.json:
-    ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User: SublimeText3
+    ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User:
+        path: SublimeText3
+        create: true
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
