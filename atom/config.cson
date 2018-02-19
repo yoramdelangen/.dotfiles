@@ -1,0 +1,70 @@
+"*":
+  "atom-autocomplete-php":
+    verboseErrors: true
+  "atom-beautify":
+    executables:
+      "php-cs-fixer":
+        path: "/Users/Yoram/.composer/vendor/bin/php-cs-fixer"
+    general:
+      _analyticsUserId: "7acc178e-69e1-4857-bdc5-159f26138ba3"
+    js:
+      indent_with_tabs: true
+    php:
+      cs_fixer_config_file: "~/.scripts/scripts/php_cs.dist"
+      cs_fixer_path: "/Users/Yoram/.composer/vendor/bin/php-cs-fixer"
+      disabled: true
+      fixers: "align_double_arrow,short_array_syntax,concat_with_spaces,ordered_use"
+      level: "symfony"
+  "autocomplete-php": {}
+  "autoupdate-packages":
+    lastUpdateTimestamp: 1519064577099
+  core:
+    disabledPackages: [
+      "tabs"
+    ]
+    excludeVcsIgnoredPaths: false
+    ignoredNames: [
+      "node_modules"
+    ]
+    projectHome: "/Users/Yoram/atom-projects/"
+    telemetryConsent: "limited"
+  editor:
+    fontFamily: "Menlo"
+    fontSize: 10
+    lineHeight: 3
+    showIndentGuide: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "6c5085f6-f180-e9da-5a1c-a05eb52e99e2"
+  "fuzzy-finder": {}
+  "linter-eslint":
+    fixOnSave: true
+  "linter-php": {}
+  "php-fmt":
+    autoAlign: true
+    selfUpdate: true
+    useSpaceIndentation: true
+  "php-integrator-navigation": {}
+  tabs:
+    alwaysShowTabBar: false
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".blade.html.php.text":
+  editor:
+    commentEnd: " --}}"
+    commentStart: "{{-- "
+".js.source":
+  editor:
+    tabLength: 2
+".php.source":
+  editor:
+    tabLength: 4
+".php.text":
+  whitespace:
+    removeTrailingWhitespace: true
+".source.yaml":
+  editor:
+    tabLength: 4
