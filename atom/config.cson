@@ -19,18 +19,21 @@
   "autoupdate-packages":
     lastUpdateTimestamp: 1519064577099
   core:
-    disabledPackages: [
-      "tabs"
-    ]
+    disabledPackages: []
     excludeVcsIgnoredPaths: false
     ignoredNames: [
       "node_modules"
     ]
     projectHome: "/Users/Yoram/atom-projects/"
     telemetryConsent: "limited"
+    themes: [
+      "nord-atom-ui"
+      "nord-atom-syntax"
+    ]
+    titleBar: "hidden"
   editor:
-    fontFamily: "Menlo"
-    fontSize: 10
+    fontFamily: "Source Code Pro"
+    fontSize: 12
     lineHeight: 3
     showIndentGuide: true
     tabLength: 4
@@ -40,6 +43,8 @@
   "linter-eslint":
     fixOnSave: true
   "linter-php": {}
+  "nord-atom-ui":
+    darkerFormFocusEffect: true
   "php-fmt":
     autoAlign: true
     selfUpdate: true

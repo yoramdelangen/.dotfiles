@@ -31,3 +31,14 @@ atom-text-editor {
 atom-text-editor::shadow .cursor {
   // border-color: red;
 }
+
+.no-title-bar:not(.fullscreen) {
+    &.custom-title-bar, &.custom-inset-title-bar {
+        .theme-native-ui .tab-bar {
+            margin-left: -1px;
+            .tab:nth-child(1) {
+                border-left: 1px solid @tab-bar-border-color;
+            }
+        }
+    }
+}
