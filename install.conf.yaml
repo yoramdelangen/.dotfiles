@@ -1,0 +1,27 @@
+- defaults:
+  link:
+    create: true
+    relink: true
+
+- clean: ['~']
+
+- link:
+  ~/.gitconfig: null
+  ~/.scripts: null
+  ~/.bash_aliases: null
+  ~/.bash_exports: null
+  ~/.vim: vim
+  ~/.vimrc:
+    relink: true
+    path: vimrc
+  ~/.zshrc:
+    force: true
+    path: zshrc
+  ~/.vscode:
+    relink: true
+    path: vscode
+  ~/.composer/composer.json: null
+  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User: null
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
