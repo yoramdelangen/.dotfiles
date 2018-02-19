@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/yoram/.scripts'
+let g:netrw_dirhist_2='/Users/yoram/.valet'
+let g:netrw_dirhist_3='/Users/yoram/.oh-my-zsh'
+let g:netrw_dirhist_4='/Users/yoram/.oh-my-zsh/themes'
+let g:netrw_dirhist_5='/Users/yoram/.composer'
