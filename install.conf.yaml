@@ -15,7 +15,7 @@
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
-    ~/.vscode: vscode
+    #    ~/.vscode: vscode
     ~/.composer/composer.json:
     ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User: SublimeText3
 
