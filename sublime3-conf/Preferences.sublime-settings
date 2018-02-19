@@ -18,7 +18,7 @@
 		"node_modules/**"
 	],
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/SublimeLinter/Brave (rainglow) (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Aurora (SL).tmTheme",
 	"disable_formatted_linebreak": true,
 	"drag_text": false,
 	"draw_minimap_border": false,
@@ -56,7 +56,7 @@
 	"show_full_path": true,
 	"show_panel_on_build": false,
 	"show_tab_close_buttons": false,
-	"theme": "gruvbox (Dark) (Soft).sublime-theme",
+	"theme": "gruvbox (Dark) (Hard).sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true
 }
