@@ -21,7 +21,7 @@
       space_after_anon_function: true
   "autocomplete-php": {}
   "autoupdate-packages":
-    lastUpdateTimestamp: 1519107777306
+    lastUpdateTimestamp: 1519150977555
   core:
     disabledPackages: [
       "auto-detect-indentation"
