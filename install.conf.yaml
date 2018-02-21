@@ -34,3 +34,9 @@
     ~/.atom/styles.less:
         path: atom/styles.less
         force: true
+    ~/.atom/package.list:
+        path: atom/package.list
+        force: true
+    ~/.atom/snippets.cson:
+        path: atom/snippets.cson
+        force: true
