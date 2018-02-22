@@ -7,7 +7,44 @@ export ZSH=/Users/Yoram/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="spaceship"
 
-prompt spaceship
+# Spaceship prompt options
+SPACESHIP_TIME_SHOW=true
+
+# Just comment a section if you want to disable it
+SPACESHIP_PROMPT_ORDER=(
+  time          # Time stampts section
+  #user         # Username section
+  dir           # Current directory section
+  #host         # Hostname section
+  git           # Git section (git_branch + git_status)
+  # hg          # Mercurial section (hg_branch  + hg_status)
+  # package     # Package version (Disabled)
+  node          # Node.js section
+  # ruby        # Ruby section
+  # elixir      # Elixir section
+  # xcode       # Xcode section (Disabled)
+  swift         # Swift section
+  golang        # Go section
+  php           # PHP section
+  # rust        # Rust section
+  # haskell     # Haskell Stack section
+  # julia       # Julia section (Disabled)
+  docker      	# Docker section (Disabled)
+  aws           # Amazon Web Services section
+  # venv        # virtualenv section
+  # conda       # conda virtualenv section
+  pyenv         # Pyenv section
+  # dotnet      # .NET section
+  # ember       # Ember.js section (Disabled)
+  # kubecontext # Kubectl context section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  vi_mode     	# Vi-mode indicator (Disabled)
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,7 +90,7 @@ PROMPT_GEOMETRY_COLORIZE_ROOT=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git yarn zsh-syntax-highlighting zsh-syntax-highlighting git-flow)
+plugins=(git yarn zsh-syntax-highlighting zsh-syntax-highlighting git-flow zsh-autosuggestions)
 
 # User configuration
 
@@ -96,11 +133,8 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 export PATH="/usr/local/sbin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/Yoram/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/Yoram/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/Yoram/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/Yoram/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
