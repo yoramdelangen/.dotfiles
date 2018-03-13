@@ -18,7 +18,7 @@
 		"node_modules/**"
 	],
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/SublimeLinter/Aurora (SL).tmTheme",
+	"color_scheme": "Packages/ayu/ayu-mirage.tmTheme",
 	"disable_formatted_linebreak": true,
 	"drag_text": false,
 	"draw_minimap_border": false,
@@ -30,8 +30,8 @@
 		".hg",
 		"CVS"
 	],
-	"font_face": "Source Code Pro",
-	"font_size": 10,
+	"font_face": "Roboto Mono",
+	"font_size": 11,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -56,7 +56,13 @@
 	"show_full_path": true,
 	"show_panel_on_build": false,
 	"show_tab_close_buttons": false,
-	"theme": "gruvbox (Dark) (Hard).sublime-theme",
+	"theme": "ayu-mirage.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
+	"ui_fix_tab_labels": true,
+	"ui_font_default": true,
+	"ui_font_size_small": true,
+	"ui_font_source_code_pro": true,
+	"ui_separator": true,
+	"ui_wide_scrollbars": true,
 	"use_simple_full_screen": true
 }
