@@ -44,6 +44,7 @@
 		"SublimeLinter-phpcs",
 		"SublimeLinter-phplint",
 		"TodoReview",
+		"Twig",
 		"Vue Syntax Highlight",
 		"VueFormatter"
 	]
