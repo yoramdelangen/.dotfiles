@@ -1,4 +1,4 @@
-# Devlopment alias
+# development aliases
 alias art='php artisan'
 alias artisan='php artisan'
 alias ip='ifconfig | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'
@@ -59,7 +59,7 @@ alias lll="ls -la"
 alias source_bash='source ~/.zshrc'
 alias c='clear'
 alias cc="osascript -e 'if application \"iTerm2\" is frontmost then tell application \"System Events\" to keystroke \"k\" using command down'"
-alias phpfix='php-cs-fixer fix .  --config=/Users/Yoram/.scripts/php_cs.dist'
+alias phpfix='php-cs-fixer fix . --config=/Users/yoram/.dotfiles/scripts/.php_cs.dist'
 alias size='du -hs * | sort -h'
 
 # PHPUnit
