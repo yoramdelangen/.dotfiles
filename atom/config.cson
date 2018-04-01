@@ -21,7 +21,7 @@
       space_after_anon_function: true
   "autocomplete-php": {}
   "autoupdate-packages":
-    lastUpdateTimestamp: 1519150977555
+    lastUpdateTimestamp: 1520782098519
   core:
     disabledPackages: [
       "auto-detect-indentation"
@@ -36,7 +36,7 @@
       "nord-atom-ui"
       "nord-atom-syntax"
     ]
-    titleBar: "hidden"
+    titleBar: "custom-inset"
   editor:
     autoIndent: false
     fontFamily: "Source Code Pro"

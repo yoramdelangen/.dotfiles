@@ -41,6 +41,7 @@
 		"Markdown",
 		"Phpcs",
 		"SilverStripe",
+		"SublimeLinter",
 		"Todo",
 		"Vintage"
 	],

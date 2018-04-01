@@ -5,6 +5,9 @@ alias ip='ifconfig | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'
 alias ngrok='~/.ngrok'
 alias myssh='cat ~/.ssh/id_rsa.pub'
 alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles'
+alias watch='yarn run watch'
+alias prod='yarn run prod'
+alias devel='yarn run dev'
 
 # open editor
 alias subl='open -a Sublime\ Text'
