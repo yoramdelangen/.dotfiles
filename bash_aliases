@@ -8,6 +8,7 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles'
 alias watch='yarn run watch'
 alias prod='yarn run prod'
 alias devel='yarn run dev'
+alias python='/usr/local/bin/python3'
 
 # open editor
 alias subl='open -a Sublime\ Text'
