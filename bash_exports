@@ -1,8 +1,15 @@
-export PATH=${PATH}:~/.composer/vendor/bin
+# GIT
 export PATH=/usr/local/git/bin:$PATH
+# PHP version
+export PATH="/usr/local/opt/php71/bin:$PATH"
+export PATH="/usr/local/opt/php71/sbin:$PATH"
+# PHP global composer
+export PATH=${PATH}:~/.composer/vendor/bin
+# NodeJS tools
+export PATH=$HOME/.node/bin:$PATH
+# Default exports includes mysql
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
-export PATH=$HOME/.node/bin:$PATH
 
 # Export others
 export EDITOR=vim
