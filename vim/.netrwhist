@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/usr/local/etc/nginx'
 let g:netrw_dirhist_2='/usr/local/etc/nginx/valet'
 let g:netrw_dirhist_3='/usr/local/etc/nginx'
+let g:netrw_dirhist_4='/Users/Yoram'
+let g:netrw_dirhist_5='/System/Library/CoreServices/Menu Extras/WWAN.menu'
+let g:netrw_dirhist_6='/System/Library/CoreServices/Menu Extras/WWAN.menu/Contents'
+let g:netrw_dirhist_7='/System/Library/CoreServices/Menu Extras/WWAN.menu'
+let g:netrw_dirhist_8='/System/Library/CoreServices/Menu Extras/WWAN.menu/Contents'
+let g:netrw_dirhist_9='/Users/Yoram/.local/share/virtualenvs/yoramdelangen-_jIvGs07/lib/python3.6/site-packages/pelican'

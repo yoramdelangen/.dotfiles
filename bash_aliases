@@ -8,12 +8,13 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles'
 alias watch='yarn run watch'
 alias prod='yarn run prod'
 alias devel='yarn run dev'
-alias python='/usr/local/bin/python3'
+alias pip='/usr/local/bin/pip3'
 
 # open editor
 alias subl='open -a Sublime\ Text'
 alias pstorm='open -a PhpStorm'
 alias vscode='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+alias pycharm='open -a PyCharm\ CE'
 
 # open in browser
 open_by_browser(){ open -a $1 $2}
