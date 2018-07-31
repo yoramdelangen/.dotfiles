@@ -15,6 +15,7 @@ alias pip='/usr/local/bin/pip3'
 alias subl='open -a Sublime\ Text'
 alias pstorm='open -a PhpStorm'
 alias vscode='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+alias pycharm='open -a PyCharm\ CE'
 
 # open in browser
 open_by_browser(){ open -a $1 $2}
