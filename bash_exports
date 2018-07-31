@@ -11,6 +11,10 @@ export PATH=$HOME/.node/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 
+# Python exports
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Export others
 export EDITOR=vim
 export CLICOLOR=1
@@ -21,3 +25,8 @@ export GOPATH=$HOME/GoCode
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
+# Export more bin directories
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"

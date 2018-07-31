@@ -8,7 +8,8 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles'
 alias watch='yarn run watch'
 alias prod='yarn run prod'
 alias devel='yarn run dev'
-alias python='/usr/local/bin/python3'
+alias py='python'
+alias pip='/usr/local/bin/pip3'
 
 # open editor
 alias subl='open -a Sublime\ Text'
@@ -79,8 +80,14 @@ git_pull() {
         echo "Pull from branch => $1"
         git pull -v --stat origin "$1"
     else
-        echo "Pull from branch => $(parse_git_branch)"
-        git pull -v --stat origin "$(parse_git_branch)"
+        if [[ -z "$(parse_git_branch)" ]]; then
+            BR='master'
+        else
+            BR=$(parse_git_branch)
+        fi
+
+        echo "Pull from branch => $BR"
+        git pull -v --stat origin "$BR"
     fi
 
 	git fetch --tags
@@ -90,11 +97,24 @@ alias pull=git_pull
 git_push() {
     if [ ! -z "$1" ]; then
         echo "Push on branch => $1"
-        git push -u origin "$1"
+        git push origin "$1"
     else
-        echo "Push on branch => $(parse_git_branch)"
-        git push -u origin "$(parse_git_branch)"
+        if [[ -z "$(parse_git_branch)" ]]; then
+            BR='master'
+        else
+            BR="$(parse_git_branch)"
+        fi
+        echo "Push on branch => $BR"
+        git push origin "$BR"
     fi
+
+    while true; do
+        read "yn?Pushing tags? [Nn|Yy] "
+        case $yn in
+            [Yy]* ) git push origin --tags; break;;
+            * ) break ;;
+        esac
+    done
 }
 alias push=git_push
 alias newversion=~/.scripts/new-version.sh

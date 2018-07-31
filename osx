@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# Ask for the administrator password upfront
+sudo -v
+
+########### KEYBOARD SETTINGS #############
+
+# Enable full keyboard access for all controls
+# (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Set a blazingly fast keyboard repeat rate
+defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+
+# Disable Menu bar transparency
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# Dock
+# ----------------------------------------------------------------------
+# Dock: enable the 2D Dock
+defaults write com.apple.dock no-glass -bool true
+# Dock: don’t animate opening applications
+defaults write com.apple.dock launchanim -bool false
+# Dock: speed up Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
+# Finder
+# ----------------------------------------------------------------------
+# Finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true

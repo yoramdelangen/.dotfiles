@@ -31,7 +31,7 @@ SPACESHIP_PROMPT_ORDER=(
   # julia       # Julia section (Disabled)
   docker      	# Docker section (Disabled)
   aws           # Amazon Web Services section
-  # venv        # virtualenv section
+  venv          # virtualenv section
   # conda       # conda virtualenv section
   pyenv         # Pyenv section
   # dotnet      # .NET section
@@ -93,21 +93,24 @@ PROMPT_GEOMETRY_COLORIZE_ROOT=true
 plugins=(git yarn zsh-syntax-highlighting zsh-syntax-highlighting git-flow zsh-autosuggestions)
 
 # User configuration
-
 export PATH="/opt/local/bin:/opt/local/sbin:/Users/Yoram/bin:/usr/local/bin:/usr/local/mysql/bin:/usr/local/git/bin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/Yoram/.composer/vendor/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
+# TMUX config
+tmux() ( ORIG_PWD_FOR_TMUX="${PWD}" command tmux "$@"; )
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -131,9 +134,6 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.yarn/bin:$PATH"
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
