@@ -1,0 +1,10 @@
+[
+  { "args": null, "command": "select_all" },
+  // Convert * to tabs
+  { "args": { "set_translate_tabs": true }, "command": "unexpand_tabs" },
+  // Change tab size to 2
+  { "args": { "setting": "tab_size", "value": 4 }, "command": "set_setting" },
+  // // Change tab to spaces
+  // { "args": { "set_translate_tabs": true }, "command": "expand_tabs" },
+  // { "args": { "setting": "tab_size", "value": 1 }, "command": "set_setting" },
+]

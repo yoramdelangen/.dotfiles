@@ -7,6 +7,8 @@
 			"operand": "text.html,text.html.twig,text.twig,source.html,source.html.twig,source.twig"
 		}]
 	},
+	{ "keys": ["super+alt+j"], "command": "run_macro_file", "args": {"file": "res://Packages/User/macros/convert-spaces-2.sublime-macro"}},
+	{ "keys": ["super+alt+h"], "command": "run_macro_file", "args": {"file": "res://Packages/User/macros/convert-tab-4.sublime-macro"}},
 
 	// Organize and import classes via uses
 	{ "keys": ["alt+enter"], "command": "find_use", "args": {}},
