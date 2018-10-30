@@ -5,10 +5,10 @@ export ZSH=/Users/Yoram/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="spaceship"
+ZSH_THEME="zeit"
 
 # Spaceship prompt options
-SPACESHIP_TIME_SHOW=true
+#SPACESHIP_TIME_SHOW=true
 
 # Just comment a section if you want to disable it
 SPACESHIP_PROMPT_ORDER=(
@@ -136,5 +136,5 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+#autoload -U promptinit; promptinit
+#prompt spaceship

@@ -31,3 +31,6 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 # ----------------------------------------------------------------------
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Font rendering
+defaults write com.extropy.oni ApplePressAndHoldEnabled -bool false

@@ -19,10 +19,12 @@
 		"__pycache__"
 	],
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Theme - City Lights/City-Lights.tmTheme",
+	"color_scheme": "Packages/User/Color Highlighter/themes/ayu.tmTheme",
 	"disable_formatted_linebreak": true,
 	"drag_text": false,
 	"draw_minimap_border": false,
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
 	"findreplace_small": true,
 	"folder_exclude_patterns":
 	[
@@ -31,12 +33,12 @@
 		".hg",
 		"CVS"
 	],
-	"font_face": "Monaco",
+	"font_face": "IBM Plex Mono",
 	"font_options":
 	[
 		"ss01"
 	],
-	"font_size": 10,
+	"font_size": 12,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -44,12 +46,11 @@
 		"ignore_vcs_packages",
 		"Markdown",
 		"Phpcs",
-		"SilverStripe",
 		"Todo",
 		"Vintage"
 	],
-	"line_padding_bottom": 4,
-	"line_padding_top": 4,
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
 	"margin": 0,
 	"overlay_scroll_bars": "enabled",
 	"phpunit-sublime-terminal": "iTerm",
@@ -59,7 +60,7 @@
 	"show_definitions": false,
 	"show_full_path": true,
 	"show_tab_close_buttons": false,
-	"theme": "City-Lights.sublime-theme",
+	"theme": "ayu-dark.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"ui_fix_tab_labels": true,
 	"ui_font_default": true,
@@ -68,6 +69,5 @@
 	"ui_separator": true,
 	"ui_wide_scrollbars": true,
 	"use_simple_full_screen": true,
-	"ensure_newline_at_eof_on_save": true,
-	"draw_white_space": "all"
+	"word_wrap": false
 }

@@ -1,4 +1,5 @@
 // These settings override both User and Default settings for the PHP syntax
 {
-	"show_panel_on_build": false
+	"show_panel_on_build": false,
+	"translate_tabs_to_spaces": false
 }
