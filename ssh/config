@@ -1,1 +1,36 @@
 UserKnownHostsFile="/Users/Yoram/.ssh/known_hosts"
+
+Host "sydl"
+  HostName 136.243.214.244
+  User yoram
+  IdentityFile ~/.ssh/id_rsa
+
+Host "topicusplatform prod"
+  HostName topicusplatform.nl
+  User topicus
+  IdentityFile ~/.ssh/id_rsa
+
+Host "bouwinvest"
+  HostName bouwinvestplatform.nl
+  User bouwinvest
+  IdentityFile ~/.ssh/id_rsa
+
+Host "spottalytics"
+  HostName 31.7.6.129
+  User spotta
+  IdentityFile ~/.ssh/id_rsa
+
+Host "gitlab"
+  HostName 149.210.163.6
+  User brandcube
+  IdentityFile ~/.ssh/id_rsa
+
+Host "wysiwyg"
+  HostName wysiwygnederland.nl
+  User runcloud 
+  IdentityFile ~/.ssh/id_rsa
+
+Host "pureenergy"
+  HostName pureenergie.pe.cube.nl
+  User puretest
+  IdentityFile ~/.ssh/id_rsa

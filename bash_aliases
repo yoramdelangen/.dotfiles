@@ -1,3 +1,10 @@
+#!/bin/bash
+
+# Code check with analyzer tool
+# Url: https://www.shellcheck.net/
+# or via commandline:
+# brew install shellcheck; shellcheck ~/.bash_aliases
+
 # development aliases
 alias art='php artisan'
 alias artisan='php artisan'
@@ -18,7 +25,7 @@ alias vscode='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/
 alias pycharm='open -a PyCharm\ CE'
 
 # open in browser
-open_by_browser(){ open -a $1 $2}
+open_by_browser(){ open -a "$1" "$2"; }
 alias firefox='open_by_browser "FirefoxDeveloperEdition"'
 alias chrome='open_by_browser "Google Chrome"'
 alias safari='open_by_browser safari'
@@ -43,6 +50,7 @@ alias nah='git checkout .'
 alias gf='git fetch'
 alias gd='git diff'
 alias gu='git tag'
+alias gitclean='git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches'
 alias cdu='composer dump-autoload'
 alias cu='composer update'
 alias ci='composer install'
@@ -58,9 +66,12 @@ alias code='~/Code/'
 alias bc='~/Code/Brandcube'
 alias hosts='sudo vim /etc/hosts'
 alias known_hosts='sudo vim /Users/yoramdelangen/.ssh/known_hosts'
+switch_project() { cd ~/Sites/Brandcube/"$1" || return; }
+alias project=switch_project
 
 # Others
 alias _=sudo
+alias ls="ls -G"
 alias lll="ls -la"
 alias source_bash='source ~/.zshrc'
 alias c='clear'
@@ -77,7 +88,7 @@ parse_git_branch() {
 }
 
 git_pull() {
-    if [ ! -z "$1" ]; then
+    if [ -n "$1" ]; then
         echo "Pull from branch => $1"
         git pull -v --stat origin "$1"
     else
@@ -91,12 +102,12 @@ git_pull() {
         git pull -v --stat origin "$BR"
     fi
 
-	git fetch --tags
+    git fetch --tags
 }
 alias pull=git_pull
 
 git_push() {
-    if [ ! -z "$1" ]; then
+    if [ -n "$1" ]; then
         echo "Push on branch => $1"
         git push origin "$1"
     else
@@ -110,7 +121,7 @@ git_push() {
     fi
 
     while true; do
-        read "yn?Pushing tags? [Nn|Yy] "
+        read -r "yn?Pushing tags? [Nn|Yy] "
         case $yn in
             [Yy]* ) git push origin --tags; break;;
             * ) break ;;
@@ -121,7 +132,7 @@ alias push=git_push
 alias newversion=~/.scripts/new-version.sh
 
 function homestead() {
-    ( cd ~/Homestead && vagrant $* )
+    ( cd ~/Homestead && vagrant "$@" )
 }
 alias hse="vim ~/Homestead/Homestead.yaml"
 alias hs=homestead
