@@ -17,6 +17,7 @@ alias prod='yarn run prod'
 alias devel='yarn run dev'
 alias py='python'
 alias pip='/usr/local/bin/pip3'
+alias tableau="open /Applications/Tableau\ Desktop\ 2019.4.app --args --remote-debugging-port=8696"
 
 # open editor
 alias subl='open -a Sublime\ Text'
