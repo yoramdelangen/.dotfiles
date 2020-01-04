@@ -18,6 +18,11 @@ alias devel='yarn run dev'
 alias py='python'
 alias pip='/usr/local/bin/pip3'
 alias tableau="open /Applications/Tableau\ Desktop\ 2019.4.app --args --remote-debugging-port=8696"
+alias tunnel_sydl="ssh -L 3333:localhost:3306 -N yoram@admin.sydl.nl"
+
+# yarn aliases
+alias y='yarn'
+alias ya='yarn add'
 
 # open editor
 alias subl='open -a Sublime\ Text'
@@ -67,8 +72,12 @@ alias code='~/Code/'
 alias bc='~/Code/Brandcube'
 alias hosts='sudo vim /etc/hosts'
 alias known_hosts='sudo vim /Users/yoramdelangen/.ssh/known_hosts'
-switch_project() { cd ~/Sites/Brandcube/"$1" || return; }
+switch_project() { cd ~/Sites/"$1" || return; }
 alias project=switch_project
+
+# Quick edit configs
+alias ezsh="vim ~/.zshrc"
+alias ealias="vim ~/.bash_aliases"
 
 # Others
 alias _=sudo
@@ -132,8 +141,4 @@ git_push() {
 alias push=git_push
 alias newversion=~/.scripts/new-version.sh
 
-function homestead() {
-    ( cd ~/Homestead && vagrant "$@" )
-}
-alias hse="vim ~/Homestead/Homestead.yaml"
-alias hs=homestead
+alias mvim="mvim -v"

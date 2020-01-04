@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/usr/local/Cellar/blackfire-agent/1.23.0/share/man/man1'
-let g:netrw_dirhist_2='/usr/local/Cellar/blackfire-agent/1.23.0/share/man'
-let g:netrw_dirhist_3='/usr/local/Cellar/blackfire-agent/1.23.0/share/man/man1'
-let g:netrw_dirhist_4='/usr/local/Cellar/blackfire-agent/1.23.0/share/man'
-let g:netrw_dirhist_5='/usr/local/Cellar/blackfire-agent/1.23.0/share/man/man1'
-let g:netrw_dirhist_6='/usr/local/Cellar/blackfire-agent/1.23.0/share/man'
-let g:netrw_dirhist_7='/usr/local/Cellar/blackfire-agent/1.23.0/share'
-let g:netrw_dirhist_8='/usr/local/Cellar/blackfire-agent/1.23.0'
-let g:netrw_dirhist_9='/usr/local/Cellar/blackfire-agent/1.23.0/bin'
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/yoram/Sites/Extensions/extensions-api/docs'
+let g:netrw_dirhist_2='/Users/yoram/Sites/Extensions/extensions-api'
+let g:netrw_dirhist_1='/Users/yoram/Sites/Extensions'

@@ -13,24 +13,25 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
-# Disable Menu bar transparency
-defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
-# Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
+# Set keyboard 
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false 
+defaults delete -g ApplePressAndHoldEnabled
 
-# Dock
-# ----------------------------------------------------------------------
-# Dock: enable the 2D Dock
-defaults write com.apple.dock no-glass -bool true
-# Dock: don’t animate opening applications
-defaults write com.apple.dock launchanim -bool false
-# Dock: speed up Mission Control animations
-defaults write com.apple.dock expose-animation-duration -float 0.1
+########### DISABLE CERTAIN SETTINGS ############# 
+# SOURCE: https://www.macworld.co.uk/how-to/mac-software/mac-terminal-projects-tutorial-3613813/
 
-# Finder
-# ----------------------------------------------------------------------
-# Finder: show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean TRUE
 
-# Font rendering
-defaults write com.extropy.oni ApplePressAndHoldEnabled -bool false
+# Increase auto show-hide 2x times speed
+defaults write com.apple.dock autohide-time-modifier -float 0.5
+
+# Allow to copy text from "Preview" mode
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+
+# Disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool TRUE #killall SystemUIServer
+
+# Hide non-active apps in Dock
+# defaults write com.apple.dock static-only -bool TRUE

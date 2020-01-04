@@ -4,7 +4,7 @@
         "laravel/installer": "^1.3",
         "squizlabs/php_codesniffer": "*",
         "phpunit/phpunit": "^5.5",
-        "friendsofphp/php-cs-fixer": "^2.15",
+        "friendsofphp/php-cs-fixer": "^2.16",
         "laravel/valet": "^2.5",
         "overtrue/phplint": "^1.1"
     },
