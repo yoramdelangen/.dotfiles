@@ -21,23 +21,9 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.osx: osx
+    ~/.gitconfig: .gitconfig
     #    ~/.vscode: vscode
     ~/.composer/composer.json:
     "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User":
         force: true
         path: sublime3-conf
-    ~/.atom/config.cson:
-        path: atom/config.cson
-        force: true
-    ~/.atom/keymap.cson:
-        path: atom/keymap.cson
-        force: true
-    ~/.atom/styles.less:
-        path: atom/styles.less
-        force: true
-    ~/.atom/package.list:
-        path: atom/package.list
-        force: true
-    ~/.atom/snippets.cson:
-        path: atom/snippets.cson
-        force: true
