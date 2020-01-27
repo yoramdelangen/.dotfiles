@@ -17,6 +17,7 @@
         path: scripts
     ~/.bash_aliases: bash_aliases
     ~/.bash_exports: bash_exports
+    ~/.prettierrc: prettierrc
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
