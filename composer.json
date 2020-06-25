@@ -6,7 +6,8 @@
         "phpunit/phpunit": "^5.5",
         "friendsofphp/php-cs-fixer": "^2.16",
         "laravel/valet": "^2.5",
-        "overtrue/phplint": "^1.1"
+        "overtrue/phplint": "^1.1",
+        "laravel-zero/installer": "^2.3"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.6.4"

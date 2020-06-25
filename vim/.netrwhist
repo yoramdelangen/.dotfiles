@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/yoram/.config/dotfiles'
+let g:netrw_dirhist_4='/Users/yoram/.config/dotfiles/vim'
 let g:netrw_dirhist_3='/Users/yoram/Sites/Extensions/extensions-api/docs'
 let g:netrw_dirhist_2='/Users/yoram/Sites/Extensions/extensions-api'
 let g:netrw_dirhist_1='/Users/yoram/Sites/Extensions'
