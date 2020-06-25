@@ -34,6 +34,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 
+" Git Support
+Plug 'airblade/vim-gitgutter'
+
 " tabular plugin is used to format tables
 Plug 'godlygeek/tabular'
 " JSON front matter highlight plugin
