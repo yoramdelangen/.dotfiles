@@ -7,6 +7,7 @@
 
 # development aliases
 alias art='php artisan'
+alias a='php artisan'
 alias artisan='php artisan'
 alias ip='ifconfig | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'
 alias ngrok='~/.ngrok'
@@ -17,14 +18,18 @@ alias prod='yarn run prod'
 alias devel='yarn run dev'
 alias py='python'
 alias pip='/usr/local/bin/pip3'
-alias tableau="open /Applications/Tableau\ Desktop\ 2019.4.app --args --remote-debugging-port=8696"
+alias tableau="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
+alias tableau_beta="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
 alias tunnel_sydl="ssh -L 3333:localhost:3306 -N yoram@admin.sydl.nl"
+alias tunnel_sydl_mongo="ssh -L 27017:localhost:27017 -N yoram@admin.sydl.nl"
 
 # yarn aliases
 alias y='yarn'
 alias ya='yarn add'
 
 # open editor
+alias v="nvim"
+alias vim="nvim"
 alias subl='open -a Sublime\ Text'
 alias pstorm='open -a PhpStorm'
 alias vscode='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
@@ -36,6 +41,7 @@ alias firefox='open_by_browser "FirefoxDeveloperEdition"'
 alias chrome='open_by_browser "Google Chrome"'
 alias safari='open_by_browser safari'
 alias opera='open_by_browser opera'
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
 # Git aliases
 alias g='git'
@@ -68,9 +74,7 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias ~='cd ~'
 alias sites='cd ~/Sites/'
-alias code='~/Code/'
-alias bc='~/Code/Brandcube'
-alias hosts='sudo vim /etc/hosts'
+alias hosts='sudo nvim /etc/hosts'
 alias known_hosts='sudo vim /Users/yoramdelangen/.ssh/known_hosts'
 switch_project() { cd ~/Sites/"$1" || return; }
 alias project=switch_project
@@ -132,10 +136,14 @@ git_push() {
 
     while true; do
         read -r "yn?Pushing tags? [Nn|Yy] "
-        case $yn in
-            [Yy]* ) git push origin --tags; break;;
-            * ) break ;;
-        esac
+        declare -l yn
+
+        if [[ $yn == "y" ]]; then
+           git push origin --tags
+           break;
+        else
+           break;
+        fi
     done
 }
 alias push=git_push

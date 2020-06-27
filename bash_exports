@@ -1,12 +1,12 @@
 # GIT
 export PATH=/usr/local/git/bin:$PATH
-# PHP version
-export PATH="/usr/local/opt/php71/bin:$PATH"
-export PATH="/usr/local/opt/php71/sbin:$PATH"
+
 # PHP global composer
 export PATH=${PATH}:~/.composer/vendor/bin
+
 # NodeJS tools
 export PATH=$HOME/.node/bin:$PATH
+
 # Default exports includes mysql
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
@@ -14,18 +14,19 @@ export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 # Python exports
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export PATH=$PATH:~/Library/Python/3.7/bin
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 
 # Export others
 export EDITOR=vim
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
+export PATH="$PATH:/Applications/VLC.app/Contents/MacOS"
 
-# Export GO language vars
-export GOPATH=$HOME/GoCode
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+## Export GO language vars
+#export GOPATH=$HOME/GoCode
+#export GOROOT=/usr/local/opt/go/libexec
+#export PATH=$PATH:$GOPATH/bin
+#export PATH=$PATH:$GOROOT/bin
 
 # Export more bin directories
 export PATH="/usr/local/sbin:$PATH"
@@ -35,3 +36,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"

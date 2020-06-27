@@ -5,6 +5,7 @@
         "squizlabs/php_codesniffer": "*",
         "phpunit/phpunit": "^5.5",
         "friendsofphp/php-cs-fixer": "^2.16",
+        "laravel-zero/installer": "^2.3",
         "laravel/valet": "^2.7",
         "overtrue/phplint": "^1.1"
     },
