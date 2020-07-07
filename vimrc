@@ -1,49 +1,52 @@
 filetype plugin indent on
 syntax on
+
+set cmdheight=2
+set encoding=UTF-8
 set number relativenumber
 set clipboard=unnamed
+set shiftwidth=4 autoindent smartindent tabstop=4 softtabstop=4 expandtab
 
-let mapleader = ","
-
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/vendor/*,*/storage/*,*/cache/*,*/node_modules/*,*/bower_components/*
+"let mapleader = ","
+" set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/vendor/*,*/storage/*,*/cache/*,*/node_modules/*,*/bower_components/*
 
 " Keys {{{ 
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 
 " Theme
-" Plug 'mhartington/oceanic-next'
-Plug 'dracula/vim', { 'as': 'dracula' }
+    " Plug 'mhartington/oceanic-next'
+    Plug 'dracula/vim', { 'as': 'dracula' }
+    Plug 'gruvbox-community/gruvbox'
 
-" Vim Airline
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+" Tools
+    Plug 'scrooloose/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'tpope/vim-fugitive'
+    Plug 'sheerun/vim-polyglot'
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-" Plug 'junegunn/vim-easy-align'
+    " tabular plugin is used to format tables
+    Plug 'godlygeek/tabular'
 
-" Snippts etc.
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-" Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
-" Nerdtree
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ctrlpvim/ctrlp.vim'
-
-" Git Support
-Plug 'airblade/vim-gitgutter'
-
-" tabular plugin is used to format tables
-Plug 'godlygeek/tabular'
-" JSON front matter highlight plugin
-Plug 'elzr/vim-json'
-Plug 'plasticboy/vim-markdown'
+" Syntax
+    Plug 'elzr/vim-json'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'ap/vim-css-color' "Displays a preview of colors with CSS
 
 call plug#end()
+
+" THEMING
+let g:gruvbox_contrast_dark = 'hard'
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+let g:gruvbox_invert_selection='0'
+
+colorscheme gruvbox
+set background=dark
 
 "
 " Set editor configuration
@@ -60,7 +63,7 @@ map <C-\> :vsplit<CR>
 nnoremap <D-d> :vsplit<CR>
 nnoremap <S-D-d> :vsplit<CR>
 " Drop line while in insert mode
-imap <D-BS> <Esc>dd
+" imap <D-BS> <Esc>dd
 " change escape key to jj
 map <C-[> <Esc>
 map <C-c> <Esc>
@@ -70,8 +73,13 @@ imap ;; <Esc>
 map <leader>s :w<cr>
 nmap <leader>sq :wq<cr>
 
-map <C-j> :-10<CR>
-map <C-k> :+10<CR>
+map <C-k> :-10<CR>
+map <C-j> :+10<CR>
+
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
+
+nnoremap Q <nop>
 
 " disable arrowk keys
 noremap <Up> <Nop>
@@ -98,7 +106,6 @@ vnoremap <leader>P "+P
 " NerdTree Config
 " Show on startup
 " autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists(“s:std_in”) | NERDTree | endif
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -118,13 +125,6 @@ let g:tex_conceal = ""
 let g:vim_markdown_math = 1
 
 " support front matter of various format
-let g:vim_markdown_frontmatter = 1  " for YAML format
-let g:vim_markdown_toml_frontmatter = 1  " for TOML format
-let g:vim_markdown_json_frontmatter = 1  " for JSON format
-
-" Some config for NCM2
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
+let g:vim_markdown_frontmatter = 1 
+let g:vim_markdown_toml_frontmatter = 1  
+let g:vim_markdown_json_frontmatter = 1 

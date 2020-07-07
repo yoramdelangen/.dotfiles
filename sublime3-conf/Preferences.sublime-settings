@@ -1,7 +1,7 @@
 {
 	"auto_complete": true,
 	"auto_complete_commit_on_tab": false,
-	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "losevska",
 	"font_size": 15,
