@@ -22,6 +22,7 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.osx: osx
+    ~/.tmux.conf: tmux.conf
     ~/.gitconfig: .gitconfig
     #    ~/.vscode: vscode
     ~/.composer/composer.json:
