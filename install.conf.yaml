@@ -24,7 +24,9 @@
     ~/.osx: osx
     ~/.tmux.conf: tmux.conf
     ~/.gitconfig: .gitconfig
-    #    ~/.vscode: vscode
+    ~/.config/fish:
+        path: fish
+        create: true
     ~/.composer/composer.json:
     "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User":
         force: true
