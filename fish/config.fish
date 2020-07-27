@@ -19,8 +19,6 @@ alias gaa="git add --all"
 alias cc="clear"
 
 function git_pull -d "Pull from current GIT repository" 
-   echo "Argv: $argv" 
-   echo "$0"
    if test "$argv" != ""
         echo "Pull: $argv"
         git pull -v --stat origin "$argv"
