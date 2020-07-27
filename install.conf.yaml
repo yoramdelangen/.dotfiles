@@ -15,6 +15,9 @@
     ~/.scripts:
         create: true
         path: scripts
+    ~/.config/alacritty:
+        create: true
+        path: alacritty
     ~/.bash_aliases: bash_aliases
     ~/.bash_exports: bash_exports
     ~/.prettierrc: prettierrc
