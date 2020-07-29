@@ -1,9 +1,12 @@
+set -g fish_emoji_width 2
+
 # directoy movement
 alias lll="ls -la"
-alias ..="cd ../../"
-alias ...="cd ../../../"
-alias ....="cd ../../../../"
-alias .....="cd ../../../../../"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias ......="cd ../../../../../"
 
 # Tooling
 alias v="nvim"
@@ -14,6 +17,14 @@ alias gs="git status"
 alias gd="git diff"
 alias gc="git commit"
 alias gaa="git add --all"
+alias gco="git checkout"
+
+# Applications & Tunnels
+alias tableau="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
+alias tableau_2019="open /Applications/Tableau\ Desktop\ 2019.1.app --args --remote-debugging-port=8696"
+alias tableau_beta="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
+alias tunnel_sydl="ssh -L 3333:localhost:3306 -N yoram@admin.sydl.nl"
+alias tunnel_sydl_mongo="ssh -L 27017:localhost:27017 -N yoram@admin.sydl.nl"
 
 # others
 alias cc="clear"
