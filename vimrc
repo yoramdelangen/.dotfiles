@@ -76,10 +76,18 @@ nmap <leader>sq :wq<cr>
 map <C-k> :-10<CR>
 map <C-j> :+10<CR>
 
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
+" Move line up or down
+"xnoremap K :move '<-2<CR>gv-gv
+"xnoremap J :move '>+1<CR>gv-gv
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 nnoremap Q <nop>
+noremap qq :noh<CR>
 
 " disable arrowk keys
 noremap <Up> <Nop>
@@ -128,3 +136,4 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1 
 let g:vim_markdown_toml_frontmatter = 1  
 let g:vim_markdown_json_frontmatter = 1 
+
