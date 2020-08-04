@@ -21,7 +21,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Tools
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-gitgutter'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-fugitive'
@@ -69,6 +70,8 @@ map <C-[> <Esc>
 map <C-c> <Esc>
 imap ;; <Esc>
 
+map <C-p> :GFiles<CR>
+
 " quick save and exit
 map <leader>s :w<cr>
 nmap <leader>sq :wq<cr>
@@ -107,9 +110,6 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
-
-" CtrlP config
-":let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " NerdTree Config
 " Show on startup
