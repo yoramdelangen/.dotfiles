@@ -3,15 +3,11 @@
 	"auto_complete_commit_on_tab": false,
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "losevska",
-	"font_size": 15,
-	"gni_003": false,
+	"font_face": "JetBrains Mono",
+	"font_size": 14,
 	"ignored_packages":
 	[
-		"ActualVim",
-		"Six",
-		"Vintage",
-		"Vintageous"
+		"Vintage"
 	],
 	"indent_to_bracket": false,
 	"line_padding_bottom": 4,
