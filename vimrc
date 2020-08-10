@@ -53,7 +53,7 @@ set background=dark
 " Set editor configuration
 "
 " Set default font and size
-set guifont=IBMPlexMono:h14
+set guifont=FiraMono:h14
 " set linespace=15
 
 set mouse=a

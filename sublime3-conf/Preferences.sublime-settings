@@ -7,7 +7,9 @@
 	"font_size": 14,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Six",
+		"Vintage",
+		"Vintageous"
 	],
 	"indent_to_bracket": false,
 	"line_padding_bottom": 4,
