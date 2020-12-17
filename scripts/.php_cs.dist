@@ -21,5 +21,10 @@ return PhpCsFixer\Config::create()
         'phpdoc_order' => true,
         'strict_comparison' => true,
         'strict_param' => true,
-        'is_null' => false,
-    ]);
+		'is_null' => false,
+        'global_namespace_import' => [
+          // 'import_classes' => true,
+          'import_constants' => true,
+          'import_functions' => true
+        ]	
+	]);

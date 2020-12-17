@@ -1,9 +1,9 @@
 {
 	"auto_complete": true,
 	"auto_complete_commit_on_tab": false,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "JetBrains Mono",
+	"font_face": "Source Code Pro",
 	"font_size": 14,
 	"ignored_packages":
 	[
@@ -17,7 +17,7 @@
 	"neovintageous_build_version": 11100,
 	"shift_tab_unindent": true,
 	"show_full_path": true,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "ayu-mirage.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
 	"vintageous_use_ctrl_keys": null,

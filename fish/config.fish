@@ -88,3 +88,5 @@ alias push=git_push
 # Path Exports
 export PATH="$PATH:/Applications/Visual Studio Code.app/Conte,,.,nts/Resources/app/bin"
 export PATH="$PATH:/Users/yoram/.composer/vendor/bin"
+export PATH="$PATH:/usr/local/opt/php@7.4/bin"
+export PATH="$PATH:/usr/local/opt/php@7.4/sbin"

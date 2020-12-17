@@ -1,5 +1,5 @@
 [user]
-	email = yoramdelangen@gmail.nl
+	email = yoramdelangen@gmail.com
 	name = Yoram de Langen
 [core]
 	quotepath = false
@@ -18,3 +18,8 @@
 	trustExitCode = true
 [push]
 	default = matching
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

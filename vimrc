@@ -6,8 +6,11 @@ set encoding=UTF-8
 set number relativenumber
 set clipboard=unnamed
 set shiftwidth=4 autoindent smartindent tabstop=4 softtabstop=4 expandtab
+set nocursorline
+set lazyredraw
+set ttyfast
 
-"let mapleader = ","
+let mapleader = ";"
 " set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/vendor/*,*/storage/*,*/cache/*,*/node_modules/*,*/bower_components/*
 
 " Keys {{{ 
@@ -19,8 +22,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'gruvbox-community/gruvbox'
 
 " Tools
-    Plug 'scrooloose/nerdtree'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
+    "Plug 'scrooloose/nerdtree'
+    "Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-gitgutter'
@@ -30,6 +33,11 @@ call plug#begin('~/.config/nvim/plugged')
 
     " tabular plugin is used to format tables
     Plug 'godlygeek/tabular'
+" Formatters
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+    Plug 'friendsofphp/php-cs-fixer'
+    Plug 'stephpy/vim-php-cs-fixer'
 
 " Syntax
     Plug 'elzr/vim-json'
@@ -53,16 +61,15 @@ set background=dark
 " Set editor configuration
 "
 " Set default font and size
-set guifont=FiraMono:h14
-" set linespace=15
+set guifont=PragmataProMono:h15
 
 set mouse=a
 
 " Set keymapping
 nnoremap <C-k><C-b> :NERDTreeToggle<Enter>
-map <C-\> :vsplit<CR>
-nnoremap <D-d> :vsplit<CR>
-nnoremap <S-D-d> :vsplit<CR>
+nmap <leader>\ :vsplit<CR>
+nmap <leader>- :split<CR>
+
 " Drop line while in insert mode
 " imap <D-BS> <Esc>dd
 " change escape key to jj
@@ -70,24 +77,35 @@ map <C-[> <Esc>
 map <C-c> <Esc>
 imap ;; <Esc>
 
-map <C-p> :GFiles<CR>
+map <C-p> :GFiles --cached --others --exclude-standard<CR>
+nmap <C-e> :Ex<CR>
+nmap <C-e><C-n> :Ex<CR> %
+nmap <C-e><C-d> :Ex<CR> d
+
+" Formatter commands
+nmap <Leader>p <Plug>(Prettier)
+nnoremap <M-C-l> :call PhpCsFixerFixFile()<CR>
 
 " quick save and exit
-map <leader>s :w<cr>
-nmap <leader>sq :wq<cr>
+nnoremap <leader>s :w<cr>
+nnoremap <leader>sq :wq<cr>
 
-map <C-k> :-10<CR>
-map <C-j> :+10<CR>
+noremap <C-k> :-10<CR>
+noremap <C-j> :+10<CR>
 
+map <D-t> :echo "Super was clicked with super key"<CR>
+
+" execute "set <M-j>=\ej"
+" execute "set <M-k>=\ek"
 " Move line up or down
 "xnoremap K :move '<-2<CR>gv-gv
 "xnoremap J :move '>+1<CR>gv-gv
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <M-j> :m .+1<CR>==
+nnoremap <M-k> :m .-2<CR>==
+inoremap <M-j> <Esc>:m .+1<CR>==gi
+inoremap <M-k> <Esc>:m .-2<CR>==gi
+vnoremap <M-j> :m '>+1<CR>gv=gv
+vnoremap <M-k> :m '<-2<CR>gv=gv
 
 nnoremap Q <nop>
 noremap qq :noh<CR>
@@ -111,16 +129,48 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" COC shortcutsc
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Auto close some tags
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <C-space> coc#refresh()
+else
+  inoremap <silent><expr> <C-@> coc#refresh()
+endif
+
 " NerdTree Config
 " Show on startup
 " autocmd StdinReadPre * let s:std_in=1
-let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-
-" Vim Airline config
-" let g:airline_powerline_fonts = 1
-" let g:airline_symbols_ascii = 1
+" "let NERDTreeShowHidden = 1
+" "let NERDTreeMinimalUI = 1
+" "let NERDTreeDirArrows = 1
 
 " disable header folding
 let g:vim_markdown_folding_disabled = 1
@@ -136,4 +186,3 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1 
 let g:vim_markdown_toml_frontmatter = 1  
 let g:vim_markdown_json_frontmatter = 1 
-
