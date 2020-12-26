@@ -131,6 +131,9 @@ vnoremap <leader>P "+P
 
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
+" find through project
+nnoremap <C-S-f> :Ag<CR>
+
 " COC shortcutsc
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -186,3 +189,8 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1 
 let g:vim_markdown_toml_frontmatter = 1  
 let g:vim_markdown_json_frontmatter = 1 
+
+if filereadable(expand("~/.config/nvim/vimrc_background"))
+  let base16colorspace=256          " Remove this line if not necessary
+  source ~/.config/nvim/vimrc_background
+endif

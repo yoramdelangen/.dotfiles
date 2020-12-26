@@ -1,1 +1,5 @@
 .DS_Store
+nvim/plugged/*
+nvim/plugged/.gitkeep
+nvim/pack/*
+nvim/pack/.gitkeep

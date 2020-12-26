@@ -90,3 +90,4 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Conte,,.,nts/Resources/a
 export PATH="$PATH:/Users/yoram/.composer/vendor/bin"
 export PATH="$PATH:/usr/local/opt/php@7.4/bin"
 export PATH="$PATH:/usr/local/opt/php@7.4/sbin"
+export PATH="$PATH:/Users/yoram/Library/Python/3.9/bin"

@@ -4,7 +4,7 @@
 	"color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Source Code Pro",
-	"font_size": 14,
+	"font_size": 15,
 	"ignored_packages":
 	[
 		"Six",

@@ -22,6 +22,7 @@
     ~/.bash_exports: bash_exports
     ~/.prettierrc: prettierrc
     ~/.vim: vim
+    ~/.config/nvim: nvim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.osx: osx
