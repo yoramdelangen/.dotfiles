@@ -1,5 +1,7 @@
 set -g fish_emoji_width 2
 
+set -gx Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
+
 # directoy movement
 alias lll="ls -la"
 alias ..="cd ../"

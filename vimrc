@@ -5,13 +5,12 @@ set cmdheight=2
 set encoding=UTF-8
 set number relativenumber
 set clipboard=unnamed
-set shiftwidth=4 autoindent smartindent tabstop=4 softtabstop=4 expandtab
-set nocursorline
-set lazyredraw
+set shiftwidth=2 autoindent smartindent tabstop=2 softtabstop=2 expandtab
+""set nocursorline
+"set lazyredraw
 set ttyfast
 
 let mapleader = ";"
-" set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/vendor/*,*/storage/*,*/cache/*,*/node_modules/*,*/bower_components/*
 
 " Keys {{{ 
 call plug#begin('~/.config/nvim/plugged')
@@ -47,22 +46,15 @@ call plug#begin('~/.config/nvim/plugged')
 call plug#end()
 
 " THEMING
-let g:gruvbox_contrast_dark = 'hard'
-if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
-let g:gruvbox_invert_selection='0'
-
 colorscheme gruvbox
-set background=dark
 
-"
+;
 " Set editor configuration
 "
 " Set default font and size
-set guifont=PragmataProMono:h15
+set guifont=FiraMono:h15
 
+" Dunno what this does......
 set mouse=a
 
 " Set keymapping
@@ -153,12 +145,12 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Auto close some tags
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
+"inoremap " ""<left>
+"inoremap ' ''<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
+"inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 " Use <c-space> to trigger completion.
@@ -168,22 +160,12 @@ else
   inoremap <silent><expr> <C-@> coc#refresh()
 endif
 
-" NerdTree Config
-" Show on startup
-" autocmd StdinReadPre * let s:std_in=1
-" "let NERDTreeShowHidden = 1
-" "let NERDTreeMinimalUI = 1
-" "let NERDTreeDirArrows = 1
-
-" disable header folding
-let g:vim_markdown_folding_disabled = 1
-
 " do not use conceal feature, the implementation is not so good
-let g:vim_markdown_conceal = 0
+"let g:vim_markdown_conceal = 0
 
 " disable math tex conceal feature
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
+"let g:tex_conceal = ""
+"let g:vim_markdown_math = 1
 
 " support front matter of various format
 let g:vim_markdown_frontmatter = 1 
