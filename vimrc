@@ -48,17 +48,16 @@ call plug#end()
 " THEMING
 colorscheme gruvbox
 
-;
 " Set editor configuration
 "
 " Set default font and size
-set guifont=FiraMono:h15
+set guifont=FiraCodeNerdFont:h14
 
 " Dunno what this does......
 set mouse=a
 
 " Set keymapping
-nnoremap <C-k><C-b> :NERDTreeToggle<Enter>
+vnoremap <C-k><C-b> :NERDTreeToggle<Enter>
 nmap <leader>\ :vsplit<CR>
 nmap <leader>- :split<CR>
 

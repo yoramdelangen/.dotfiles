@@ -53,7 +53,7 @@ alias myssh='cat ~/.ssh/id_rsa.pub'
 
 function git_pull -d "Pull from current GIT repository" 
    if test "$argv" != ""
-        echo "Pull: $argv"
+        echo "👇 $argv"
         git pull -v --stat origin "$argv"
     else
         set current_branch (git rev-parse --abbrev-ref HEAD)
@@ -62,7 +62,7 @@ function git_pull -d "Pull from current GIT repository"
             set current_branch "master"
         end
 
-        echo "Pull: $current_branch"
+        echo "👇 $current_branch"
         git pull -v --stat origin "$current_branch"
     end
 
@@ -71,7 +71,7 @@ alias pull=git_pull
 
 function git_push -d "Push from current GIT repository" 
    if test "$argv" != ""
-        echo "Push: $argv"
+        echo "👆 $argv"
         git push -u -v --progress origin "$argv"
     else
         set current_branch (git rev-parse --abbrev-ref HEAD)
@@ -80,7 +80,7 @@ function git_push -d "Push from current GIT repository"
             set current_branch "master"
         end
 
-        echo "Push: $current_branch"
+        echo "👆 $current_branch"
         git push -v --progress origin "$current_branch"
     end
 

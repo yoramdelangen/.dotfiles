@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/yoram/.config/dotfiles/alacritty'
 let g:netrw_dirhist_0='/Users/yoram/.config/dotfiles/nvim'
 let g:netrw_dirhist_9='/Users/yoram/Sites/Web/proxy-api/app/Console'
 let g:netrw_dirhist_8='/Users/yoram/Sites/Web/proxy-api/app'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_5='/Users/yoram/Sites/Projects/vue-tv-remote/src'
 let g:netrw_dirhist_4='/Users/yoram/Sites/Projects/vue-tv-remote'
 let g:netrw_dirhist_3='/Users/yoram/Sites/Projects/notes-app/src'
 let g:netrw_dirhist_2='/Users/yoram/Sites/Projects/notes-app'
-let g:netrw_dirhist_1='/Users/yoram/Sites/Experiments/inkdrop-clean-view/lib'
