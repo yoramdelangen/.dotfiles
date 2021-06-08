@@ -1,6 +1,6 @@
 <?php
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
 	->setUsingCache(false)
 	->setRules([
@@ -16,7 +16,7 @@ return PhpCsFixer\Config::create()
         'no_useless_return' => true,
         'not_operator_with_successor_space' => true,
         'ordered_class_elements' => true,
-        'ordered_imports' => ['sortAlgorithm' => 'length'],
+        'ordered_imports' => ['sort_algorithm' => 'length'],
         'php_unit_strict' => true,
         'phpdoc_order' => true,
         'strict_comparison' => true,

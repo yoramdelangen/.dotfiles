@@ -6,5 +6,19 @@
     "js",
     "json",
     "vue"
-  ]
+  ],
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnInsertLeave": true,
+  "coc.preferences.formatOnType": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.messageTarget": "echo",
+  "diagnostic-languageserver.formatFiletypes": {
+    "php": "php-cs-fixer"
+  },
+  "git.enableGutters": true,
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "!",
+  "diagnostic.infoSign": "•",
+  "diagnostic.hintSign": "•",
+  "intelephense.environment.phpVersion": "7"
 }

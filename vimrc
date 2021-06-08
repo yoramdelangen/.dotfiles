@@ -5,59 +5,63 @@ set cmdheight=2
 set encoding=UTF-8
 set number relativenumber
 set clipboard=unnamed
-set shiftwidth=2 autoindent smartindent tabstop=2 softtabstop=2 expandtab
+set shiftwidth=2 autoindent smartindent tabstop=4 softtabstop=4 expandtab
 ""set nocursorline
 "set lazyredraw
 set ttyfast
 
 let mapleader = ";"
 
+"" KITE settings
+" All the languages Kite supports
+let g:kite_supported_languages = ['*']
+
 " Keys {{{ 
 call plug#begin('~/.config/nvim/plugged')
 
-" Theme
-    " Plug 'mhartington/oceanic-next'
-    Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'gruvbox-community/gruvbox'
-
 " Tools
-    "Plug 'scrooloose/nerdtree'
-    "Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'tpope/vim-fugitive'
-    Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
 
-    " tabular plugin is used to format tables
-    Plug 'godlygeek/tabular'
-" Formatters
-    Plug 'editorconfig/editorconfig-vim'
-    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-    Plug 'friendsofphp/php-cs-fixer'
-    Plug 'stephpy/vim-php-cs-fixer'
-
-" Syntax
-    Plug 'elzr/vim-json'
-    Plug 'plasticboy/vim-markdown'
-    Plug 'ap/vim-css-color' "Displays a preview of colors with CSS
+source ~/.config/nvim/plugins/nerdtree.vim
+source ~/.config/nvim/plugins/theming.vim
+source ~/.config/nvim/plugins/syntax_format.vim
+" source ~/.config/nvim/plugins/fzf.vim
+" source ~/.config/nvim/plugins/phpactor.vim
+source ~/.config/nvim/plugins/markdown.vim
+" source ~/.config/nvim/plugins/coc.vim
+" source ~/.config/nvim/plugins/lsp.vim
+source ~/.config/nvim/plugins/easy-align.vim
+source ~/.config/nvim/plugins/telescope.vim
+source ~/.config/nvim/plugins/vimwiki.vim
 
 call plug#end()
 
 " THEMING
 colorscheme gruvbox
 
+" Telescope settings
+lua << EOF
+require('telescope').setup {
+    defaults = {
+        file_ignore_patterns = {
+            "node_modules/.*",
+            ".git/.*"
+        }
+    }
+}
+EOF
+
 " Set editor configuration
 "
 " Set default font and size
-set guifont=FiraCodeNerdFont:h14
+set guifont=CozetteVector:h14
 
 " Dunno what this does......
 set mouse=a
 
 " Set keymapping
-vnoremap <C-k><C-b> :NERDTreeToggle<Enter>
 nmap <leader>\ :vsplit<CR>
 nmap <leader>- :split<CR>
 
@@ -66,16 +70,14 @@ nmap <leader>- :split<CR>
 " change escape key to jj
 map <C-[> <Esc>
 map <C-c> <Esc>
-imap ;; <Esc>
 
-map <C-p> :GFiles --cached --others --exclude-standard<CR>
+" map <C-p> :Files<CR>
 nmap <C-e> :Ex<CR>
 nmap <C-e><C-n> :Ex<CR> %
 nmap <C-e><C-d> :Ex<CR> d
 
 " Formatter commands
 nmap <Leader>p <Plug>(Prettier)
-nnoremap <M-C-l> :call PhpCsFixerFixFile()<CR>
 
 " quick save and exit
 nnoremap <leader>s :w<cr>
@@ -91,8 +93,8 @@ map <D-t> :echo "Super was clicked with super key"<CR>
 " Move line up or down
 "xnoremap K :move '<-2<CR>gv-gv
 "xnoremap J :move '>+1<CR>gv-gv
-nnoremap <M-j> :m .+1<CR>==
-nnoremap <M-k> :m .-2<CR>==
+map <M-j> :m .+1<CR>==
+map <M-k> :m .-2<CR>==
 inoremap <M-j> <Esc>:m .+1<CR>==gi
 inoremap <M-k> <Esc>:m .-2<CR>==gi
 vnoremap <M-j> :m '>+1<CR>gv=gv
@@ -120,28 +122,15 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR> :echo "Config reloaded! ✅"<CR>
+
+" PHP
+nnoremap <leader>cs :!php-cs-fixer fix -q --stop-on-violation --using-cache=no --show-progress=none %<CR> :echo "PHP CS Fix done! 🔥" <CR><CR>
+autocmd FileType php nnoremap <Leader>e :call PhpInsertUse()<CR>
 
 " find through project
 nnoremap <C-S-f> :Ag<CR>
 
-" COC shortcutsc
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gr <Plug>(coc-references)
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Auto close some tags
 "inoremap " ""<left>
@@ -150,28 +139,12 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 "inoremap [ []<left>
 "inoremap { {}<left>
 "inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <C-space> coc#refresh()
-else
-  inoremap <silent><expr> <C-@> coc#refresh()
-endif
-
-" do not use conceal feature, the implementation is not so good
-"let g:vim_markdown_conceal = 0
-
-" disable math tex conceal feature
-"let g:tex_conceal = ""
-"let g:vim_markdown_math = 1
-
-" support front matter of various format
-let g:vim_markdown_frontmatter = 1 
-let g:vim_markdown_toml_frontmatter = 1  
-let g:vim_markdown_json_frontmatter = 1 
+" inoremap {;<CR> {<CR>};<ESC>O
 
 if filereadable(expand("~/.config/nvim/vimrc_background"))
   let base16colorspace=256          " Remove this line if not necessary
   source ~/.config/nvim/vimrc_background
 endif
+
+" INSPIRED BY
+" - https://gist.github.com/ocharles/822e0577d7f00c428729338015904cf2

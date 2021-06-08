@@ -13,5 +13,14 @@
 	{ "keys": ["ctrl+shift+r"], "command": "reveal_in_side_bar"},
 	// PHP CS Fixer - Cleanup
 	{ "keys": ["super+ctrl+l"], "command": "sublime_php_cs_fix"},
-	{ "keys": ["alt+shift+f"], "command": "js_prettier" }
+	{ "keys": ["alt+shift+f"], "command": "js_prettier" },
+	{
+	    "keys": ["j", "j"],
+	    "command": "exit_insert_mode",
+	    "context":
+	    [
+	        { "key": "setting.command_mode", "operand": false },
+	        { "key": "setting.is_widget", "operand": false }
+	    ]
+	}
 ]

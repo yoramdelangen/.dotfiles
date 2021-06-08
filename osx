@@ -10,7 +10,7 @@ sudo -v
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Set a blazingly fast keyboard repeat rate
-defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
 # Set keyboard 
@@ -33,5 +33,14 @@ defaults write com.apple.finder QLEnableTextSelection -bool TRUE
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool TRUE #killall SystemUIServer
 
+# Disable animations
+defaults write com.apple.finder DisableAllAnimations -bool true
+
 # Hide non-active apps in Dock
 # defaults write com.apple.dock static-only -bool TRUE
+
+# Disable workspace change animations
+defaults write com.apple.dock workspaces-swoosh-animation-off -bool YES
+
+# ref: https://apple.stackexchange.com/questions/17929/how-can-i-disable-animation-when-switching-desktops-in-lion
+defaults write com.apple.dock expose-animation-duration -int 0

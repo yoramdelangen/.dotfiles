@@ -1,25 +1,21 @@
 {
 	"auto_complete": true,
 	"auto_complete_commit_on_tab": false,
-	"color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "Source Code Pro",
-	"font_size": 15,
+	"font_face": "Monokai",
+	"font_size": 14,
 	"ignored_packages":
 	[
-		"Six",
-		"Vintage",
-		"Vintageous"
+		"LSP-intelephense",
 	],
 	"indent_to_bracket": false,
-	"line_padding_bottom": 4,
-	"line_padding_top": 4,
+	"line_padding_bottom": 6,
+	"line_padding_top": 6,
 	"neovintageous_build_version": 11100,
 	"shift_tab_unindent": true,
 	"show_full_path": true,
-	"theme": "ayu-mirage.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
-	"vintageous_use_ctrl_keys": null,
-	"vintageous_use_super_keys": null
+	"vintage_start_in_command_mode": true,
+	"index_exclude_gitignore": false,
 }
