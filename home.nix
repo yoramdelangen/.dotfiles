@@ -10,10 +10,10 @@
     # ./machines/osx-work.nix
     
     ## Tools we installed on all machines
-    ./alacritty/default.nix
+    # ./alacritty/default.nix
     # ./alacritty/ubuntu-regolith.nix
-    ./neovim/default.nix
-
+    ./neovim/index.nix
+    ./tmux/index.nix
 
     ./git/default.nix
   ];
@@ -38,3 +38,4 @@
 
 # References/inspiration for this nix dotfiles configuration
 # - https://hugoreeves.com/posts/2019/nix-home/
+# - https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix 
