@@ -26,6 +26,12 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.osx: osx
+    ~/.config/yabai:
+        create: true
+        path: yabai
+    ~/.config/skhd:
+        create: true
+        path: skhd
     ~/.tmux.conf: tmux.conf
     ~/.gitconfig: .gitconfig
     ~/.config/fish:
