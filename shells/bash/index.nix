@@ -1,17 +1,17 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    zsh
     starship
   ];
   
-  programs.zsh = {
+  programs.bash = {
     enable = true;
 
     shellAliases = {
       lg = "lazygit";
+      gs = "git status";
     };
     
-    shellInit = ''
+    initExtra = ''
       echo "Testing does this load?"
 
       export XDG_CONFIG_HOME="$HOME/.config"
@@ -23,6 +23,14 @@
   };
 
   programs.alacritty = {
-    program = "zsh";
+    settings = {
+      shell = {
+        program = "fish";
+        args = [
+          "-C"
+          "neofetch"
+        ];
+      };
+    };
   };
 }

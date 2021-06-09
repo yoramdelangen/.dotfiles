@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, lib, pkgs, ... }: 
 
 {
   # Install neovim 0.5
@@ -22,13 +22,17 @@
     
     # make sure we install neovim 0.5
     package = pkgs.neovim-nightly;
-  };
 
-  xdg.configFile."nvim/init.vim".source = ./init.vim;
-  xdg.configFile."nvim/vim-plug.vim".source = ./vim-plug.vim;
-  xdg.configFile."nvim/movement.vim".source = ./movement.vim;
-  xdg.configFile."nvim/plugins/telescope.vim".source = ./plugins/telescope.vim;
+    extraConfig = with lib.strings; concatMapStrings (x: fileContents x + "\n") [
+      ./src/init.vim
+      ./src/vim-plug.vim
+      ./src/plugins.vim
+      ./src/movement.vim
+      ./src/plugins/telescope.vim
+    ];
+  };
 }
 
-# References: 
+# REFERENCES
 # - https://github.com/malob/nixpkgs/blob/master/home/neovim.nix
+# - https://github.com/breuerfelix/nixos/blob/main/shell/vim/init.nix

@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ config, lib, pkgs, ... }:
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -8,6 +7,9 @@
     # What machine are we working on atm?
     ./machines/ubuntu-regolith.nix
     # ./machines/osx-work.nix
+
+    # Shell
+    ./shells/bash/index.nix
     
     ## Tools we installed on all machines
     # ./alacritty/default.nix

@@ -15,7 +15,12 @@
     userEmail = "yoramdelangen@gmail.com";
     userName = "Yoram de Langen";
     ignores = [
-      ".DS_Store"
+      ".idea" ".vs" ".vsc" ".vscode" # ide
+      ".DS_Store" # mac
+      "node_modules" "npm-debug.log" # npm
+      "__pycache__" "*.pyc" # python
+      ".ipynb_checkpoints" # jupyter
+      "__sapper__" # svelte
     ];
   };
 
