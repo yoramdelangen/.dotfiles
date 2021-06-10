@@ -12,7 +12,7 @@
     ./shells/bash/index.nix
 
     # Utils - like fonts etc..
-    # ./utils/fonts.nix
+    ./utils/fonts.nix
     
     ## Tools we installed on all machines
     # ./tools/alacritty/default.nix
