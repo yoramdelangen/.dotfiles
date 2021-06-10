@@ -10,14 +10,19 @@
 
     # Shell
     ./shells/bash/index.nix
+
+    # Utils - like fonts etc..
+    # ./utils/fonts.nix
     
     ## Tools we installed on all machines
-    # ./alacritty/default.nix
-    # ./alacritty/ubuntu-regolith.nix
-    ./neovim/index.nix
-    ./tmux/index.nix
-
-    ./git/default.nix
+    # ./tools/alacritty/default.nix
+    # ./tools/alacritty/ubuntu-regolith.nix
+    ./tools/neovim/index.nix
+    ./tools/tmux/index.nix
+    ./tools/git/default.nix
+    
+    # Development tools
+    ./dev/javascript.nix
   ];
 
   home.packages = with pkgs; [
@@ -25,6 +30,11 @@
     exa
     bat
     fd
+
+    # shell startup
+    lolcat
+    cowsay
+    fortune
   ];
 
   # This value determines the Home Manager release that your

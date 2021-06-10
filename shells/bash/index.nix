@@ -9,11 +9,13 @@
     shellAliases = {
       lg = "lazygit";
       gs = "git status";
+      ls = "exa";
+      ll = "exa -l";
+      hm = "home-manager";
     };
     
     initExtra = ''
-      echo "Testing does this load?"
-
+      fortune | cowsay | lolcat
       export XDG_CONFIG_HOME="$HOME/.config"
     '';
   };

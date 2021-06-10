@@ -9,6 +9,7 @@
 
     shellAliases = {
       lg = "lazygit";
+      ll = "exa -l";
     };
     
     shellInit = ''

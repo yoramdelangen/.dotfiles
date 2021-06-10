@@ -28,7 +28,9 @@
       ./src/vim-plug.vim
       ./src/plugins.vim
       ./src/movement.vim
-      ./src/plugins/telescope.vim
+      ./src/plugins/lua/telescope.vim
+      ./src/plugins/tree.vim
+      ./src/plugins/lua/lsp.vim
     ];
   };
 }
