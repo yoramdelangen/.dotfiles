@@ -4,7 +4,9 @@ set -Ux EDITOR nvim
 set -gx Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
 
 # directoy movement
-alias lll="ls -la"
+alias ls=exa
+alias ll="exa -l"
+alias lll="exa -la"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"

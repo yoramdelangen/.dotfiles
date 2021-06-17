@@ -96,7 +96,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FiraCode Nerd Font
+    ## family: FiraCode Nerd Font
+    family: DejaVuSansMono Nerd Font
 
   # Bold font face
   #bold:
@@ -160,7 +161,7 @@ colors:
   # Default colors
   primary:
     # hard contrast: background = '#1d2021'
-    background: '#282828'
+    background: '#1c1c1c'
     # soft contrast: background = '#32302f'
     foreground: '#ebdbb2'
 
@@ -253,7 +254,7 @@ colors:
   #thickness: 0.15
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
@@ -484,6 +485,7 @@ shell:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # at once.
 key_bindings:
+  - { key: Slash,   mods: Control,       chars: "\x1f" }
   #- { key: Paste,                                action: Paste          }
   #- { key: Copy,                                 action: Copy           }
   #- { key: L,         mods: Control,             action: ClearLogNotice }
@@ -568,7 +570,6 @@ key_bindings:
   - { key: N,      mods: Command,            action: SpawnNewInstance }
   #- { key: F,      mods: Command|Control,    action: ToggleFullscreen }
 
-#debrc/components/LicenseAlert.vue
 #[]g:
   # Display the time it takes to redraw each frame.
   #render_timer: false

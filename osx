@@ -10,8 +10,8 @@ sudo -v
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Set a blazingly fast keyboard repeat rate
-defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+defaults write -g InitialKeyRepeat -int 20 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 
 # Set keyboard 
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
@@ -37,7 +37,7 @@ defaults write com.apple.screencapture disable-shadow -bool TRUE #killall System
 defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Hide non-active apps in Dock
-# defaults write com.apple.dock static-only -bool TRUE
+defaults write com.apple.dock static-only -bool TRUE
 
 # Disable workspace change animations
 defaults write com.apple.dock workspaces-swoosh-animation-off -bool YES
