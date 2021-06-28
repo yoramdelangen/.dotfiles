@@ -16,6 +16,8 @@ alias ......="cd ../../../../../"
 # open Tooling
 alias v="nvim"
 alias vim="nvim"
+alias neovide="neovide"
+alias vw="nvim -c v:lua require'v-vimwiki'.startVimwiki()"
 alias subl="open -a Sublime\ Text"
 alias tableau="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
 alias tableau_2019="open /Applications/Tableau\ Desktop\ 2019.1.app --args --remote-debugging-port=8696"
