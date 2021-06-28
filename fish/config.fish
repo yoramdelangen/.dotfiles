@@ -12,12 +12,14 @@ alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
 alias ......="cd ../../../../../"
+alias dot="cd ~/.config/dotfiles"
 
 # open Tooling
 alias v="nvim"
 alias vim="nvim"
 alias neovide="neovide"
 alias vw="nvim -c v:lua require'v-vimwiki'.startVimwiki()"
+alias notes='vim -c VimwikiIndex'
 alias subl="open -a Sublime\ Text"
 alias tableau="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
 alias tableau_2019="open /Applications/Tableau\ Desktop\ 2019.1.app --args --remote-debugging-port=8696"
@@ -34,7 +36,6 @@ alias comp="composer"
 alias phpfix='php-cs-fixer fix . --config=/Users/yoram/.dotfiles/scripts/.php_cs.dist'
 alias y='yarn'
 alias ya='yarn add'
-alias notes='vim -c VimwikiIndex'
 
 # Git
 alias gs="git status"
