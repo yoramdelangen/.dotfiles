@@ -164,6 +164,10 @@ _G.packer_plugins = {
     needs_bufread = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/opt/vim-matchup"
   },
+  ["vim-prettier"] = {
+    loaded = true,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/vim-prettier"
+  },
   ["vim-startify"] = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/vim-startify"

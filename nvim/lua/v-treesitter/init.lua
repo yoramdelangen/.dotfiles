@@ -6,7 +6,7 @@ require'nvim-treesitter.configs'.setup {
         -- disable = { "c", "ruby" },  -- optional, list of language that will be disabled
     },
     highlight = {
-        enable = O.treesitter.highlight.enabled -- false will disable the whole extension
+        enable = O.treesitter.highlight.enabled 
     },
     context_commentstring = {
         enable = true,
@@ -14,8 +14,7 @@ require'nvim-treesitter.configs'.setup {
           css = '// %s'
         }
       },
-    -- indent = {enable = true, disable = {"python", "html", "javascript"}},
     -- TODO seems to be broken
-    indent = {enable = {"javascriptreact"}},
+    indent = {enable = true},
     autotag = {enable = true},
 }

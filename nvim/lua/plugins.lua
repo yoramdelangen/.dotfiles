@@ -36,6 +36,7 @@ return require('packer').startup(function()
   use 'kabouzeid/nvim-lspinstall'
   use 'editorconfig/editorconfig-vim'
   use 'glepnir/lspsaga.nvim' -- not LUA
+  use 'prettier/vim-prettier'
 
   -- Completion
   use 'hrsh7th/nvim-compe'

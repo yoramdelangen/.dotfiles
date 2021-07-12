@@ -91,6 +91,9 @@ shift + cmd - l : yabai -m window --warp east
 shift + cmd - j : yabai -m window --warp south 
 shift + cmd - k : yabai -m window --warp north 
 
+# rotate layout 90 degrees
+shift + cmd - e : yabai -m space --rotate 90
+
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
 
