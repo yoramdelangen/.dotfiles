@@ -1,47 +1,68 @@
 -- Set leader
-key_bind('n', '<Space>', '<NOP>', {noremap = true, silent = true})
+bind_n('<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- better window movement
-key_bind('n', '<C-h>', '<C-w>h', {silent = true})
-key_bind('n', '<C-j>', '<C-w>j', {silent = true})
-key_bind('n', '<C-k>', '<C-w>k', {silent = true})
-key_bind('n', '<C-l>', '<C-w>l', {silent = true})
+bind_n('<C-h>', '<C-w>h', {silent = true})
+bind_n('<C-j>', '<C-w>j', {silent = true})
+bind_n('<C-k>', '<C-w>k', {silent = true})
+bind_n('<C-l>', '<C-w>l', {silent = true})
 
 -- quicker movement
-key_bind('n', '<C-A-j>', '<cmd>+10<cr>', {silent=true})
-key_bind('n', '<C-A-k>', '<cmd>-10<cr>', {silent=true})
+bind_n('<C-A-j>', '<cmd>+10<cr>', {silent=true})
+bind_n('<C-A-k>', '<cmd>-10<cr>', {silent=true})
+
+-- Moving text more easily:
+-- move visual selection
+bind_v('J', ':m .+1<cr>gv=gv', true)
+bind_v('K', ':m <-2<cr>gv=gv', true)
+-- single line movement in 2 modes
+bind_i('<C-j>', ':m .+1<cr>==', true)
+bind_i('<C-k>', ':m .-2<cr>==', true)
+bind_n('<C-j>', ':m .+1<cr>==', true)
+bind_n('<C-k>', ':m .-2<cr>==', true)
 
 -- improve identation
-key_bind('v', '>', '>gv')
-key_bind('v', '<', '<gv')
+bind_v('>', '>gv')
+bind_v('<', '<gv')
 
 -- No Highlight
-key_bind('n', '<leader>hc', '<cmd>nohls<cr>', {silent=true})
+bind_n('<leader>hc', '<cmd>nohls<cr>', {silent=true})
 
 -- buffer and tab movement (replaced with barbar)
--- key_bind('n', '<tab>', '<cmd>tabnext<cr>', {noremap=true})
--- key_bind('n', '<s-tab>', '<cmd>tabprev<cr>', {noremap=true})
--- key_bind('n', '<C-]>', '<cmd>tabnext<cr>', {noremap=true})
--- key_bind('n', '<C-[>', '<cmd>tabprev<cr>', {noremap=true})
+-- bind_n('<tab>', '<cmd>tabnext<cr>', true)
+-- bind_n('<s-tab>', '<cmd>tabprev<cr>', true)
+-- bind_n('<C-]>', '<cmd>tabnext<cr>', true)
+-- bind_n('<C-[>', '<cmd>tabprev<cr>', true)
 
 -- " No recording, its not AVG PROOFFF!
-key_bind('n', 'Q', '<nop>', {noremap=true})
-key_bind('n', 'q', '<nop>', {noremap=true})
-key_bind('n', 'qq', '<nop>', {noremap=true})
+bind_n('Q', '<nop>', true)
+bind_n('q', '<nop>', true)
+bind_n('qq', '<nop>', true)
 
 -- " change escape key to jj
-key_bind('i', '<C-c>', '<esc>', {noremap=true})
-key_bind('i', 'jk', '<esc>', {noremap=true})
-key_bind('i', 'kj', '<esc>', {noremap=true})
+bind_i('<C-c>', '<esc>')
+bind_i('jk', '<esc>', true)
+bind_i('kj', '<esc>', true)
+
+-- Keeping it centered
+bind_n('n', 'nzzzv', true)
+bind_n('N', 'Nzzzv', true)
+bind_n('J', 'mzJ`z', true)
+
+-- Undo break points for undo
+bind_i(',', ',<c-g>u', true)
+bind_i('.', '.<c-g>u', true)
+bind_i('!', '!<c-g>u', true)
+bind_i('?', '?<c-g>u', true)
 
 -- Improve DD not to yank
---key_bind('n', 'dd', '"_dd', {noremap=true})
---key_bind('n', 'D', '"_D', {noremap=true})
+--bind_n('dd', '"_dd', true)
+--bind_n('D', '"_D', true)
 
 -- Easier Copy pasta
-key_bind('n', 'Y', 'y$', {noremap=true, silent=true})
+bind_n('Y', 'y$', {noremap=true, silent=true})
 
 key_bind('', '<leader>y', '"*y')
 key_bind('', '<leader>Y', '"+y')
@@ -54,8 +75,8 @@ noremap <Leader>Y "+y
 noremap <Leader>P "+p ]]
 
 -- Prettier formatter
-key_bind('n', '<C-S-p>', '<cmd>Prettier', {noremap=true})
-key_bind('n', '<C-S-ENTER>', '<cmd>Prettier', {noremap=true})
+bind_n('<C-S-p>', '<cmd>Prettier', true)
+bind_n('<C-S-ENTER>', '<cmd>Prettier', true)
 
 -- REFERENCES
 -- Helpers for setup proper keybindings:

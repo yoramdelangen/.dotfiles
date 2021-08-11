@@ -15,7 +15,7 @@ key_bind('n', '<leader>ww', '<cmd>lua require"v-vimwiki".startupVimwiki()<cr>', 
 M = {}
 function M.startupVimwiki()
   -- Set working directory to vimwiki folder.
-  vim.cmd([[ lcd $HOME/.vimwiki/index.wiki ]]) -- set working directory to open file/folder
+  vim.cmd([[ lcd $HOME/.vimwiki ]]) -- set working directory to open file/folder
 
   -- Startup VimWiki
   vim.cmd([[ VimwikiIndex ]])
