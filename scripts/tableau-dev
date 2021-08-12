@@ -10,8 +10,13 @@
 
 ## Goal is to dynamicly be able to open A Tableau Desktop appliocation in development mode. 
 ## 
-## ROADMAP
+## TODOS:
 ## - Adding port check for dynamicly open multiple Tableau versions on different ports.
+## - Detect if there was already a development mode version of Tableau Desktop running and open that version instead of a new one.
+##
+## INSTALLATION:
+## Put the bash script in /usr/local/bin or in a path thats available in your PATH variable.
+## You'll be able to run it like: tableau-dev
 
 # make tab cycle through commands after listing
 bind '"\t":menu-complete'
