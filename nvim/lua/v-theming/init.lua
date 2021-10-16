@@ -3,11 +3,42 @@ vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
 
 vim.cmd[[colorscheme onedark]]
-vim.o.guifont = "DejaVuSansMono Nerd Font:h12"
+-- vim.o.guifont = "JetBrainsMono Nerd Font:h12"
+
+-- Icons
+require'nvim-web-devicons'.setup {
+ -- your personnal icons can go here (to override)
+ -- DevIcon will be appended to `name`
+ override = {
+  zsh = {
+    icon = "",
+    color = "#428850",
+    name = "Zsh"
+  }
+ };
+ -- globally enable default icons (default to false)
+ -- will get overriden by `get_icons` option
+ default = true;
+}
 
 -- Statusbar
 --Set statusbar
-vim.g.lightline = { colorscheme = 'onedark';
-      active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } };
+--[[ vim.g.lightline = { 
+  colorscheme = 'onedark';
+  active = { 
+    left = { 
+      { 'mode', 'paste' }, 
+      { 'gitbranch', 'readonly', 'filename', 'modified' } 
+    } 
+  };
 --       component_function = { gitbranch = 'fugitive#head', };
-}
+} ]]
+
+
+-- THEMES
+-- - Onedark
+-- - Groovbox
+-- - Zephyr (https://github.com/glepnir/zephyr-nvim)
+
+-- REFRENCES
+-- onedark

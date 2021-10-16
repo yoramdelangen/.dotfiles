@@ -1,6 +1,10 @@
 package foreign-env
 package nvm
+package vcs
 package z
+theme batman
+theme boxfish
+theme chain
 theme default
 theme eclm
 theme krisleech

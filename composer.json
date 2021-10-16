@@ -2,7 +2,8 @@
   "require": {
     "laravel/valet": "^2.15",
     "overtrue/phplint": "^2.3",
-    "friendsofphp/php-cs-fixer": "^3.0"
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "beyondcode/expose": "^2.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

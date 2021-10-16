@@ -2,12 +2,17 @@ vim.g.neovide_cursor_vfx_mode = "pixiedust"
 vim.g.neovide_fullscreen = false 
 vim.g.neovide_no_idle=true
 
-key_bind('n', '<D-v>', '"+p', {silent=true})
-key_bind('n', '<D-c>', '"+y', {silent=true})
-key_bind('i', '<D-v>', '<ESC>"+p', {silent=true})
-key_bind('i', '<D-c>', '<ESC>"+y', {silent=true})
+opt = { silent=true }
 
-key_bind('n', '<leader><S-f>', "<cmd>lua require'v-gui/neovide'.toggleFullscreen()<cr>")
+key_bind('', '<D-v>', '"+p', opt)
+key_bind('', '<D-c>', '"+y', opt)
+--[[ key_bind('', '<D-v>', '<ESC>"+p', opt)
+key_bind('', '<D-c>', '<ESC>"+y', opt) ]]
+
+key_bind('', '<C-a>\\', '<cmd>vsplit<cr>', opt)
+key_bind('', '<C-a>-', '<cmd>split<cr>', opt)
+
+key_bind('n', '<leader>F', "<cmd>lua require'v-gui/neovide'.toggleFullscreen()<cr>")
 
 M = {}
 function M.toggleFullscreen()

@@ -35,7 +35,7 @@ select opt in "${options[@]}"; do
   case $opt in
     *.app)
       echo "Tableau file $opt selected"
-      open -a "$opt" --args --remote-debugging-port=8096
+      open "$opt" --args --remote-debugging-port=8696
       break
       ;;
     "Do nothing ")

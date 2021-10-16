@@ -1,1 +1,1 @@
-/Users/yoram/.local/share/omf/themes/eclm/fish_prompt.fish
+/Users/yoram/.local/share/omf/themes/boxfish/fish_prompt.fish

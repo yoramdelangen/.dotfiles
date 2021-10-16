@@ -13,13 +13,12 @@ require('keymappings')
 
 -- Load Plugins
 require('v-nvimtree')
+require('v-treesitter')
 require('v-telescope')
 require('v-lsp')
-require('v-treesitter')
-require('v-compe')
-require('v-fterm')
 require('v-kommentary')
 require('v-vimwiki')
+require('v-hop')
 
 -- Fancy things up
 require('v-theming')
@@ -31,5 +30,7 @@ if vim.g.neovide then
 end
 
 -- REFERENCES
+-- https://github.com/glepnir/nvim
 -- https://github.com/ChristianChiarulli/LunarVimPrevious
 -- https://github.com/neovim/nvim-lspconfig/wiki/Complete-init.lua-example
+-- https://oroques.dev/notes/neovim-init/#commands-and-autocommands

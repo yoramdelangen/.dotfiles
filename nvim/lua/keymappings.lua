@@ -16,12 +16,15 @@ bind_n('<C-A-k>', '<cmd>-10<cr>', {silent=true})
 -- Moving text more easily:
 -- move visual selection
 bind_v('J', ':m .+1<cr>gv=gv', true)
-bind_v('K', ':m <-2<cr>gv=gv', true)
+bind_v('K', ':m .-2<cr>gv=gv', true)
 -- single line movement in 2 modes
 bind_i('<C-j>', ':m .+1<cr>==', true)
 bind_i('<C-k>', ':m .-2<cr>==', true)
-bind_n('<C-j>', ':m .+1<cr>==', true)
-bind_n('<C-k>', ':m .-2<cr>==', true)
+bind_n('<C-S-j>', ':m .+1<cr>==', true)
+bind_n('<C-S-k>', ':m .-2<cr>==', true)
+
+-- Plugin: Hop bindings
+bind_n('<leader>j', "<cmd>lua require'hop'.hint_words()<cr>")
 
 -- improve identation
 bind_v('>', '>gv')
@@ -68,6 +71,11 @@ key_bind('', '<leader>y', '"*y')
 key_bind('', '<leader>Y', '"+y')
 key_bind('', '<leader>p', '"*p')
 key_bind('', '<leader>P', '"+p')
+
+-- Delete line without copy selection
+bind_n('<leader>d', '"_d')
+key_bind('x', '<leader>d', '"_d')
+key_bind('x', '<leader>p', '"_dP')
 
 --[[ noremap <Leader>y "*y
 noremap <Leader>p "*p

@@ -6,7 +6,7 @@ require'nvim-treesitter.configs'.setup {
         -- disable = { "c", "ruby" },  -- optional, list of language that will be disabled
     },
     highlight = {
-        enable = O.treesitter.highlight.enabled 
+        enable = true
     },
     context_commentstring = {
         enable = true,
@@ -15,6 +15,6 @@ require'nvim-treesitter.configs'.setup {
         }
       },
     -- TODO seems to be broken
-    indent = {enable = true},
+    -- indent = {enable = true},
     autotag = {enable = true},
 }
