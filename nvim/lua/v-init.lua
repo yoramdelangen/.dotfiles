@@ -13,20 +13,17 @@ require('v-packer')
 
 -- Load Plugins
 require('v-nvimtree')
-require('v-treesitter')
+require 'v-treesitter'
 require('v-telescope')
 require('v-lsp')
 require('v-kommentary')
+require('v-vimwiki')
 require('v-hop')
-require('v-which-key')
-require('v-gitsigns')
 
 -- Fancy things up
 require('v-theming')
 require('v-barbar')
-
--- apps
-require('v-vimwiki')
+require 'v-which-key'
 
 -- Loading GUI stuff
 if vim.g.neovide then

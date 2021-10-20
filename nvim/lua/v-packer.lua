@@ -1,18 +1,16 @@
-local execute = vim.api.nvim_command
 local fn = vim.fn
-
+-- Auto install Packer
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-  execute 'packadd packer.nvim'
+  vim.api.nvim_command 'packadd packer.nvim'
 end
 
 -- Performance improvement by compiling packer package??
 vim.api.nvim_exec([[
   augroup Packer
     autocmd!
-    autocmd BufWritePost init.lua PackerCompile
+    autocmd BufWritePost v-packer.lua PackerCompile
   augroup end
 ]], false)
 
@@ -26,10 +24,10 @@ return require('packer').startup(function()
 
   -- Telescope
   use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} }
-  use 'nvim-telescope/telescope-fzy-native.nvim'
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Improving movement around
-  use { 'phaazon/hop.nvim', as = 'hop', config = function() require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' } end }
+  use 'phaazon/hop.nvim'
 
   -- LSP and editorconfig (spacing and identation)
   use 'neovim/nvim-lspconfig'
@@ -46,13 +44,12 @@ return require('packer').startup(function()
   use "hrsh7th/vim-vsnip" -- no Lua
   use {"hrsh7th/vim-vsnip-integ", opt = true} -- no Lua
 
-  use 'rafamadriz/friendly-snippets'
+  -- use 'rafamadriz/friendly-snippets'
   use 'b3nj5m1n/kommentary' -- NO Lua
   
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-  use {"windwp/nvim-ts-autotag", opt = true}
-  use {'andymass/vim-matchup', opt = true}
+  use "windwp/nvim-ts-autotag"
 
   -- THEMING
   use 'joshdick/onedark.vim'         -- Theme inspired by Atom
@@ -61,6 +58,7 @@ return require('packer').startup(function()
   use { 'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}, config = function () require('lualine').setup() end }
   use 'romgrk/barbar.nvim'
   use 'mhinz/vim-startify'
+  use 'folke/which-key.nvim'
 
   -- LANGUAGERS
   use 'jwalton512/vim-blade'
@@ -69,7 +67,6 @@ return require('packer').startup(function()
   -- use "numtostr/FTerm.nvim"
 
   -- Tools/Apps
-  -- use { 'AckslD/nvim-whichkey-setup.lua', requires = {'liuchengxu/vim-which-key'}, }
   use 'vimwiki/vimwiki'
 
   -- TODO: Install the following:

@@ -10,8 +10,8 @@ bind_n('<C-k>', '<C-w>k', {silent = true})
 bind_n('<C-l>', '<C-w>l', {silent = true})
 
 -- quicker movement
-bind_n('<C-A-j>', '<cmd>+10<cr>', {silent=true})
-bind_n('<C-A-k>', '<cmd>-10<cr>', {silent=true})
+key_bind('', '<C-A-k>', '10k', {silent=true})
+key_bind('', '<C-A-j>', '10j', {silent=true})
 
 -- Moving text more easily:
 -- move visual selection
@@ -88,4 +88,5 @@ bind_n('<C-S-ENTER>', '<cmd>Prettier', true)
 
 -- REFERENCES
 -- Helpers for setup proper keybindings:
+-- https://github.com/ThePrimeagen/.dotfiles/blob/master/nvim/.config/nvim/plugin/lsp.vim
 -- https://github.com/nanotee/nvim-lua-guide#defining-mappingsv

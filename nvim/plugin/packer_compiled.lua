@@ -89,18 +89,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
   },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/friendly-snippets"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
-  hop = {
-    config = { "\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0" },
+  ["hop.nvim"] = {
     loaded = true,
-    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/hop"
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/hop.nvim"
   },
   kommentary = {
     loaded = true,
@@ -128,7 +123,6 @@ _G.packer_plugins = {
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
@@ -137,9 +131,8 @@ _G.packer_plugins = {
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-ts-autotag"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/yoram/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag"
+    loaded = true,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -161,9 +154,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
-  ["telescope-fzy-native.nvim"] = {
+  ["telescope-fzf-native.nvim"] = {
     loaded = true,
-    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -172,12 +165,6 @@ _G.packer_plugins = {
   ["vim-blade"] = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/vim-blade"
-  },
-  ["vim-matchup"] = {
-    after_files = { "/Users/yoram/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
-    loaded = false,
-    needs_bufread = true,
-    path = "/Users/yoram/.local/share/nvim/site/pack/packer/opt/vim-matchup"
   },
   ["vim-prettier"] = {
     loaded = true,
@@ -200,6 +187,10 @@ _G.packer_plugins = {
   vimwiki = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/vimwiki"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
@@ -208,14 +199,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\flualine\frequire\0", "config", "lualine.nvim")
 time([[Config for lualine.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
--- Config for: hop
-time([[Config for hop]], true)
-try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop")
-time([[Config for hop]], false)
 if should_profile then save_profiles() end
 
 end)

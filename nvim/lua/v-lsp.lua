@@ -1,14 +1,33 @@
-local LspInstall = require 'lspinstall'
 local saga = require 'lspsaga'
 local luasnip = require("luasnip")
 
+-- Register custom commands
+vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+vim.api.nvim_exec([[
+augroup AutoFormatting
+  autocmd!
+  let blacklist = ['md', 'markdown', 'vimwiki']
+  autocmd BufWritePre * if index(blacklist, &ft) < 0 | %s/\s\+$//e
+  autocmd BufWritePre *.ts,*.tsx,*.js,*.vue call prettier#Prettier()
+  autocmd BufWritePre *.lua Format
+augroup end
+]], false)
+
+-- KEYBINDINGS
+
+local opts = { noremap=true, silent=true }
+key_bind('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+key_bind('n', '<leader>vs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+key_bind('n', '<leader>vh', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+key_bind('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+key_bind('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+key_bind('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+-- key_bind('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts) -- will be replaced by Telescope
+
+-- Helper functions
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
-local feedkey = function(key, mode)
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
 -- Setup nvim-cmp.
@@ -76,10 +95,12 @@ end
 -- Config: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 local lspconfig = require 'lspconfig'
 
+-- START ALL LSP SERVERS
 lspconfig.tsserver.setup(config()) -- JS/Typescript
 lspconfig.intelephense.setup(config()) -- PHP
 lspconfig.html.setup(config())
 lspconfig.vuels.setup(config())
+lspconfig.tailwindcss.setup(config())
 lspconfig.cssls.setup(config())
 lspconfig.bashls.setup(config())
 lspconfig.jedi_language_server.setup(config()) -- Python
@@ -95,32 +116,40 @@ lspconfig.gopls.setup(config({
     },
 }))
 
---[[ local sumneko_root_path = '/home/theprimeagen/personal/lua-language-server'
-local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
-lspconfig.sumneko_lua.setup(config({
-    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT',
-                -- Setup your lua path
-                path = vim.split(package.path, ';'),
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = {'vim'},
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = {
-                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-                },
-            },
-        },
+
+-- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
+local sumneko_root_path = '/Users/yoram/Workspace/Builds/lua-language-server'
+local sumneko_binary = sumneko_root_path.."/bin/macOS/lua-language-server"
+
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
+require'lspconfig'.sumneko_lua.setup {
+  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = runtime_path,
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
     },
-})) ]]
+  },
+}
 
 -- TODO: Missing:  python, lua
 
@@ -137,6 +166,7 @@ lspconfig.sumneko_lua.setup(config({
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
@@ -172,6 +202,5 @@ end
 -- require('v-lsp/lua')
 
 -- Map :Format to vim.lsp.buf.formatting()
-vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
 -- https://github.com/neovim/nvim-lspconfig/wiki/Complete-init.lua-example
