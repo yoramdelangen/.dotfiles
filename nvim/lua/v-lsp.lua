@@ -34,22 +34,10 @@ end
 -- Mapping: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
 local cmp = require'cmp'
 cmp.setup({
-    snippet = {
-        expand = function(args)
-            -- For `vsnip` user.
-            -- vim.fn["vsnip#anonymous"](args.body)
-
-            -- For `luasnip` user.
-            require('luasnip').lsp_expand(args.body)
-
-            -- For `ultisnips` user.
-            -- vim.fn["UltiSnips#Anon"](args.body)
-        end,
-    },
     mapping = {
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
@@ -74,12 +62,21 @@ cmp.setup({
           end
         end, { "i", "s" }),
     },
-
     sources = {
+        { name = 'nvim_lua' },
         { name = 'nvim_lsp' },
-        -- For vsnip user.
+        { name = 'path' },
         { name = 'luasnip' },
-        { name = 'buffer' },
+        { name = 'buffer', keyword_length=5 },
+    },
+    snippet = {
+        expand = function(args)
+            -- For `luasnip` user.
+            require('luasnip').lsp_expand(args.body)
+        end,
+    },
+    experimental = {
+      ghost_text = true
     }
 })
 
@@ -93,18 +90,18 @@ local function config(_config)
 end
 
 -- Config: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
-local lspconfig = require 'lspconfig'
+local lsp = require 'lspconfig'
+local util = require 'lspconfig/util'
 
 -- START ALL LSP SERVERS
-lspconfig.tsserver.setup(config()) -- JS/Typescript
-lspconfig.intelephense.setup(config()) -- PHP
-lspconfig.html.setup(config())
-lspconfig.vuels.setup(config())
-lspconfig.tailwindcss.setup(config())
-lspconfig.cssls.setup(config())
-lspconfig.bashls.setup(config())
-lspconfig.jedi_language_server.setup(config()) -- Python
-lspconfig.gopls.setup(config({
+lsp.tsserver.setup(config()) -- JS/Typescript
+lsp.intelephense.setup(config()) -- PHP
+lsp.html.setup(config())
+lsp.tailwindcss.setup(config())
+lsp.cssls.setup(config())
+lsp.bashls.setup(config())
+lsp.jedi_language_server.setup(config()) -- Python
+lsp.gopls.setup(config({
     cmd = {"gopls", "serve"},
     settings = {
         gopls = {
@@ -115,6 +112,8 @@ lspconfig.gopls.setup(config({
         },
     },
 }))
+-- lsp.vuels.setup(config())
+lsp.volar.setup(config())
 
 
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
@@ -125,7 +124,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require'lspconfig'.sumneko_lua.setup {
+lsp.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   settings = {
     Lua = {
@@ -150,8 +149,6 @@ require'lspconfig'.sumneko_lua.setup {
     },
   },
 }
-
--- TODO: Missing:  python, lua
 
 --[[ local on_attach = function(_client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end

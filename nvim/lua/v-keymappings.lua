@@ -25,6 +25,7 @@ bind_n('<C-S-k>', ':m .-2<cr>==', true)
 
 -- Plugin: Hop bindings
 bind_n('<leader>j', "<cmd>lua require'hop'.hint_words()<cr>")
+bind_n('q', '%')
 
 -- improve identation
 bind_v('>', '>gv')

@@ -35,6 +35,7 @@ end
 
 -- REFERENCES
 -- https://github.com/glepnir/nvim
+-- https://dev.to/voyeg3r/my-ever-growing-neovim-init-lua-h0p
 -- https://github.com/ChristianChiarulli/LunarVimPrevious
 -- https://github.com/neovim/nvim-lspconfig/wiki/Complete-init.lua-example
 -- https://oroques.dev/notes/neovim-init/#commands-and-autocommands

@@ -38,15 +38,19 @@ return require('packer').startup(function()
 
   -- Completion
   use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp'
+
+  -- Snippets
   use 'L3MON4D3/LuaSnip'
   use "hrsh7th/vim-vsnip" -- no Lua
   use {"hrsh7th/vim-vsnip-integ", opt = true} -- no Lua
 
   -- use 'rafamadriz/friendly-snippets'
   use 'b3nj5m1n/kommentary' -- NO Lua
-  
+
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "windwp/nvim-ts-autotag"
