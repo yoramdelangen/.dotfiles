@@ -2,7 +2,8 @@
 vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
 
-vim.cmd[[colorscheme onedark]]
+vim.cmd[[colorscheme default]]
+
 -- vim.o.guifont = "JetBrainsMono Nerd Font:h12"
 
 -- Icons
@@ -21,24 +22,3 @@ require'nvim-web-devicons'.setup {
  default = true;
 }
 
--- Statusbar
---Set statusbar
---[[ vim.g.lightline = { 
-  colorscheme = 'onedark';
-  active = { 
-    left = { 
-      { 'mode', 'paste' }, 
-      { 'gitbranch', 'readonly', 'filename', 'modified' } 
-    } 
-  };
---       component_function = { gitbranch = 'fugitive#head', };
-} ]]
-
-
--- THEMES
--- - Onedark
--- - Groovbox
--- - Zephyr (https://github.com/glepnir/zephyr-nvim)
-
--- REFRENCES
--- onedark

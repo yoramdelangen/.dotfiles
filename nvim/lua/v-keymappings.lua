@@ -20,12 +20,12 @@ bind_v('K', ':m .-2<cr>gv=gv', true)
 -- single line movement in 2 modes
 bind_i('<C-j>', ':m .+1<cr>==', true)
 bind_i('<C-k>', ':m .-2<cr>==', true)
-bind_n('<C-S-j>', ':m .+1<cr>==', true)
-bind_n('<C-S-k>', ':m .-2<cr>==', true)
+bind_n('<C-J>', ':m .+1<cr>==', true)
+bind_n('<C-K>', ':m .-2<cr>==', true)
 
 -- Plugin: Hop bindings
 bind_n('<leader>j', "<cmd>lua require'hop'.hint_words()<cr>")
-bind_n('q', '%')
+bind_n('<leader>q', '%')
 
 -- improve identation
 bind_v('>', '>gv')
@@ -84,8 +84,8 @@ noremap <Leader>Y "+y
 noremap <Leader>P "+p ]]
 
 -- Prettier formatter
-bind_n('<C-S-p>', '<cmd>Prettier', true)
-bind_n('<C-S-ENTER>', '<cmd>Prettier', true)
+-- bind_n('<C-S-ENTER>', '<cmd>Prettier', true)
+-- bind_n('<C-S-P>', '<cmd>Prettier', true)
 
 -- REFERENCES
 -- Helpers for setup proper keybindings:

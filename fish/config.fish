@@ -104,3 +104,4 @@ export PATH="$PATH:/usr/local/opt/php@7.4/bin"
 export PATH="$PATH:/usr/local/opt/php@7.4/sbin"
 export PATH="$PATH:/Users/yoram/Library/Python/3.9/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
+fish_add_path /usr/local/sbin

@@ -8,7 +8,7 @@ augroup AutoFormatting
   autocmd!
   let blacklist = ['md', 'markdown', 'vimwiki']
   autocmd BufWritePre * if index(blacklist, &ft) < 0 | %s/\s\+$//e
-  autocmd BufWritePre *.ts,*.tsx,*.js,*.vue call prettier#Prettier()
+  autocmd BufWritePre *.ts,*.tsx,*.js,*.vue Format
   autocmd BufWritePre *.lua Format
 augroup end
 ]], false)
@@ -37,7 +37,7 @@ cmp.setup({
     mapping = {
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<C-space>'] = cmp.mapping.complete(),
+        ['<C-b>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
@@ -91,7 +91,7 @@ end
 
 -- Config: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 local lsp = require 'lspconfig'
-local util = require 'lspconfig/util'
+local tsserver_path = os.getenv("HOME") .. '/.config/yarn/global/node_modules/typescript/lib/tsserverlibrary.js'
 
 -- START ALL LSP SERVERS
 lsp.tsserver.setup(config()) -- JS/Typescript
@@ -113,8 +113,13 @@ lsp.gopls.setup(config({
     },
 }))
 -- lsp.vuels.setup(config())
-lsp.volar.setup(config())
-
+lsp.volar.setup(config({
+  init_options = {
+      typescript = {
+          serverPath = tsserver_path
+      }
+  }
+}))
 
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
 local sumneko_root_path = '/Users/yoram/Workspace/Builds/lua-language-server'

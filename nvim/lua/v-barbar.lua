@@ -5,7 +5,7 @@ vim.g.bufferline = {
   -- netrw_bufsettings = 'nohidden noma nomod nonu nowrap ro buflisted'
 }
 
-opts = {noremap=true,silent=true}
+local opts = {noremap=true,silent=true}
 -- Bindings
 key_bind('n', '<A-[>', '<cmd>BufferPrevious<CR>', opts)
 key_bind('n', '<A-]>', '<cmd>BufferNext<CR>', opts)

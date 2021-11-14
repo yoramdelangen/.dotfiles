@@ -1,9 +1,13 @@
 -- Config: https://github.com/folke/which-key.nvim
-require("which-key").setup { }
+local whichKey = require("which-key")
 
-local wk = require("which-key")
+whichKey.setup ({
+  spelling = {
+    enabled = true
+  }
+})
 
-wk.register({
+whichKey.register({
   --[[ f = {
     name = "file", -- optional group name
     f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label

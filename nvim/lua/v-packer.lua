@@ -1,7 +1,7 @@
 local fn = vim.fn
 -- Auto install Packer
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
   vim.api.nvim_command 'packadd packer.nvim'
 end
@@ -14,7 +14,7 @@ vim.api.nvim_exec([[
   augroup end
 ]], false)
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -49,7 +49,8 @@ return require('packer').startup(function()
   use {"hrsh7th/vim-vsnip-integ", opt = true} -- no Lua
 
   -- use 'rafamadriz/friendly-snippets'
-  use 'b3nj5m1n/kommentary' -- NO Lua
+  -- use 'b3nj5m1n/kommentary' -- NO Lua
+  use 'numToStr/Comment.nvim'
 
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
@@ -59,7 +60,7 @@ return require('packer').startup(function()
   use 'joshdick/onedark.vim'         -- Theme inspired by Atom
   -- use 'itchyny/lightline.vim'        -- Fancier statusline
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  use { 'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}, config = function () require('lualine').setup() end }
+  use { 'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true} }
   use 'romgrk/barbar.nvim'
   use 'mhinz/vim-startify'
   use 'folke/which-key.nvim'
@@ -72,6 +73,8 @@ return require('packer').startup(function()
 
   -- Tools/Apps
   use 'vimwiki/vimwiki'
+  use 'akinsho/toggleterm.nvim'
+  use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" }
 
   -- TODO: Install the following:
   -- https://github.com/folke/which-key.nvim

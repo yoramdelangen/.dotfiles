@@ -29,7 +29,7 @@ vim.wo.number = true
 
 -- Speed up completion windows
 vim.o.updatetime = 300 -- Faster completion
-vim.o.timeoutlen = 100 -- By default timeoutlen is 1000 ms
+vim.o.timeoutlen = 300 -- By default timeoutlen is 1000 ms
 
 -- GLOBAL BUFFER OPTIONS
 -- vim.bo.smartindent = true

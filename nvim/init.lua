@@ -22,11 +22,14 @@ require('v-which-key')
 require('v-gitsigns')
 
 -- Fancy things up
+require('v-lualine')
 require('v-theming')
 require('v-barbar')
 
 -- apps
 require('v-vimwiki')
+require('v-trouble')
+require('v-toggleterm')
 
 -- Loading GUI stuff
 if vim.g.neovide then

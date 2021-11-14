@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/LuaSnip"
@@ -85,6 +89,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/cmp-path"
+  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
@@ -97,16 +109,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/hop.nvim"
   },
-  kommentary = {
-    loaded = true,
-    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/kommentary"
-  },
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
-    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\flualine\frequire\0" },
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
@@ -162,6 +169,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/toggleterm.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/trouble.nvim"
+  },
   ["vim-blade"] = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/vim-blade"
@@ -195,10 +210,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\flualine\frequire\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
