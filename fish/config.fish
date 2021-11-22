@@ -1,5 +1,6 @@
 set -g fish_emoji_width 2
 set -Ux EDITOR nvim
+set -Ux TERM "screen-256color"
 
 set -gx Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
 
@@ -61,7 +62,7 @@ alias myip='ifconfig | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'
 alias myssh='cat ~/.ssh/id_rsa.pub'
 alias wm='~/.scripts/wm-control.sh'
 
-function git_pull -d "Pull from current GIT repository" 
+function git_pull -d "Pull from current GIT repository"
    if test "$argv" != ""
         echo "👇 $argv"
         git pull -v --stat origin "$argv"
@@ -79,7 +80,7 @@ function git_pull -d "Pull from current GIT repository"
 end
 alias pull=git_pull
 
-function git_push -d "Push from current GIT repository" 
+function git_push -d "Push from current GIT repository"
    if test "$argv" != ""
         echo "👆 $argv"
         git push -u -v --progress origin "$argv"

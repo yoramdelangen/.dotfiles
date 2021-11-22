@@ -5,7 +5,7 @@ require("trouble").setup { -- your configuration comes here
 
 local opt = {silent = true, noremap = true}
 
-key_bind("n", "<leader>xx", "<cmd>Trouble<cr>", opt)
+key_bind("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opt)
 key_bind("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>", opt)
 key_bind("n", "<leader>xd", "<cmd>Trouble lsp_document_diagnostics<cr>", opt)
 key_bind("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opt)

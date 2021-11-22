@@ -1,4 +1,3 @@
-local saga = require 'lspsaga'
 local luasnip = require("luasnip")
 
 -- Register custom commands
@@ -65,8 +64,8 @@ cmp.setup({
     sources = {
         { name = 'nvim_lua' },
         { name = 'nvim_lsp' },
-        { name = 'path' },
         { name = 'luasnip' },
+        { name = 'path' },
         { name = 'buffer', keyword_length=5 },
     },
     snippet = {
@@ -79,9 +78,6 @@ cmp.setup({
       ghost_text = true
     }
 })
-
--- init LSP Saga
-saga.init_lsp_saga()
 
 local function config(_config)
     return vim.tbl_deep_extend("force", {

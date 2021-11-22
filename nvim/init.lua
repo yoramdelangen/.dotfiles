@@ -1,5 +1,7 @@
 CONFIG_PATH = vim.fn.stdpath('config')
 
+-- require 'nvim-startup'.setup()
+
 require('v-utils/helpers')
 require('v-utils/reload')
 

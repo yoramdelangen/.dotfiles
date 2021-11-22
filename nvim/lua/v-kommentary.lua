@@ -1,22 +1,40 @@
-require('Comment').setup({
-    ---Create basic (operator-pending) and extended mappings for NORMAL + VISUAL mode
-    ---@type table
-    mappings = {
-        ---operator-pending mapping
-        ---Includes `gcc`, `gcb`, `gc[count]{motion}` and `gb[count]{motion}`
-        basic = true,
-        ---extra mapping
-        ---Includes `gco`, `gcO`, `gcA`
-        extra = false,
-        ---extended mapping
-        ---Includes `g>`, `g<`, `g>[count]{motion}` and `g<[count]{motion}`
-        extended = false,
-    },
+require'mini.comment'.setup({
+   mappings = {
+    -- Toggle comment (like `gcip` - comment inner paragraph) for both
+    -- Normal and Visual modes
+    comment = 'gc',
+
+    -- Toggle comment on current line
+    comment_line = 'gcc',
+
+    -- Define 'comment' textobject (like `dgc` - delete whole comment block)
+    textobject = 'gc',
+  }
 })
 
-local ft = require('Comment.ft')
-ft.set('php', {'//%s', '/*%s*/'})
 
+-- COMMENT
+-- require('Comment').setup({
+--     ---Create basic (operator-pending) and extended mappings for NORMAL + VISUAL mode
+--     ---@type table
+--     mappings = {
+--         ---operator-pending mapping
+--         ---Includes `gcc`, `gcb`, `gc[count]{motion}` and `gb[count]{motion}`
+--         basic = true,
+--         ---extra mapping
+--         ---Includes `gco`, `gcO`, `gcA`
+--         extra = false,
+--         ---extended mapping
+--         ---Includes `g>`, `g<`, `g>[count]{motion}` and `g<[count]{motion}`
+--         extended = false,
+--     },
+-- })
+--
+-- local ft = require('Comment.ft')
+-- ft.set('php', {'//%s', '/*%s*/'})
+
+
+-- KOMMENTARY
 -- key_bind('', '<leader>/', "<cmd>lua require('Comment').toggle()<cr>", {noremap = true, silent = true})
 
 --[[ vim.g.kommentary_create_default_mappings = false

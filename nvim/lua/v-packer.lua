@@ -4,13 +4,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
   vim.api.nvim_command 'packadd packer.nvim'
-end
 
+end
 -- Performance improvement by compiling packer package??
 vim.api.nvim_exec([[
   augroup Packer
-    autocmd!
     autocmd BufWritePost v-packer.lua PackerCompile
+    autocmd!
   augroup end
 ]], false)
 
@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'kabouzeid/nvim-lspinstall'
   use 'editorconfig/editorconfig-vim'
-  use 'glepnir/lspsaga.nvim' -- not LUA
+  -- use 'glepnir/lspsaga.nvim' -- not LUA
   use 'prettier/vim-prettier'
 
   -- Completion
@@ -50,20 +50,21 @@ return require('packer').startup(function(use)
 
   -- use 'rafamadriz/friendly-snippets'
   -- use 'b3nj5m1n/kommentary' -- NO Lua
-  use 'numToStr/Comment.nvim'
+  -- use 'numToStr/Comment.nvim'
+  use { 'echasnovski/mini.nvim', branch = 'stable' }
 
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "windwp/nvim-ts-autotag"
 
   -- THEMING
-  use 'joshdick/onedark.vim'         -- Theme inspired by Atom
+  -- use 'joshdick/onedark.vim'         -- Theme inspired by Atom
   -- use 'itchyny/lightline.vim'        -- Fancier statusline
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true} }
   use 'romgrk/barbar.nvim'
-  use 'mhinz/vim-startify'
   use 'folke/which-key.nvim'
+  use 'Shatur/neovim-ayu'
 
   -- LANGUAGERS
   use 'jwalton512/vim-blade'
@@ -71,13 +72,15 @@ return require('packer').startup(function(use)
   -- Terminal usage
   -- use "numtostr/FTerm.nvim"
 
+  -- Profilers
+  use 'henriquehbr/nvim-startup.lua'
+
   -- Tools/Apps
   use 'vimwiki/vimwiki'
   use 'akinsho/toggleterm.nvim'
   use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" }
 
   -- TODO: Install the following:
-  -- https://github.com/folke/which-key.nvim
   -- https://github.com/norcalli/nvim-colorizer.lua
   --
   -- @@ LATERS

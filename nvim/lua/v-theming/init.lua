@@ -2,9 +2,18 @@
 vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
 
-vim.cmd[[colorscheme default]]
+vim.cmd[[colorscheme ayu-mirage]]
 
--- vim.o.guifont = "JetBrainsMono Nerd Font:h12"
+local NONE = 'None'
+require('ayu').setup({
+  overrides = {
+    Normal = { bg = NONE },
+    -- ColorColumn = { bg = NONE },
+    -- CursorColumn = { bg = NONE },
+    -- CursorLine = { bg = NONE },
+    -- CursorLineNr = { bg = NONE }
+  }
+})
 
 -- Icons
 require'nvim-web-devicons'.setup {
