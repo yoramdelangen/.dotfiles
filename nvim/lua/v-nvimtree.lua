@@ -27,7 +27,6 @@ vim.g.nvim_tree_icons = {
 require'nvim-tree'.setup({
   auto_close = true,
   open_on_tab = true,
-  open_on_setup = true,
   view = {
     side = 'right',
     auto_resize = true

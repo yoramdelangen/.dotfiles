@@ -49,8 +49,7 @@ return require('packer').startup(function(use)
   use {"hrsh7th/vim-vsnip-integ", opt = true} -- no Lua
 
   -- use 'rafamadriz/friendly-snippets'
-  -- use 'b3nj5m1n/kommentary' -- NO Lua
-  -- use 'numToStr/Comment.nvim'
+  use 'b3nj5m1n/kommentary'
   use { 'echasnovski/mini.nvim', branch = 'stable' }
 
   -- Treesitter

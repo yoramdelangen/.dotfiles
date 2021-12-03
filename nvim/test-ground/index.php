@@ -1,5 +1,10 @@
 <?php
 
-function helperFunction() {
+function helperFunction()
+{
+}
 
+
+class MyTestClass
+{
 }

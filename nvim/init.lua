@@ -40,6 +40,7 @@ end
 
 -- REFERENCES
 -- https://github.com/glepnir/nvim
+-- https://elianiva.my.id/post/improving-nvim-startup-time
 -- https://dev.to/voyeg3r/my-ever-growing-neovim-init-lua-h0p
 -- https://github.com/ChristianChiarulli/LunarVimPrevious
 -- https://github.com/neovim/nvim-lspconfig/wiki/Complete-init.lua-example
