@@ -12,7 +12,9 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } 
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'windwp/nvim-ts-autotag'
+
 
   -- install LSP to help us properly
   use 'neovim/nvim-lspconfig'
@@ -29,7 +31,7 @@ return require('packer').startup(function(use)
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = {'nvim-lua/plenary.nvim'}
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'xiyaowong/telescope-emoji.nvim'
@@ -37,7 +39,7 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope-file-browser.nvim'
 
   -- UI elements
-  use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" }}
+  use { 'ellisonleao/gruvbox.nvim', requires = { 'rktjmp/lush.nvim' }}
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }}
 
   -- Terminal
@@ -46,5 +48,8 @@ return require('packer').startup(function(use)
   -- file manager
   use 'kyazdani42/nvim-web-devicons'
   use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
+
+  -- helpers
+  use 'b3nj5m1n/kommentary'  
 
 end)

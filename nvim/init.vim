@@ -15,4 +15,13 @@ command! Q q
 
 command! Format execute 'lua vim.lsp.buf.formatting()'
 
+" remove spaces on save, except markdown, vimwiki etc
+let blacklist = ['md', 'markdown', 'vimwiki']
+autocmd BufWritePre * if index(blacklist, &ft) < 0 | %s/\s\+$//e
+
 lua require('yoramdelangen')
+
+" make background transparent
+highlight Normal     ctermbg=NONE guibg=NONE
+highlight LineNr     ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE

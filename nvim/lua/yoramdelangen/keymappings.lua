@@ -9,10 +9,10 @@ vim.g.maplocalleader = ' '
 vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>nohls', options)
 
 -- better window movement
-vim.api.nvim_set_keymap('n', '<C-S-h>', '<C-w>h', options)
-vim.api.nvim_set_keymap('n', '<C-S-j>', '<C-w>j', options)
-vim.api.nvim_set_keymap('n', '<C-S-k>', '<C-w>k', options)
-vim.api.nvim_set_keymap('n', '<C-S-l>', '<C-w>l', options)
+-- vim.api.nvim_set_keymap('n', '<C-S-h>', '<C-w>h', options)
+-- vim.api.nvim_set_keymap('n', '<C-S-j>', '<C-w>j', options)
+-- vim.api.nvim_set_keymap('n', '<C-S-k>', '<C-w>k', options)
+-- vim.api.nvim_set_keymap('n', '<C-S-l>', '<C-w>l', options)
 
 vim.api.nvim_set_keymap('n', '<C-Bslash>', '<cmd>vsplit<cr> <C-w>l', options)
 vim.api.nvim_set_keymap('n', '<C-Bar>', '<cmd>split<cr> <C-w>k', options)

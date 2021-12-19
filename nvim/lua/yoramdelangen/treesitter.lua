@@ -18,7 +18,9 @@ require 'nvim-treesitter.configs'.setup {
       css = '// %s'
     }
   },
-  autotag = { 
+  autotag = {
     enable = true
   },
 }
+
+require 'nvim-ts-autotag'.setup {}
