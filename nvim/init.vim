@@ -1,3 +1,5 @@
+set shell=/bin/bash
+
 " In case i make again typo's
 abbr funciton function
 abbr teh the
