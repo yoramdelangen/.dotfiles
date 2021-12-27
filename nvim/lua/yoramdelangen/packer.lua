@@ -18,15 +18,19 @@ return require('packer').startup(function(use)
 
   -- install LSP to help us properly
   use 'neovim/nvim-lspconfig'
- 
+
   -- AUTOCOMPLETE & SNIPPETS
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/cmp-nvim-lua'
+
+  -- snippets
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'rafamadriz/friendly-snippets'
 
   -- Telescope
   use {
@@ -50,6 +54,6 @@ return require('packer').startup(function(use)
   use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
 
   -- helpers
-  use 'b3nj5m1n/kommentary'  
+  use 'b3nj5m1n/kommentary'
 
 end)

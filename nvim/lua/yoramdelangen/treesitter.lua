@@ -1,6 +1,6 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'lua', 'lua', 'javascript', 'typescript', 'php', 'vue' }, 
-  -- sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
+  ensure_installed = { 'lua', 'lua', 'javascript', 'typescript', 'php', 'vue' },
+  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   highlight = {
     enable = true,              -- false will disable the whole extension
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
@@ -14,12 +14,20 @@ require 'nvim-treesitter.configs'.setup {
   },
   context_commentstring = {
     enable = true,
+    enable_autocmd = false,
     config = {
       css = '// %s'
     }
   },
   autotag = {
     enable = true
+  },
+  autopairs = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+    disable = { "yaml" }
   },
 }
 
