@@ -10,6 +10,7 @@ base=(
   git
   tmux
   php-cs-fixer
+  composer
 )
 mac=(
   osx
