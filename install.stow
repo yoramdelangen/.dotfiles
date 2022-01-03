@@ -11,7 +11,7 @@ base=(
   tmux
   php-cs-fixer
 )
-MAC=(
+mac=(
   osx
   fish
   prettier
@@ -24,7 +24,7 @@ my_profile() {
   local unameOut="$(uname -s)"
   case "${unameOut}" in
       Linux*)     machine=linux;;
-      Darwin*)    machine=mac;;
+      Darwin*)    machine=macos;;
       CYGWIN*)    machine=cygwin;;
       MINGW*)     machine=min_gw;;
       *)          machine="UNKNOWN:${unameOut}"
@@ -43,7 +43,7 @@ stowit() {
 }
 
 echo ""
-echo "Stowing apps for user: ${whoami}"
+echo "STOWING APPS FOR USER: ${whoami}"
 
 # install apps available to local users and root
 for app in ${base[@]}; do
@@ -51,6 +51,11 @@ for app in ${base[@]}; do
     stowit "${HOME}" $app
 done
 
-if [[ $(my_profile) == "mac" ]]; then
-  echo "stow mac"
+if [[ $(my_profile) == "macos" ]]; then
+  echo ""
+  echo "PROFILE: macos"
+  for app in ${mac[@]}; do
+    echo "Stow: $app"
+    stowit "${HOME}" $app
+  done
 fi
