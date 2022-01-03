@@ -1,7 +1,0 @@
-UserKnownHostsFile="/Users/Yoram/.ssh/known_hosts"
-
-Host sydl_server
-  HostName 45.148.29.87
-  User yoram
-  IdentityFile ~/.ssh/id_rsa
-

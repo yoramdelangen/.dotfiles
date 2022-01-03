@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# make sure we have pulled in and updated any submodules
+git submodule init
+git submodule update
+
+base=(
+  personal
+  nvim
+  git
+  tmux
+  php-cs-fixer
+)
+MAC=(
+  osx
+  fish
+  prettier
+  bash_osx
+  bin_osx
+)
+I3=()
+
+my_profile() {
+  local unameOut="$(uname -s)"
+  case "${unameOut}" in
+      Linux*)     machine=linux;;
+      Darwin*)    machine=mac;;
+      CYGWIN*)    machine=cygwin;;
+      MINGW*)     machine=min_gw;;
+      *)          machine="UNKNOWN:${unameOut}"
+  esac
+  echo $machine
+}
+
+# run the stow command for the passed in directory ($2) in location $1
+stowit() {
+    usr=$1
+    app=$2
+    # -v verbose
+    # -R recursive
+    # -t target
+    stow -R ${app}
+}
+
+echo ""
+echo "Stowing apps for user: ${whoami}"
+
+# install apps available to local users and root
+for app in ${base[@]}; do
+    echo "Stow: $app"
+    stowit "${HOME}" $app
+done
+
+if [[ $(my_profile) == "mac" ]]; then
+  echo "stow mac"
+fi

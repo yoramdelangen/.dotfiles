@@ -1,3 +1,3 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
+[submodule "personal"]
+	path = personal
+	url = git@github.com:yoramdelangen/.dotfiles-personal.git
