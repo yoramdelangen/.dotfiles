@@ -18,6 +18,7 @@ mac=(
   prettier
   bash_osx
   bin_osx
+  alacritty
 )
 I3=()
 
