@@ -1,6 +1,12 @@
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+  if client.name == 'tsserver' or client.name == 'volar' or client.name == 'intelephense' then
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+  end
+
+  print('Loaded LSP config for: '.. client.name)
 
   -- Mappings.
   local opts = { noremap=true, silent=true }

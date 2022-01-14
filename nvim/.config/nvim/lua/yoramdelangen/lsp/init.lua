@@ -2,11 +2,13 @@ local lsp = require 'lspconfig'
 local on_attach = require 'yoramdelangen.lsp.on_attach'
 local cmp_lsp = require 'cmp_nvim_lsp'
 
-local tsserver_path = os.getenv("HOME") .. '/.config/yarn/global/node_modules/typescript/lib/tsserverlibrary.js'
+local tsserver_path = vim.fn.expand '~/.config/yarn/global/node_modules/typescript/lib/tsserverlibrary.js'
+
 local function lsp_conf(_config)
     return vim.tbl_deep_extend("force", {
         on_attach = on_attach;
-        capabilities = cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+        capabilities = cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities());
+        root_dir = function() return vim.loop.cwd() end
     }, _config or {})
 end
 
@@ -57,3 +59,7 @@ lsp.sumneko_lua.setup(lsp_conf({
     },
   },
 }))
+
+
+-- REFERENCES
+-- https://elianiva.my.id/post/my-nvim-lsp-setup

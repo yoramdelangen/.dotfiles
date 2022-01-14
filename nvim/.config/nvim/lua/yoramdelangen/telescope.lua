@@ -10,6 +10,16 @@ local file_browser = {
   theme = "ivy",
 }
 
+local bufdel = require 'bufdel'
+local action_state = require 'telescope.actions.state'
+
+local implement_bufdel = function (prompt_bufnr)
+  local current_picker = action_state.get_current_picker(prompt_bufnr)
+  current_picker:delete_selection(function(selection)
+    bufdel.delete_buffer(selection.bufnr, true)
+  end)
+end
+
 telescope.setup {
   extensions = {
     fzf = fzf,
@@ -25,7 +35,7 @@ telescope.setup {
     buffers = {
       mappings = {
         i = {
-          ["<c-d>"] = actions.delete_buffer
+          ["<c-d>"] = implement_bufdel
         }
       }
     }

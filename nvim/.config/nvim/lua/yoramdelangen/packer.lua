@@ -15,9 +15,9 @@ return require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'windwp/nvim-ts-autotag'
 
-
   -- install LSP to help us properly
   use 'neovim/nvim-lspconfig'
+  use 'jose-elias-alvarez/null-ls.nvim'
 
   -- AUTOCOMPLETE & SNIPPETS
   use 'hrsh7th/cmp-nvim-lsp'
@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lua'
+  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
   -- snippets
   use 'L3MON4D3/LuaSnip'
@@ -55,5 +56,8 @@ return require('packer').startup(function(use)
 
   -- helpers
   use 'b3nj5m1n/kommentary'
+
+  -- Extensions that help NVIM from doing stupid stuff
+  use 'ojroques/nvim-bufdel'
 
 end)

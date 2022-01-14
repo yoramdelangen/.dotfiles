@@ -27,7 +27,8 @@ keymap('', '<C-j>', '10j', opts)
 keymap('i', 'jk', '<esc>', opts)
 
 -- close current buffer and move around buffers
-keymap('n', '<C-q>', '<cmd>bdelete<cr>', opts)
+keymap('n', '<C-q>', '<cmd>BufDel<cr>', opts)
+keymap('n', '<C-S-Q>', '<cmd>BufDel!<cr>', opts)
 keymap('n', '<C-]>', '<cmd>bnext<cr>', opts)
 keymap('n', '<C-[>', '<cmd>bprev<cr>', opts)
 
@@ -56,3 +57,6 @@ keymap('', '<leader>p', '"*p', opts)
 keymap('', '<leader>P', '"+p', opts)
 
 keymap('v', 'p', '"_dP', opts) -- keep value in the register
+
+-- goto outside the current method on a newline
+keymap('n', '<leader>}', 'ysiw}', opts)
