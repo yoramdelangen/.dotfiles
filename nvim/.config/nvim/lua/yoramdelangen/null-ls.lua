@@ -5,6 +5,7 @@ require('null-ls').setup {
   sources = {
     -- FORMATTERS
     builtins.formatting.stylua,
+    builtins.formatting.shfmt,
     builtins.formatting.prettier.with({
       env = {
         PRETTIERD_DEFAULT_CONFIG = vim.fn.expand "~/.prettierrc",
