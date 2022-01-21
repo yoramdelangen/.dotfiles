@@ -15,7 +15,7 @@ command! Wq wq
 command! W w
 command! Q q
 
-command! Format execute 'lua vim.lsp.buf.formatting()'
+command! Format execute 'lua vim.lsp.buf.formatting_sync()'
 
 " remove spaces on save, except markdown, vimwiki etc
 let blacklist = ['md', 'markdown', 'vimwiki']

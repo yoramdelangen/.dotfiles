@@ -13,7 +13,7 @@ window:
 font:
   normal:
     # family: Fixedsys Excelsior
-    family: AurulentSansMono Nerd Font
+    family: NotoSansMono Nerd Font
 
   # Bold font face
   #bold:
@@ -53,7 +53,6 @@ font:
   offset:
     x: 0
     y: 2
-  use_thin_strokes: true
 
 background_opacity: 0.95
 

@@ -19,6 +19,7 @@ opt.softtabstop = 2
 opt.expandtab = true
 opt.scrolloff = 8
 opt.smartindent = true
+opt.iskeyword:append('-')
 
 -----------------------------------------------------------
 -- Toggle invisible characters
@@ -78,3 +79,4 @@ require 'yoramdelangen.nvim-tree'
 require 'yoramdelangen.kommentary'
 require 'yoramdelangen.null-ls'
 require 'yoramdelangen.bufdel'
+-- require 'yoramdelangen.mkdnflow'

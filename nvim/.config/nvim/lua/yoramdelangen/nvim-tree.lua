@@ -12,6 +12,7 @@ vim.g.nvim_tree_add_trailing = 1
 vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_refresh_wait = 500
 vim.g.nvim_tree_symlink_arrow = ' >> '
+-- vim.g.nvim_tree_special_files = { 'README.md': 1 }
 
 -- vim.g.nvim_tree_icons = {
 --     default = 'Óòí',
@@ -31,8 +32,13 @@ require'nvim-tree'.setup({
     auto_resize = true
   },
   filters = {
+    dotfiles = false,
     custom = { '.git', '.DS_Store', '.cache' }
-  }
+  },
+  git = {
+    enable = true,
+    ignore = false,
+  },
 })
 
 -- Keymappings
