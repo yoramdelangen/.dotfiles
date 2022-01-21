@@ -20,7 +20,9 @@ mac=(
   bin_osx
   alacritty
 )
-I3=()
+linux=(
+  i3
+)
 
 my_profile() {
   local unameOut="$(uname -s)"
@@ -44,6 +46,8 @@ stowit() {
     stow -R ${app}
 }
 
+echo $(my_profile)
+
 echo ""
 echo "STOWING APPS FOR USER: ${whoami}"
 
@@ -57,6 +61,15 @@ if [[ $(my_profile) == "macos" ]]; then
   echo ""
   echo "PROFILE: macos"
   for app in ${mac[@]}; do
+    echo "Stow: $app"
+    stowit "${HOME}" $app
+  done
+fi
+
+if [[ $(my_profile) == "linux" ]]; then
+  echo ""
+  echo "PROFILE: linux"
+  for app in ${linux[@]}; do
     echo "Stow: $app"
     stowit "${HOME}" $app
   done

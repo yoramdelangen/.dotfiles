@@ -7,9 +7,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.api.nvim_command 'packadd packer.nvim'
 end
 
+vim.cmd [[packadd packer.nvim]]
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  use { 'wbthomason/packer.nvim', opt = true }
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
