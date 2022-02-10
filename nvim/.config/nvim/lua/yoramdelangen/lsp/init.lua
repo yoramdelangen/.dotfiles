@@ -27,6 +27,7 @@ lsp.volar.setup(lsp_conf({
       }
   }
 })) -- Vue3
+lsp.gopls.setup(lsp_conf()) -- GO lang
 
 -- LUA
 local sumneko_root_path = '/Users/yoram/Workspace/Builds/lua-language-server'

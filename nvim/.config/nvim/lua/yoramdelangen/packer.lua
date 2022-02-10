@@ -46,6 +46,7 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope-file-browser.nvim'
 
   -- UI elements
+  use 'norcalli/nvim-base16.lua'
   use { 'ellisonleao/gruvbox.nvim', requires = { 'rktjmp/lush.nvim' }}
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }}
 
