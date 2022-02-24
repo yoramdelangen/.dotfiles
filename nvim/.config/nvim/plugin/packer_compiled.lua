@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
+  ["nvim-base16.lua"] = {
+    loaded = true,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/nvim-base16.lua",
+    url = "https://github.com/norcalli/nvim-base16.lua"
+  },
   ["nvim-bufdel"] = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/nvim-bufdel",
@@ -180,8 +185,9 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
-    loaded = true,
-    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/opt/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {

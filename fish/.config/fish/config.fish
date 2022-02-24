@@ -98,13 +98,21 @@ function git_push -d "Push from current GIT repository"
 end
 alias push=git_push
 
+# necessary for openssl in compiling PHP
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+
+# Set GO Lang config
+export GOPATH=$HOME/Workspace/go
+
 # Path Exports
-export PATH="$PATH:/Applications/Visual Studio Code.app/Conte,,.,nts/Resources/app/bin"
-export PATH="$PATH:/Users/yoram/.composer/vendor/bin"
-export PATH="$PATH:/usr/local/opt/php@7.4/bin"
-export PATH="$PATH:/usr/local/opt/php@7.4/sbin"
-export PATH="$PATH:/Users/yoram/Library/Python/3.9/bin"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/usr/loca/Cellar/bin"
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$GOPATH:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 fish_add_path /usr/local/sbin

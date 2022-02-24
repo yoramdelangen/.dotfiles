@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'lua', 'javascript', 'typescript', 'php', 'vue', 'markdown' },
+  ensure_installed = { 'lua', 'go', 'javascript', 'typescript', 'php', 'vue', 'markdown' },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   highlight = {
     enable = true,              -- false will disable the whole extension
@@ -31,4 +31,3 @@ require 'nvim-treesitter.configs'.setup {
   },
 }
 
-require 'nvim-ts-autotag'.setup {}
