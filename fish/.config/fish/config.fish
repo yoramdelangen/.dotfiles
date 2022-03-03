@@ -94,7 +94,6 @@ function git_push -d "Push from current GIT repository"
         echo "👆 $current_branch"
         git push -v --progress origin "$current_branch"
     end
-
 end
 alias push=git_push
 
@@ -108,7 +107,7 @@ export GOPATH=$HOME/Workspace/go
 
 # Path Exports
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH="$PATH:/usr/loca/Cellar/bin"
+export PATH="$PATH:/usr/local/Cellar/bin"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$HOME/.bin:$PATH"
