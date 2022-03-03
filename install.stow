@@ -11,6 +11,7 @@ base=(
   tmux
   php-cs-fixer
   composer
+  kitty
 )
 mac=(
   osx
@@ -22,6 +23,7 @@ mac=(
 )
 linux=(
   i3
+  zsh
 )
 
 my_profile() {
