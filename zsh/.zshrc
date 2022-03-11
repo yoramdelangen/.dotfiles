@@ -121,3 +121,5 @@ alias vi="nvim"
 alias dot="nvim ~/.zshrc"
 alias i3dot="nvim ~/.i3/config"
 alias notes="cd ~/workspace/repositories/github.com/yoramdelangen/vimwiki-notes && nvim index.md"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

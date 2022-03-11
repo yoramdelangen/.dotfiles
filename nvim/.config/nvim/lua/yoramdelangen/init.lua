@@ -58,8 +58,9 @@ wo.showbreak = '↪'
 -----------------------------------------------------------
 -- THEMING
 -----------------------------------------------------------
-O.termguicolors = true
+opt.termguicolors = true
 O.background = 'dark' -- or "light" for light mode
+g.gruvbox_contrast_dark = 'hard'
 vim.cmd([[ colorscheme gruvbox ]])
 
 -----------------------------------------------------------
