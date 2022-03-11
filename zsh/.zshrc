@@ -94,9 +94,12 @@ export BROWSER='/var/lib/snapd/snap/bin/brave'
 export ARCHFLAGS="-arch x86_64"
 
 # for GOLANG
-export GOROOT="$HOME/workspace/golang/modules"
+export GOROOT="/usr/lib/go"
 export GOPATH="$HOME/workspace/golang"
 
+# Exports
+export PATH="$HOME/workspace/golang/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -121,5 +124,3 @@ alias vi="nvim"
 alias dot="nvim ~/.zshrc"
 alias i3dot="nvim ~/.i3/config"
 alias notes="cd ~/workspace/repositories/github.com/yoramdelangen/vimwiki-notes && nvim index.md"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
