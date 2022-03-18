@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'lua', 'go', 'javascript', 'typescript', 'php', 'vue', 'markdown' },
+  ensure_installed = { 'lua', 'go', 'javascript', 'typescript', 'php', 'vue', 'markdown', 'dockerfile' },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   highlight = {
     enable = true,              -- false will disable the whole extension

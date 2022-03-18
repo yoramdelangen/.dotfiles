@@ -30,6 +30,7 @@ lsp.volar.setup(lsp_conf({
 lsp.gopls.setup(lsp_conf()) -- GO lang
 
 -- LUA
+-- TODO: fix this static path to be dynamic....
 local sumneko_root_path = '/Users/yoram/Workspace/Builds/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/macOS/lua-language-server"
 
