@@ -45,6 +45,9 @@ return require('packer').startup(function(use)
   use 'cljoly/telescope-repo.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
 
+  -- Harpoon
+  use 'ThePrimeagen/harpoon'
+
   -- UI elements
   use 'norcalli/nvim-base16.lua'
   use 'ellisonleao/gruvbox.nvim'

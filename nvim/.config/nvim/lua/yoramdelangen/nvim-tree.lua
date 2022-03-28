@@ -8,15 +8,12 @@ vim.g.nvim_tree_show_icons = {
 vim.g.nvim_tree_highlight_opened_files = 3
 vim.g.nvim_tree_create_in_closed_folder = 1
 vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_refresh_wait = 500
 vim.g.nvim_tree_symlink_arrow = ' >> '
 
 require'nvim-tree'.setup({
-  auto_close = true,
-  disable_netrw = false,
-  hijack_netrw = true,
   open_on_setup = true,
+  hijack_cursor = true,
   hijack_unnamed_buffer_when_opening = true,
   filters = {
     dotfiles = false,
@@ -29,6 +26,9 @@ require'nvim-tree'.setup({
   actions = {
     change_dir = {
       enable = false
+    },
+    open_file = {
+      quit_on_open = true
     }
   }
 })

@@ -63,7 +63,7 @@ vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope git_files hidden=true<cr>'
 vim.api.nvim_set_keymap('n', '<C-A-p>', '<cmd>Telescope find_files hidden=true no_ignore=true<cr>', options)
 vim.api.nvim_set_keymap('n', '<C-b>', '<cmd>Telescope buffers<cr>', options)
 vim.api.nvim_set_keymap('n', '<leader>fm', '<cmd>lua require "telescope".extensions.file_browser.file_browser()<cr>', options)
-vim.api.nvim_set_keymap('n', '<C-/>', '<cmd>lua require "telescope.builtins".grep_string()<cr>', options)
+vim.api.nvim_set_keymap('n', '<leader>/', '<cmd>lua require "telescope.builtin".grep_string()<cr>', options)
 
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', options)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd Telescope help_tags<cr>', options)
