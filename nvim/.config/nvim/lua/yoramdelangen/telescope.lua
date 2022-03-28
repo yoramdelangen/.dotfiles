@@ -1,5 +1,4 @@
 local telescope  = require 'telescope'
-local actions = require 'telescope.actions'
 local fzf = {
   fuzzy = true,                    -- false will only do exact matching
   override_generic_sorter = true,  -- override the generic sorter
@@ -8,6 +7,7 @@ local fzf = {
 }
 local file_browser = {
   theme = "ivy",
+  previewer = false,
 }
 
 local bufdel = require 'bufdel'
@@ -32,7 +32,16 @@ telescope.setup {
     ".idea/*",
   },
   pickers = {
+    find_files = {
+      theme = "ivy",
+      previewer = false,
+    },
+    git_files = {
+      theme = "ivy",
+      previewer = false,
+    },
     buffers = {
+      previewer = false,
       mappings = {
         i = {
           ["<c-d>"] = implement_bufdel
@@ -53,7 +62,8 @@ local options = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope git_files hidden=true<cr>', options)
 vim.api.nvim_set_keymap('n', '<C-A-p>', '<cmd>Telescope find_files hidden=true no_ignore=true<cr>', options)
 vim.api.nvim_set_keymap('n', '<C-b>', '<cmd>Telescope buffers<cr>', options)
-vim.api.nvim_set_keymap('n', '<leader>pv', '<cmd>lua require "telescope".extensions.file_browser.file_browser()<cr>', options)
+vim.api.nvim_set_keymap('n', '<leader>fm', '<cmd>lua require "telescope".extensions.file_browser.file_browser()<cr>', options)
+vim.api.nvim_set_keymap('n', '<C-/>', '<cmd>lua require "telescope.builtins".grep_string()<cr>', options)
 
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', options)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd Telescope help_tags<cr>', options)
