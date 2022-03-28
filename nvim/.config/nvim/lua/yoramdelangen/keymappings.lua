@@ -20,7 +20,7 @@ keymap('n', '<C-Bslash>', '<cmd>vsplit<cr> <C-w>l', opts)
 keymap('n', '<C-Bar>', '<cmd>split<cr> <C-w>k', opts)
 
 -- be a JUMPER
-keymap('', '<C-k>', '11k', opts)
+keymap('', '<C-k>', '10k', opts)
 keymap('', '<C-j>', '10j', opts)
 
 -- Faster fingers
