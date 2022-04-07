@@ -24,6 +24,7 @@ mac=(
 linux=(
   i3
   zsh
+  prettier
 )
 
 my_profile() {
