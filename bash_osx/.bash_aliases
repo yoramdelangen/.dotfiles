@@ -23,6 +23,7 @@ alias tableau_2019="open /Applications/Tableau\ Desktop\ 2019.1.app --args --rem
 alias tableau_beta="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
 alias tunnel_sydl="ssh -L 3333:localhost:3306 -N yoram@admin.sydl.nl"
 alias tunnel_sydl_mongo="ssh -L 27017:localhost:27017 -N yoram@admin.sydl.nl"
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 # yarn aliases
 alias y='yarn'

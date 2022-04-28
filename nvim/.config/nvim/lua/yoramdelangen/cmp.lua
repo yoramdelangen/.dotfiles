@@ -2,7 +2,7 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
 -- lets lazyload stuff
-require 'luasnip/loaders/from_vscode'.lazy_load()
+-- require 'luasnip/loaders/from_vscode'.lazy_load()
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -104,12 +104,12 @@ cmp.setup({
       return vim_item
     end,
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
-  view = {
-    entries = "native"
-  },
+  -- window = {
+  --   documentation = "native"
+  -- },
+  -- view = {
+  --   entries = "native"
+  -- },
   experimental = {
     ghost_text = true
   },

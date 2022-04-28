@@ -53,18 +53,16 @@ return require('packer').startup(function(use)
   use 'ellisonleao/gruvbox.nvim'
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }}
 
-  -- Terminal
-  use 'akinsho/toggleterm.nvim'
-
   -- file manager
   use 'kyazdani42/nvim-web-devicons'
   use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
 
   -- Note taking
-  use'jakewvincent/mkdnflow.nvim'
+  use 'jakewvincent/mkdnflow.nvim'
 
   -- helpers
   use 'b3nj5m1n/kommentary'
+  use 'folke/todo-comments.nvim'
 
   -- Extensions that help NVIM from doing stupid stuff
   use 'ojroques/nvim-bufdel'

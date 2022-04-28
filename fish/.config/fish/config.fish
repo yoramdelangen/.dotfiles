@@ -18,13 +18,13 @@ alias dot="cd ~/.config/dotfiles"
 # open Tooling
 alias v="nvim"
 alias vim="nvim"
-alias neovide="neovide"
-alias vw="nvim -c v:lua require'v-vimwiki'.startVimwiki()"
-alias notes='vim -c VimwikiIndex'
 alias subl="open -a Sublime\ Text"
-alias tableau="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
-alias tableau_2019="open /Applications/Tableau\ Desktop\ 2019.1.app --args --remote-debugging-port=8696"
-alias tableau_beta="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
+alias dotfiles="cd $HOME/.dotfiles; nvim -n ."
+
+# Notes
+alias notes='nvim -n ~/.vimwiki/index.md'
+alias wiki='nvim -n ~/.vimwiki/index.md'
+
 alias tunnel_sydl="ssh -L 3333:localhost:3306 -N yoram@admin.sydl.nl"
 alias tunnel_sydl_mongo="ssh -L 27017:localhost:27017 -N yoram@admin.sydl.nl"
 
@@ -112,6 +112,6 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$GOPATH:$PATH"
-export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/Workspace/go/bin:$PATH"
 
 fish_add_path /usr/local/sbin

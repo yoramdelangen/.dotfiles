@@ -20,6 +20,7 @@ opt.expandtab = true
 opt.scrolloff = 8
 opt.smartindent = true
 opt.iskeyword:append('-')
+opt.iskeyword:append('_')
 
 -----------------------------------------------------------
 -- Toggle invisible characters
@@ -69,16 +70,15 @@ vim.cmd([[ colorscheme gruvbox ]])
 require 'yoramdelangen.startup'
 require 'yoramdelangen.keymappings'
 require 'yoramdelangen.packer'
-
 require 'yoramdelangen.treesitter'
 require 'yoramdelangen.telescope'
 require 'yoramdelangen.lsp'
 require 'yoramdelangen.cmp'
 require 'yoramdelangen.gitsigns'
-require 'yoramdelangen.toggleterm'
 require 'yoramdelangen.nvim-tree'
 require 'yoramdelangen.kommentary'
 require 'yoramdelangen.null-ls'
 require 'yoramdelangen.bufdel'
 require 'yoramdelangen.harpoon'
--- require 'yoramdelangen.mkdnflow'
+require 'yoramdelangen.mkdnflow'
+-- require 'yoramdelangen.todo-comments'

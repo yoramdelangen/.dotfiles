@@ -11,17 +11,18 @@ vim.g.maplocalleader = ' '
 keymap('n', '<C-l>', '<cmd>nohls<cr>', opts)
 
 -- better window movement
-keymap('n', '<A-h>', '<C-w>h', opts)
-keymap('n', '<A-j>', '<C-w>j', opts)
-keymap('n', '<A-k>', '<C-w>k', opts)
-keymap('n', '<A-l>', '<C-w>l', opts)
+-- keymap('n', '<A-h>', '<C-w>h', opts)
+-- keymap('n', '<A-j>', '<C-w>j', opts)
+-- keymap('n', '<A-k>', '<C-w>k', opts)
+-- keymap('n', '<A-l>', '<C-w>l', opts)
 
 keymap('n', '<C-Bslash>', '<cmd>vsplit<cr> <C-w>l', opts)
 keymap('n', '<C-Bar>', '<cmd>split<cr> <C-w>k', opts)
 
 -- be a JUMPER
-keymap('', '<C-k>', '10k', opts)
-keymap('', '<C-j>', '10j', opts)
+-- START USING DEFAULT NAVIGATION/JUMPING NOOB!!
+-- keymap('', '<C-k>', '10k', opts)
+-- keymap('', '<C-j>', '10j', opts)
 
 -- Faster fingers
 keymap('i', 'jk', '<esc>', opts)
@@ -45,10 +46,10 @@ keymap('n','q', '<nop>', opts)
 keymap('n','qq', '<nop>', opts)
 
 -- Moving line up
-keymap('v', '<C-A-j>', ':m .+1<cr>==', opts)
-keymap('v', '<C-A-k>', ':m .-2<cr>==', opts)
-keymap('n', '<C-A-j>', ':m .+1<cr>==', opts)
-keymap('n', '<C-A-k>', ':m .-2<cr>==', opts)
+-- keymap('v', '<C-A-j>', ':m .+1<cr>==', opts)
+-- keymap('v', '<C-A-k>', ':m .-2<cr>==', opts)
+-- keymap('n', '<C-A-j>', ':m .+1<cr>==', opts)
+-- keymap('n', '<C-A-k>', ':m .-2<cr>==', opts)
 
 -- Copy and paste from clipboard
 keymap('', '<leader>y', '"*y', opts)
