@@ -100,6 +100,7 @@ export GOPATH="$HOME/workspace/golang"
 # Exports
 export PATH="$HOME/workspace/golang/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/workspace/bin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -119,6 +120,9 @@ alias gs="git status"
 alias v="nvim"
 alias vim="nvim"
 alias vi="nvim"
+
+# PHP runtime helpers
+alias art="php artisan"
 
 ## quick openings
 alias dot="nvim ~/.zshrc"
