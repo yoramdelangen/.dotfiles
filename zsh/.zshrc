@@ -101,6 +101,7 @@ export GOPATH="$HOME/workspace/golang"
 export PATH="$HOME/workspace/golang/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/workspace/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
