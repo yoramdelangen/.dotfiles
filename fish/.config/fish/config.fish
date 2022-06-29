@@ -22,8 +22,8 @@ alias subl="open -a Sublime\ Text"
 alias dotfiles="cd $HOME/.dotfiles; nvim -n ."
 
 # Notes
-alias notes='nvim -n ~/.vimwiki/index.md'
-alias wiki='nvim -n ~/.vimwiki/index.md'
+alias notes='cd ~/.vimwiki/; nvim -n ~/.vimwiki/index.md'
+alias wiki='cd ~/.vimwiki/; nvim -n ~/.vimwiki/index.md'
 
 alias tunnel_sydl="ssh -L 3333:localhost:3306 -N yoram@admin.sydl.nl"
 alias tunnel_sydl_mongo="ssh -L 27017:localhost:27017 -N yoram@admin.sydl.nl"

@@ -61,8 +61,10 @@ wo.showbreak = '↪'
 -----------------------------------------------------------
 opt.termguicolors = true
 O.background = 'dark' -- or "light" for light mode
-g.gruvbox_contrast_dark = 'hard'
-vim.cmd([[ colorscheme gruvbox ]])
+-- g.gruvbox_contrast_dark = 'hard'
+-- vim.cmd([[ colorscheme gruvbox ]])
+vim.g.catppuccin_flavour = 'mocha' -- latte, frappe, macchiato, mocha
+vim.cmd[[colorscheme catppuccin]]
 
 -----------------------------------------------------------
 -- LOADING OTHER CONFIG
@@ -73,6 +75,7 @@ require 'yoramdelangen.packer'
 require 'yoramdelangen.treesitter'
 require 'yoramdelangen.telescope'
 require 'yoramdelangen.lsp'
+-- require 'yoramdelangen.tabnine'
 require 'yoramdelangen.cmp'
 require 'yoramdelangen.gitsigns'
 require 'yoramdelangen.nvim-tree'

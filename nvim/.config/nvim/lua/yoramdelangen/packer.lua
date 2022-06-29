@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lua'
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+  use 'github/copilot.vim'
 
   -- snippets
   use 'L3MON4D3/LuaSnip'
@@ -47,10 +48,12 @@ return require('packer').startup(function(use)
 
   -- Harpoon
   use 'ThePrimeagen/harpoon'
+  use 'ggandor/lightspeed.nvim'
 
   -- UI elements
   use 'norcalli/nvim-base16.lua'
   use 'ellisonleao/gruvbox.nvim'
+  use { 'catppuccin/nvim', as='catppuccin' }
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }}
 
   -- file manager
@@ -60,7 +63,7 @@ return require('packer').startup(function(use)
   -- Note taking
   use 'jakewvincent/mkdnflow.nvim'
 
-  -- helpers
+  -- Helpers
   use 'b3nj5m1n/kommentary'
   use 'folke/todo-comments.nvim'
 

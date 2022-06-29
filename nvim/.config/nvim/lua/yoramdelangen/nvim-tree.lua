@@ -1,20 +1,10 @@
-
-vim.g.nvim_tree_show_icons = {
-  git = 1,
-  folders = 1,
-  files = 0,
-  folder_arrows = 1
-}
-vim.g.nvim_tree_highlight_opened_files = 3
-vim.g.nvim_tree_create_in_closed_folder = 1
-vim.g.nvim_tree_add_trailing = 1
 vim.g.nvim_tree_refresh_wait = 500
-vim.g.nvim_tree_symlink_arrow = ' >> '
 
 require'nvim-tree'.setup({
   open_on_setup = true,
   hijack_cursor = true,
   hijack_unnamed_buffer_when_opening = true,
+  create_in_closed_folder = true,
   filters = {
     dotfiles = false,
     custom = { '.git', '.DS_Store', '.cache' }
@@ -30,6 +20,19 @@ require'nvim-tree'.setup({
     open_file = {
       quit_on_open = true
     }
+  },
+  renderer = {
+    add_trailing = true,
+    highlight_opened_files = 'all',
+    icons = {
+      symlink_arrow = ' >> ',
+      show = {
+        git = true,
+        folder = true,
+        file = false,
+        folder_arrow = true
+      }
+    },
   }
 })
 
