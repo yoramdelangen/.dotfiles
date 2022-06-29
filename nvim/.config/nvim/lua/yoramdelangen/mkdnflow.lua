@@ -1,9 +1,9 @@
 require 'mkdnflow'.setup({
   to_do = {
-    symbols = {' ', '-', 'X'},
+    symbols = {' ', '~', 'X'},
     update_parents = true,
     not_started = ' ',
-    in_progress = '-',
+    in_progress = '~',
     complete = 'X'
   },
 
