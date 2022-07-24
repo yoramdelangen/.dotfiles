@@ -37,6 +37,7 @@ alias comp="composer"
 alias phpfix='php-cs-fixer fix . --config=/Users/yoram/.dotfiles/scripts/.php_cs.dist'
 alias y='yarn'
 alias ya='yarn add'
+alias dockerclean='docker image prune -a -f; docker volume prune -f; docker network prune -f'
 
 # Git
 alias gs="git status"
@@ -115,3 +116,8 @@ export PATH="$GOPATH:$PATH"
 export PATH="$HOME/Workspace/go/bin:$PATH"
 
 fish_add_path /usr/local/sbin
+
+# pnpm
+set -gx PNPM_HOME "/Users/yoram/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end
