@@ -70,4 +70,9 @@ return require('packer').startup(function(use)
   -- Extensions that help NVIM from doing stupid stuff
   use 'ojroques/nvim-bufdel'
 
+  -- StatusLine
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 end)

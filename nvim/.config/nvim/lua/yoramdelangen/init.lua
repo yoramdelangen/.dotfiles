@@ -67,6 +67,29 @@ vim.g.catppuccin_flavour = 'mocha' -- latte, frappe, macchiato, mocha
 vim.cmd[[colorscheme catppuccin]]
 
 -----------------------------------------------------------
+-- Commands
+-----------------------------------------------------------
+vim.api.nvim_create_user_command('WQ', 'wq', {})
+vim.api.nvim_create_user_command('Wq', 'wq', {})
+vim.api.nvim_create_user_command('W', 'w', {})
+vim.api.nvim_create_user_command('Q', 'q', {})
+vim.api.nvim_create_user_command('Format', function ()
+  vim.lsp.buf.formatting_sync();
+  print('Formatted file')
+end, {})
+
+-----------------------------------------------------------
+-- Abbreviations
+-----------------------------------------------------------
+vim.cmd('abbr funciton function')
+vim.cmd('abbr teh the')
+vim.cmd('abbr tempalte template')
+vim.cmd('abbr fitler filter')
+vim.cmd('abbr cosnt const')
+vim.cmd('abbr attribtue attribute')
+vim.cmd('abbr attribuet attribute')
+
+-----------------------------------------------------------
 -- LOADING OTHER CONFIG
 -----------------------------------------------------------
 require 'yoramdelangen.startup'
@@ -84,4 +107,5 @@ require 'yoramdelangen.null-ls'
 require 'yoramdelangen.bufdel'
 require 'yoramdelangen.harpoon'
 require 'yoramdelangen.mkdnflow'
+require 'yoramdelangen.lualine'
 -- require 'yoramdelangen.todo-comments'

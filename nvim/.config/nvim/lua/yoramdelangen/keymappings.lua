@@ -61,3 +61,6 @@ keymap('v', 'p', '"_dP', opts) -- keep value in the register
 
 -- goto outside the current method on a newline
 keymap('n', '<leader>}', 'ysiw}', opts)
+
+-- show Explore
+keymap('n', '<C-k><C-b>', '<cmd>Ex<cr>', opts)

@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
     url = "https://github.com/ggandor/lightspeed.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["mkdnflow.nvim"] = {
     loaded = true,
     path = "/Users/yoram/.local/share/nvim/site/pack/packer/start/mkdnflow.nvim",
