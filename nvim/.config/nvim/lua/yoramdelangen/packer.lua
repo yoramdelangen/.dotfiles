@@ -62,6 +62,7 @@ return require('packer').startup(function(use)
 
   -- Note taking
   use 'jakewvincent/mkdnflow.nvim'
+  use 'jubnzv/mdeval.nvim'
 
   -- Helpers
   use 'b3nj5m1n/kommentary'

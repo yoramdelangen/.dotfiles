@@ -49,6 +49,7 @@ alias gco="git checkout"
 alias stash='git stash'
 alias size='du -hs * | sort -h'
 alias lg='lazygit'
+alias ld='lazydocker'
 
 # Applications & Tunnels
 alias tableau="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
