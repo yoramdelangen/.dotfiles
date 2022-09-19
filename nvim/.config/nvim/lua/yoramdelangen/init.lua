@@ -55,6 +55,7 @@ opt.smartcase = true
 wo.cursorline = true
 wo.number = true
 wo.showbreak = '↪'
+wo.relativenumber = true
 
 -----------------------------------------------------------
 -- THEMING

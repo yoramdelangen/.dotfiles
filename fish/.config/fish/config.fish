@@ -1,6 +1,7 @@
 set -g fish_emoji_width 2
 set -Ux EDITOR nvim
 set -Ux TERM "screen-256color"
+set -g theme_short_path yes
 
 set -gx Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
 
@@ -24,6 +25,10 @@ alias dotfiles="cd $HOME/.dotfiles; nvim -n ."
 # Notes
 alias notes='cd ~/.vimwiki/; nvim -n ~/.vimwiki/index.md'
 alias wiki='cd ~/.vimwiki/; nvim -n ~/.vimwiki/index.md'
+alias workspace='cd ~/workspace/'
+alias repo='cd ~/workspace/repositories'
+alias bitbucket='cd ~/workspace/repositories/bitbucket'
+alias github='cd ~/workspace/repositories/github.com'
 
 alias tunnel_sydl="ssh -L 3333:localhost:3306 -N yoram@admin.sydl.nl"
 alias tunnel_sydl_mongo="ssh -L 27017:localhost:27017 -N yoram@admin.sydl.nl"
@@ -48,7 +53,7 @@ alias gaa="git add --all"
 alias gco="git checkout"
 alias stash='git stash'
 alias size='du -hs * | sort -h'
-alias lg='lazygit'
+alias lg='CONFIG_DIR="$HOME/.config/lazygit" lazygit'
 alias ld='lazydocker'
 
 # Applications & Tunnels
@@ -122,3 +127,5 @@ fish_add_path /usr/local/sbin
 set -gx PNPM_HOME "/Users/yoram/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
+
+starship init fish | source
