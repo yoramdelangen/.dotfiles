@@ -70,7 +70,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git docker docker-compose zsh-autosuggestions zsh-syntax-highlighting zsh-interactive-cd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,12 +87,11 @@ export GID=$(id -g)
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
-export BROWSER='/var/lib/snapd/snap/bin/brave'
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='nvim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -102,9 +101,9 @@ export GOROOT="/usr/lib/go"
 export GOPATH="$HOME/workspace/golang"
 
 # Exports
-export PATH="$HOME/workspace/golang/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$HOME/workspace/bin:$PATH"
+export PATH="/usr/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/workspace/go/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -131,5 +130,6 @@ alias art="php artisan"
 
 ## quick openings
 alias dot="nvim ~/.zshrc"
-alias i3dot="nvim ~/.i3/config"
+# alias i3dot="nvim ~/.i3/config"
+alias adot="nvim ~/.config/awesome/rc.lua"
 alias notes="cd ~/workspace/repositories/github.com/yoramdelangen/vimwiki-notes && nvim index.md"

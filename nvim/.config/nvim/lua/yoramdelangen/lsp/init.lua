@@ -31,15 +31,15 @@ lsp.gopls.setup(lsp_conf()) -- GO lang
 
 -- LUA
 -- TODO: fix this static path to be dynamic....
-local sumneko_root_path = '/Users/yoram/Workspace/Builds/lua-language-server'
-local sumneko_binary = sumneko_root_path.."/bin/macOS/lua-language-server"
+local sumneko_root_path = vim.fn.expand '~/workspace/builds/lua-language-server'
+local sumneko_binary = sumneko_root_path.."/bin/lua-language-server"
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 lsp.sumneko_lua.setup(lsp_conf({
-  cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" };
+  cmd = { sumneko_binary, "-E", sumneko_root_path .. "/bin/main.lua" };
   settings = {
     Lua = {
       runtime = {

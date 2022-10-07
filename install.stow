@@ -22,7 +22,6 @@ mac=(
   alacritty
 )
 linux=(
-  i3
   zsh
   prettier
 )
