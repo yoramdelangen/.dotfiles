@@ -79,6 +79,10 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$(yarn global bin):$PATH"
 export PATH="$PATH:$HOME/workspace/bin"
 
+# Set these environment variables for Docker images.
+export UID=$(id -u)
+export GID=$(id -g)
+
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
