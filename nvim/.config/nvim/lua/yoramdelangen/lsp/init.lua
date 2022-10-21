@@ -7,7 +7,7 @@ local tsserver_path = vim.fn.expand '~/.config/yarn/global/node_modules/typescri
 local function lsp_conf(_config)
     return vim.tbl_deep_extend("force", {
         on_attach = on_attach;
-        capabilities = cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities());
+        capabilities = cmp_lsp.default_capabilities();
         root_dir = function() return vim.loop.cwd() end
     }, _config or {})
 end
