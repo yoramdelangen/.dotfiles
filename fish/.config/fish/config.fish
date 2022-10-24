@@ -15,6 +15,7 @@ alias ....="cd ../../../"
 alias .....="cd ../../../../"
 alias ......="cd ../../../../../"
 alias dot="cd ~/.config/dotfiles"
+alias goto="cd (quick_nav)"
 
 # open Tooling
 alias v="nvim"

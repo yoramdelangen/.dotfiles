@@ -28,11 +28,12 @@ linux=(
 
 my_profile() {
   local unameOut="$(uname -s)"
+
   case "${unameOut}" in
       Linux*)     machine=linux;;
       Darwin*)    machine=macos;;
-      CYGWIN*)    machine=cygwin;;
-      MINGW*)     machine=min_gw;;
+      # CYGWIN*)    machine=cygwin;;
+      # MINGW*)     machine=min_gw;;
       *)          machine="UNKNOWN:${unameOut}"
   esac
   echo $machine
@@ -42,15 +43,15 @@ my_profile() {
 stowit() {
     usr=$1
     app=$2
+
     # -v verbose
     # -R recursive
     # -t target
-    stow -R ${app}
+    stow -R -t ${usr} ${app}
 }
 
-echo $(my_profile)
-
 echo ""
+echo "PROFILE: $(my_profile)"
 echo "STOWING APPS FOR USER: ${whoami}"
 
 # install apps available to local users and root
