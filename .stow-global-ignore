@@ -2,6 +2,8 @@
 .git
 .gitignore
 .stow-local-ignore
+.odbc.ini
+.odbcinst.ini
 .*.example
 ^/@.*
 KeybdPrefs_.*.png
