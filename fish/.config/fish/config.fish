@@ -56,6 +56,7 @@ alias stash='git stash'
 alias size='du -hs * | sort -h'
 alias lg='CONFIG_DIR="$HOME/.config/lazygit" lazygit'
 alias ld='lazydocker'
+alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
 
 # Applications & Tunnels
 alias tableau="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"

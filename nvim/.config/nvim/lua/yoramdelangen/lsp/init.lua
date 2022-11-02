@@ -12,7 +12,7 @@ vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 
 local function lsp_conf(_config)
 	return vim.tbl_deep_extend("force", {
-		-- on_attach = on_attach;
+		on_attach = on_attach;
 		flags = {
 			-- This is the default in Nvim 0.7+
 			debounce_text_changes = 150,
