@@ -12,7 +12,7 @@ vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 
 local function lsp_conf(_config)
 	return vim.tbl_deep_extend("force", {
-		on_attach = on_attach;
+		on_attach = on_attach,
 		flags = {
 			-- This is the default in Nvim 0.7+
 			debounce_text_changes = 150,
@@ -39,10 +39,6 @@ lsp.rust_analyzer.setup(lsp_conf({
 		["rust-analyzer"] = {},
 	},
 })) -- Server-specific settings...
-
-------------------------------------------------
--- Adding more languages here
-------------------------------------------------
 lsp.yamlls.setup(lsp_conf()) -- yaml
 
 -- LUA
