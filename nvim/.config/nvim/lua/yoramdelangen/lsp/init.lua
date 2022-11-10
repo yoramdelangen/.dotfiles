@@ -43,6 +43,7 @@ lsp.rust_analyzer.setup(lsp_conf({
 ------------------------------------------------
 -- Adding more languages here
 ------------------------------------------------
+lsp.yamlls.setup(lsp_conf()) -- yaml
 
 -- LUA
 -- TODO: fix this static path to be dynamic....

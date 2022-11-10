@@ -105,6 +105,7 @@ export PATH="/usr/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/workspace/go/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="/var/lib/flatpak/exports/bin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -133,3 +134,8 @@ alias dot="nvim ~/.zshrc"
 # alias i3dot="nvim ~/.i3/config"
 alias adot="nvim ~/.config/awesome/rc.lua"
 alias notes="cd ~/workspace/repositories/github.com/yoramdelangen/vimwiki-notes && nvim index.md"
+
+# pnpm
+export PNPM_HOME="/home/yoram/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
