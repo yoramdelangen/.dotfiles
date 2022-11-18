@@ -23,6 +23,7 @@ mac=(
 )
 linux=(
   zsh
+  bin_linux
   prettier
 )
 

@@ -102,6 +102,7 @@ export GOPATH="$HOME/workspace/golang"
 
 # Exports
 export PATH="/usr/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/workspace/go/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"

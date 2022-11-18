@@ -9,6 +9,7 @@ local wo = vim.wo
 opt.mouse = "a"
 O.shortmess = O.shortmess .. "c"
 g.noswapfile = true
+vim.opt.clipboard = 'unnamedplus'
 
 -----------------------------------------------------------
 -- SET THE BEHAVIOR OF TAB

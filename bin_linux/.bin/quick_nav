@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+find ~/workspace/playground \
+  ~/workspace/go \
+  ~/workspace/repositories/github.com/appsfortableau \
+  ~/workspace/repositories/github.com/yoramdelangen \
+  ~/workspace/repositories/github.com/writebackextreme \
+  -mindepth 1 -maxdepth 1 -type d | fzf
