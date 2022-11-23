@@ -21,7 +21,8 @@ alias goto="cd (quick_nav)"
 alias v="nvim"
 alias vim="nvim"
 alias subl="open -a Sublime\ Text"
-alias dotfiles="cd $HOME/.dotfiles; nvim -n ."
+alias dotfiles="cd $HOME/workspace/repositories/github.com/yoramdelangen/dotfiles; nvim -n ."
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 # Notes
 alias notes='cd ~/.vimwiki/; nvim -n ~/.vimwiki/index.md'

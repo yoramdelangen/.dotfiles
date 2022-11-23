@@ -117,10 +117,21 @@ export PATH="/var/lib/flatpak/exports/bin:$PATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias lg="lazygit"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias ......="cd ../../../../../"
+alias goto="cd (quick_nav)"
 
 ## GIT intergration
 alias gs="git status"
+alias gd="git diff"
+alias gb="git branch"
+alias gc="git commit"
+alias gaa="git add --all"
+alias gco="git checkout"
+alias lg='CONFIG_DIR="$HOME/.config/lazygit" lazygit'
 
 ## VIM intergrations
 alias v="nvim"
@@ -129,12 +140,18 @@ alias vi="nvim"
 
 # PHP runtime helpers
 alias art="php artisan"
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 ## quick openings
 alias dot="nvim ~/.zshrc"
 # alias i3dot="nvim ~/.i3/config"
 alias adot="nvim ~/.config/awesome/rc.lua"
+alias dotfiles="cd $HOME/workspace/repositories/github.com/yoramdelangen/dotfiles; nvim -n ."
 alias notes="cd ~/workspace/repositories/github.com/yoramdelangen/vimwiki-notes && nvim index.md"
+alias workspace='cd ~/workspace/'
+alias repo='cd ~/workspace/repositories'
+alias bitbucket='cd ~/workspace/repositories/bitbucket'
+alias github='cd ~/workspace/repositories/github.com'
 
 # pnpm
 export PNPM_HOME="/home/yoram/.local/share/pnpm"
