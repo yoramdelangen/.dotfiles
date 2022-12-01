@@ -22,6 +22,7 @@ opt.scrolloff = 8
 opt.smartindent = true
 opt.iskeyword:append("-")
 opt.iskeyword:append("_")
+opt.cmdheight = 0
 
 -----------------------------------------------------------
 -- Toggle invisible characters
@@ -77,7 +78,6 @@ vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Q", "q", {})
 vim.api.nvim_create_user_command("Format", function()
 	vim.lsp.buf.format()
-	print("Formatted file")
 end, {})
 
 -----------------------------------------------------------
@@ -95,6 +95,7 @@ vim.cmd("abbr attribuet attribute")
 -- LOADING OTHER CONFIG
 -----------------------------------------------------------
 require("yoramdelangen.startup")
+require("yoramdelangen.autocmds")
 require("yoramdelangen.keymappings")
 require("yoramdelangen.packer")
 require("yoramdelangen.treesitter")
