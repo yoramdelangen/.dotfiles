@@ -63,7 +63,7 @@ keymap("v", "p", '"_dP', opts) -- keep value in the register
 keymap("n", "<leader>}", "ysiw}", opts)
 
 -- show Explore
-keymap("n", "<C-k><C-b>", "<cmd>Ex<cr>", opts)
+keymap("n", "<C-k><C-b>", "<cmd>Ex<cr><cr>", opts)
 
 -- Custom keymap to reload Neovim
 vim.keymap.set("n", "<leader>r", "", {

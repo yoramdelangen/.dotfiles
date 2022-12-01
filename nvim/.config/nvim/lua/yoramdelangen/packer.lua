@@ -21,7 +21,7 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lua")
-	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 
 	-- snippets
 	use("L3MON4D3/LuaSnip")
@@ -40,7 +40,6 @@ return require("packer").startup(function(use)
 
 	-- Harpoon
 	use("ThePrimeagen/harpoon")
-	use("ggandor/lightspeed.nvim")
 
 	-- UI elements
 	use("norcalli/nvim-base16.lua")

@@ -7,9 +7,10 @@ local wo = vim.wo
 -- GLOBAL OPTIONS
 -----------------------------------------------------------
 opt.mouse = "a"
+opt.swapfile = false
 O.shortmess = O.shortmess .. "c"
 g.noswapfile = true
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 -----------------------------------------------------------
 -- SET THE BEHAVIOR OF TAB
@@ -44,6 +45,10 @@ opt.history = 100 -- remember n lines in history
 opt.lazyredraw = true -- faster scrolling
 opt.synmaxcol = 240 -- max column for syntax highlight
 
+-- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+-- delays and poor user experience.
+opt.updatetime = 50
+
 -----------------------------------------------------------
 -- SEARCH OPTIONS
 -----------------------------------------------------------
@@ -58,6 +63,13 @@ wo.cursorline = true
 wo.number = true
 wo.showbreak = "↪"
 wo.relativenumber = true
+
+-----------------------------------------------------------
+-- NETWR
+-----------------------------------------------------------
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
 
 -----------------------------------------------------------
 -- THEMING
@@ -101,7 +113,7 @@ require("yoramdelangen.packer")
 require("yoramdelangen.treesitter")
 require("yoramdelangen.telescope")
 require("yoramdelangen.lsp")
--- require 'yoramdelangen.tabnine'
+require("yoramdelangen.tabnine")
 require("yoramdelangen.cmp")
 require("yoramdelangen.gitsigns")
 -- require 'yoramdelangen.nvim-tree'
