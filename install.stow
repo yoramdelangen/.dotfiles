@@ -20,6 +20,7 @@ mac=(
   bash_osx
   bin_osx
   alacritty
+  karabiner
 )
 linux=(
   zsh
