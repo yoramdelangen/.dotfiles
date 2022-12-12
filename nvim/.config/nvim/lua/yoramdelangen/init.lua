@@ -3,6 +3,8 @@ local g = vim.g
 local opt = vim.opt
 local wo = vim.wo
 
+local command = vim.api.nvim_create_user_command
+
 -----------------------------------------------------------
 -- GLOBAL OPTIONS
 -----------------------------------------------------------
@@ -84,12 +86,20 @@ vim.cmd([[colorscheme catppuccin]])
 -----------------------------------------------------------
 -- Commands
 -----------------------------------------------------------
-vim.api.nvim_create_user_command("WQ", "wq", {})
-vim.api.nvim_create_user_command("Wq", "wq", {})
-vim.api.nvim_create_user_command("W", "w", {})
-vim.api.nvim_create_user_command("Q", "q", {})
-vim.api.nvim_create_user_command("Format", function()
-	vim.lsp.buf.format()
+command("WQ", "wq", {})
+command("Wq", "wq", {})
+command("W", "w", {})
+command("Q", "q", {})
+command("Format", function()
+	vim.lsp.buf.format({ timeout = 4000 })
+end, {})
+command("Reload", function()
+	vim.cmd([[
+      update $MYVIMRC
+      source $MYVIMRC
+    ]])
+
+	vim.notify("Nvim config successfully reloaded!", vim.log.levels.INFO, { title = "nvim-config" })
 end, {})
 
 -----------------------------------------------------------

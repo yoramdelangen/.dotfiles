@@ -45,8 +45,13 @@ keymap("n", "Q", "<nop>", opts)
 keymap("n", "q", "<nop>", opts)
 keymap("n", "qq", "<nop>", opts)
 
+-- Improve half page movement
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+
 -- Moving line up
--- keymap('v', '<C-A-j>', ':m .+1<cr>==', opts)
 -- keymap('v', '<C-A-k>', ':m .-2<cr>==', opts)
 -- keymap('n', '<C-A-j>', ':m .+1<cr>==', opts)
 -- keymap('n', '<C-A-k>', ':m .-2<cr>==', opts)
@@ -66,15 +71,13 @@ keymap("n", "<leader>}", "ysiw}", opts)
 keymap("n", "<C-k><C-b>", "<cmd>Ex<cr><cr>", opts)
 
 -- Custom keymap to reload Neovim
-vim.keymap.set("n", "<leader>r", "", {
-	silent = true,
-	desc = "Reload init.lua",
-	callback = function()
-		vim.cmd([[
-      update $MYVIMRC
-      source $MYVIMRC
-    ]])
+vim.keymap.set("n", "<leader>r", "<cmd>Reload<cr>")
 
-		vim.notify("Nvim config successfully reloaded!", vim.log.levels.INFO, { title = "nvim-config" })
+vim.keymap.set("n", "<leader>f", "", {
+	silent = true,
+	desc = "Format current buffer",
+	callback = function()
+		vim.lsp.buf.format({ timeout = 4000 })
+		print("Format buffer")
 	end,
 })

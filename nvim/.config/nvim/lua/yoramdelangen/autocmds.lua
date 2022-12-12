@@ -19,7 +19,9 @@ autocmd({ "BufRead", "BufNewFile" }, {
   group = "SetFileTypes",
   pattern = "*",
   callback = function(buf)
-    if not string.match(buf.match, "/.env*") then
+    local regx = "%/%.env*"
+
+    if not string.match(buf.match, regx) then
       return
     end
 
