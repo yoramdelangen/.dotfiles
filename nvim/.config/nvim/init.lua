@@ -1,1 +1,1 @@
-require "yoramdelangen"
+require("tricker")
