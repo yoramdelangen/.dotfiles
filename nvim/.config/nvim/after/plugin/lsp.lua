@@ -106,8 +106,7 @@ mason_nullls.setup({
 mason_nullls.setup_handlers({
 	function(source_name, methods)
 		-- all sources with no handler get passed here
-
-		print("Register: " .. source_name)
+		-- print("Register: " .. source_name)
 		require("mason-null-ls.automatic_setup")(source_name, methods)
 	end,
 })
