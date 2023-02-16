@@ -7,7 +7,6 @@ lsp.preset("recommended")
 lsp.ensure_installed({
 	"tsserver",
 	"eslint",
-	"sumneko_lua",
 	"rust_analyzer",
 	"gopls",
 	"intelephense",
@@ -29,15 +28,6 @@ lsp.set_preferences({
 lsp.configure("prettier", {
 	env = {
 		PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.prettierrc"),
-	},
-})
-lsp.configure("sumneko_lua", {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-		},
 	},
 })
 
