@@ -9,6 +9,11 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- quickfix list
+vim.keymap.set("n", "<C-[>", "<cmd>cprev<cr>", { noremap = true })
+vim.keymap.set("n", "<C-]>", "<cmd>cnext<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { noremap = true })
+
 -- greatest remap ever
 -- vim.keymap.set("x", "<leader>p", "\"_dP")
 

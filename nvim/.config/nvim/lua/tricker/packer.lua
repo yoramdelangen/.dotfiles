@@ -16,6 +16,7 @@ return require("packer").startup(function(use)
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
+	use("nvim-treesitter/nvim-treesitter-context")
 	use("windwp/nvim-ts-autotag")
 
 	use("theprimeagen/harpoon")
@@ -64,12 +65,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Markdown, notetaking
-	use({
-		"jakewvincent/mkdnflow.nvim",
-		config = function()
-			require("mkdnflow").setup({})
-		end,
-	})
+	use("jakewvincent/mkdnflow.nvim")
 
 	-- THEMES
 	use({

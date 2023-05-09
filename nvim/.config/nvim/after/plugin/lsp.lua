@@ -1,6 +1,12 @@
 local lsp = require("lsp-zero")
-local mason_settings = require("mason.settings")
+local mason = require("mason")
 local null_ls = require("null-ls")
+
+mason.setup({
+	ui = {
+		border = "rounded",
+	},
+})
 
 lsp.preset("recommended")
 
@@ -31,13 +37,6 @@ lsp.configure("prettier", {
 	},
 })
 
--- Mason configuration
-mason_settings.set({
-	ui = {
-		border = "rounded",
-	},
-})
-
 vim.diagnostic.config({
 	virtual_text = true,
 	signs = true,
@@ -65,6 +64,10 @@ lsp.on_attach(function(client, bufnr)
 		client.server_capabilities.documentFormattingRangeProvider = false
 	end
 
+	vim.keymap.set({ "n", "x" }, "<leader>f", function()
+		vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+	end)
+
 	-- LSP actions
 	map("n", "K", vim.lsp.buf.hover)
 	map("n", "gd", vim.lsp.buf.definition)
@@ -84,22 +87,15 @@ lsp.on_attach(function(client, bufnr)
 	map("n", "]d", vim.diagnostic.goto_next)
 end)
 
-lsp.nvim_workspace()
+-- lsp.nvim_workspace()
 lsp.setup()
 
--- setup MasonNullLs for null-ls usage with Mason
-local mason_nullls = require("mason-null-ls")
-mason_nullls.setup({
-	automatic_installation = true,
-	automatic_setup = false,
-})
-mason_nullls.setup_handlers({
-	function(source_name, methods)
-		-- all sources with no handler get passed here
-		-- print("Register: " .. source_name)
-		require("mason-null-ls.automatic_setup")(source_name, methods)
-	end,
+-- -- setup MasonNullLs for null-ls usage with Mason
+require("mason-null-ls").setup({
+  automatic_installation = false,
+  -- automatic_setup = false,
+  handlers = {},
 })
 null_ls.setup()
-
+--
 -- print("Setup LSP completed")

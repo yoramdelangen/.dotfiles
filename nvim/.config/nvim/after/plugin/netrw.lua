@@ -1,0 +1,87 @@
+
+-- local buf = vim.api.nvim_create_buf(false, true)
+-- vim.api.nvim_buf_set_lines(buf, 0, -1, true, { "Title", '%#LineNr#content', 'per', 'line' })
+--
+-- -- find the keymaps i want here :help netrw-quickmap
+--
+-- local win = nil
+-- local current_bufname = nil
+-- local parent_win = nil
+--
+-- local function create_default_popup(pwin)
+--   local opt = {
+--     width = 20,
+--     height = 25,
+--     relative = "win",
+--     win = pwin,
+--     row = 0,
+--     col = vim.api.nvim_win_get_width(pwin) - 10,
+--     style = "minimal",
+--     border = "single",
+--     focusable = false,
+--   }
+--
+--   if win == nil then
+--     parent_win = pwin
+--     win = vim.api.nvim_open_win(buf, false, opt)
+--     vim.api.nvim_win_set_hl_ns(win, 0)
+--   end
+-- end
+--
+-- local create_autocmd = vim.api.nvim_create_autocmd
+-- local yankGrp = vim.api.nvim_create_augroup("NetrwKeymaps", { clear = true })
+--
+-- local function is_netrw(current_ft)
+--   return current_ft == "netrw" or vim.fn.expand("%:p") == current_bufname
+-- end
+--
+-- create_autocmd("VimLeavePre", {
+--   pattern = "*",
+--   group = yankGrp,
+--   callback = function()
+--     current_bufname = vim.fn.expand("%:p")
+--   end
+-- })
+--
+-- -- create_autocmd("FileType", {
+-- --   pattern = "*",
+-- --   group = yankGrp,
+-- --   callback = function(cb)
+-- --     local ft = vim.api.nvim_buf_get_option(cb.buf, "filetype")
+-- --     print("Something about the filetype has been done", ft)
+-- --   end
+-- -- })
+--
+-- create_autocmd({ "BufEnter", "BufRead" }, {
+--   group = yankGrp,
+--   pattern = "*",
+--   callback = function(cb)
+--     local window = vim.fn.bufwinid(cb.buf)
+--     local ft = vim.api.nvim_buf_get_option(cb.buf, "filetype")
+--
+--     if is_netrw(ft) and win == nil then
+--       vim.notify("Loaded NetRW", nil)
+--       create_default_popup(window)
+--     end
+--   end
+-- })
+--
+-- create_autocmd({ "BufLeave", "BufDelete" }, {
+--   group = yankGrp,
+--   pattern = "*",
+--   callback = function(cb)
+--     local window = vim.fn.bufwinid(cb.buf)
+--     -- do not do anything in case the current buffer
+--     -- is not equal the parent_win
+--     if parent_win ~= window then
+--       return
+--     end
+--
+--     local ft = vim.api.nvim_buf_get_option(cb.buf, "filetype")
+--
+--     if ft == "netrw" and win ~= nil and vim.api.nvim_win_is_valid(win) then
+--       vim.api.nvim_win_close(win, true)
+--       win = nil
+--     end
+--   end
+-- })
