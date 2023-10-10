@@ -123,6 +123,8 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$GOPATH:$PATH"
 export PATH="$HOME/Workspace/go/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 
 fish_add_path /usr/local/sbin
 
