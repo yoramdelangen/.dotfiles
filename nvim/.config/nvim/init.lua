@@ -39,9 +39,9 @@ P.S. You can delete this when you're done too. It's your config now :)
 --]]
 
 if vim.g.neovide then
-  vim.g.neovide_cursor_trail_legnth = 0
-  vim.g.neovide_cursor_animation_length = 0
-  vim.o.guifont = "Jetbrains Mono:h16"
+	vim.g.neovide_cursor_trail_legnth = 0
+	vim.g.neovide_cursor_animation_length = 0
+	vim.o.guifont = "Jetbrains Mono:h16"
 end
 
 -- Set <space> as the leader key
@@ -289,50 +289,56 @@ require("lazy").setup({
 	-- blazingly fast navigation
 	{
 		"theprimeagen/harpoon",
+		branch = "harpoon2",
 		config = function()
-			require("harpoon").setup()
+			local hp = require("harpoon")
 			local ui = require("harpoon.ui")
-			local mark = require("harpoon.mark")
 
-			vim.keymap.set("n", "<leader>a", mark.add_file)
-			vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+			hp.setup()
+
+			vim.keymap.set("n", "<leader>a", function()
+				hp:list():append()
+			end)
+			vim.keymap.set("n", "<C-e>", function()
+				ui:toggle_quick_menu(hp:list())
+			end)
 
 			vim.keymap.set("n", "<C-1>", function()
-				ui.nav_file(1)
+				hp:list():select(1)
 			end)
 			vim.keymap.set("n", "<C-2>", function()
-				ui.nav_file(2)
+				hp:list():select(2)
 			end)
 			vim.keymap.set("n", "<C-3>", function()
-				ui.nav_file(3)
+				hp:list():select(3)
 			end)
 			vim.keymap.set("n", "<C-4>", function()
-				ui.nav_file(4)
+				hp:list():select(4)
 			end)
 			vim.keymap.set("n", "<C-5>", function()
-				ui.nav_file(5)
+				hp:list():select(5)
 			end)
 			vim.keymap.set("n", "<C-6>", function()
-				ui.nav_file(6)
+				hp:list():select(6)
 			end)
 
 			vim.keymap.set("n", "<leader>1", function()
-				ui.nav_file(1)
+				hp:list():select(1)
 			end)
 			vim.keymap.set("n", "<leader>2", function()
-				ui.nav_file(2)
+				hp:list():select(2)
 			end)
 			vim.keymap.set("n", "<leader>3", function()
-				ui.nav_file(3)
+				hp:list():select(3)
 			end)
 			vim.keymap.set("n", "<leader>4", function()
-				ui.nav_file(4)
+				hp:list():select(4)
 			end)
 			vim.keymap.set("n", "<leader>5", function()
-				ui.nav_file(5)
+				hp:list():select(5)
 			end)
 			vim.keymap.set("n", "<leader>6", function()
-				ui.nav_file(6)
+				hp:list():select(6)
 			end)
 		end,
 	},
@@ -739,12 +745,17 @@ local servers = {
 		end,
 	},
 
-	lua_ls = {
-		Lua = {
-			workspace = { checkThirdParty = false },
-			telemetry = { enable = false },
-		},
-	},
+	-- lua_ls = {
+	-- 	Lua = {
+	--      runtime = {
+	--        -- Tell the language server which version of Lua you're using
+	--        -- (most likely LuaJIT in the case of Neovim)
+	--        version = 'LuaJIT'
+	--      },
+	-- 		workspace = { checkThirdParty = false },
+	-- 		telemetry = { enable = false },
+	-- 	},
+	-- },
 }
 
 -- Setup neovim lua configuration
@@ -772,26 +783,52 @@ mason_lspconfig.setup_handlers({
 			servers[server_name].on_new_config = nil
 		end
 
-		require("lspconfig")[server_name].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = servers[server_name],
-			filetypes = (servers[server_name] or {}).filetypes,
-			on_new_config = on_new_config,
-		})
+		if server_name == "lua_ls" then
+			require("lspconfig")[server_name].setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = servers[server_name],
+				filetypes = (servers[server_name] or {}).filetypes,
+				on_new_config = on_new_config,
+				on_init = function(client)
+					local path = client.workspace_folders[1].name
+					print("loading path for lua")
+					print(vim.env.VIMRUNTIME)
+					if
+						not vim.loop.fs_stat(path .. "/.luarc.json") and not vim.loop.fs_stat(path .. "/.luarc.jsonc")
+					then
+						client.config.settings = vim.tbl_deep_extend("force", client.config.settings, {
+							Lua = {
+								runtime = {
+									version = "LuaJIT",
+								},
+								-- Make the server aware of Neovim runtime files
+								workspace = {
+									checkThirdParty = false,
+									library = {
+										vim.env.VIMRUNTIME,
+									},
+								},
+								telemetry = { enable = false },
+							},
+						})
+
+						client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+					end
+					return true
+				end,
+			})
+		else
+			require("lspconfig")[server_name].setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = servers[server_name],
+				filetypes = (servers[server_name] or {}).filetypes,
+				on_new_config = on_new_config,
+			})
+		end
 	end,
 })
-
--- Setup formatters with guard
--- local ft = require('guard.filetype')
---
--- ft('typescript,javascript,typescriptreact,vue,scss,css,tailwindcss'):fmt('prettier')
--- require('guard').setup({
---   -- the only options for the setup function
---   -- fmt_on_save = true,
---   -- Use lsp if no formatter was defined for this filetype
---   lsp_as_default_formatter = true,
--- })
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
