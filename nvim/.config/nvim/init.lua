@@ -21,7 +21,6 @@ Kickstart.nvim is a template for your own configuration.
   And then you can explore or search through `:help lua-guide`
   - https://neovim.io/doc/user/lua-guide.html
 
-
 Kickstart Guide:
 
 I have left several `:help X` comments throughout the init.lua
@@ -110,6 +109,7 @@ require("lazy").setup({
 				jsonc = { "biome" },
 				yaml = { "prettier" },
 				html = { "prettier" },
+				toml = { "prettier" },
 				vue = { "prettier" },
 				php = { "php_cs_fixer" },
 				markdown = {
@@ -157,6 +157,20 @@ require("lazy").setup({
 			-- Adds a number of user-friendly snippets
 			"rafamadriz/friendly-snippets",
 		},
+	},
+
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		-- build = ":Copilot setup",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = {
+					auto_trigger = true,
+				},
+			})
+		end,
 	},
 
 	-- Useful plugin to show you pending keybinds.
@@ -625,7 +639,22 @@ end, 0)
 vim.keymap.set("n", "<C-{>", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "<C-}>", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
--- vim.keymap.set('n', '<leader>e', require('telescope.builtin').diagnostics, { desc = 'Open floating diagnostic message' })
+
+-- vim.keymap.set("n", "<leader>tt", function()
+-- 	require("trouble").toggle()
+-- end)
+vim.keymap.set("n", "<leader>tw", function()
+	require("trouble").toggle("workspace_diagnostics")
+end)
+vim.keymap.set("n", "<leader>td", function()
+	require("trouble").toggle("document_diagnostics")
+end)
+vim.keymap.set("n", "<leader>tl", function()
+	require("trouble").toggle("loclist")
+end)
+vim.keymap.set("n", "gR", function()
+	require("trouble").toggle("lsp_references")
+end) -- vim.keymap.set('n', '<leader>e', require('telescope.builtin').diagnostics, { desc = 'Open floating diagnostic message' })
 
 local function toggle_quickfix_menu()
 	local qf_exists = false
@@ -647,9 +676,19 @@ local function toggle_quickfix_menu()
 	end
 end
 
-vim.keymap.set("n", "<C-[>", "<cmd>cprev<cr>zz", { noremap = true })
-vim.keymap.set("n", "<C-]>", "<cmd>cnext<cr>zz", { noremap = true })
-vim.keymap.set("n", "<leader>q", toggle_quickfix_menu, { noremap = true })
+-- vim.keymap.set("n", "<C-[>", "<cmd>cprev<cr>zz", { noremap = true })
+-- vim.keymap.set("n", "<C-]>", "<cmd>cnext<cr>zz", { noremap = true })
+-- vim.keymap.set("n", "<leader>q", toggle_quickfix_menu, { noremap = true })
+
+vim.keymap.set("n", "<leader>q", function()
+	require("trouble").toggle("quickfix")
+end, { noremap = true })
+vim.keymap.set("n", "<C-[>", function()
+	require("trouble").previous({ skip_groups = true, jump = true })
+end, { noremap = true })
+vim.keymap.set("n", "<C-]>", function()
+	require("trouble").next({ skip_groups = true, jump = true })
+end, { noremap = true })
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
@@ -671,7 +710,10 @@ local on_attach = function(_, bufnr)
 	nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 	nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-	nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+	nmap("gd", function()
+		vim.lsp.buf.definition()
+		vim.cmd.normal("zz")
+	end, "[G]oto [D]efinition")
 	nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 	nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
 	nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
@@ -794,9 +836,13 @@ mason_lspconfig.setup_handlers({
 					local path = client.workspace_folders[1].name
 					print("loading path for lua")
 					print(vim.env.VIMRUNTIME)
+					print(path .. "/.luarc.json")
+					print(vim.loop.fs_stat(path .. "/.luarc.json"))
+					print(vim.loop.fs_stat(path .. "/.luarc.jsonc"))
 					if
 						not vim.loop.fs_stat(path .. "/.luarc.json") and not vim.loop.fs_stat(path .. "/.luarc.jsonc")
 					then
+						print("Forcing lua config")
 						client.config.settings = vim.tbl_deep_extend("force", client.config.settings, {
 							Lua = {
 								runtime = {
