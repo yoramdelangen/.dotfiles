@@ -305,56 +305,109 @@ require("lazy").setup({
 		"theprimeagen/harpoon",
 		branch = "harpoon2",
 		config = function()
-			local hp = require("harpoon")
-			local ui = require("harpoon.ui")
-
-			hp.setup()
-
-			vim.keymap.set("n", "<leader>a", function()
-				hp:list():append()
-			end)
-			vim.keymap.set("n", "<C-e>", function()
-				ui:toggle_quick_menu(hp:list())
-			end)
-
-			vim.keymap.set("n", "<C-1>", function()
-				hp:list():select(1)
-			end)
-			vim.keymap.set("n", "<C-2>", function()
-				hp:list():select(2)
-			end)
-			vim.keymap.set("n", "<C-3>", function()
-				hp:list():select(3)
-			end)
-			vim.keymap.set("n", "<C-4>", function()
-				hp:list():select(4)
-			end)
-			vim.keymap.set("n", "<C-5>", function()
-				hp:list():select(5)
-			end)
-			vim.keymap.set("n", "<C-6>", function()
-				hp:list():select(6)
-			end)
-
-			vim.keymap.set("n", "<leader>1", function()
-				hp:list():select(1)
-			end)
-			vim.keymap.set("n", "<leader>2", function()
-				hp:list():select(2)
-			end)
-			vim.keymap.set("n", "<leader>3", function()
-				hp:list():select(3)
-			end)
-			vim.keymap.set("n", "<leader>4", function()
-				hp:list():select(4)
-			end)
-			vim.keymap.set("n", "<leader>5", function()
-				hp:list():select(5)
-			end)
-			vim.keymap.set("n", "<leader>6", function()
-				hp:list():select(6)
-			end)
+			require("harpoon"):setup()
 		end,
+		keys = {
+			{
+				"<leader>a",
+				function()
+					require("harpoon"):list():append()
+				end,
+				desc = "harpoon file",
+			},
+			{
+				"<C-e>",
+				function()
+					local harpoon = require("harpoon")
+					harpoon.ui:toggle_quick_menu(harpoon:list())
+				end,
+				desc = "harpoon quick menu",
+			},
+			{
+				"<C-1>",
+				function()
+					require("harpoon"):list():select(1)
+				end,
+				desc = "harpoon to file 1",
+			},
+			{
+				"<C-2>",
+				function()
+					require("harpoon"):list():select(2)
+				end,
+				desc = "harpoon to file 2",
+			},
+			{
+				"<C-3>",
+				function()
+					require("harpoon"):list():select(3)
+				end,
+				desc = "harpoon to file 3",
+			},
+			{
+				"<C-4>",
+				function()
+					require("harpoon"):list():select(4)
+				end,
+				desc = "harpoon to file 4",
+			},
+			{
+				"<C-5>",
+				function()
+					require("harpoon"):list():select(5)
+				end,
+				desc = "harpoon to file 5",
+			},
+			{
+				"<C-6>",
+				function()
+					require("harpoon"):list():select(6)
+				end,
+				desc = "harpoon to file 6",
+			},
+			{
+				"<leader>1",
+				function()
+					require("harpoon"):list():select(1)
+				end,
+				desc = "harpoon to file 1",
+			},
+			{
+				"<leader>2",
+				function()
+					require("harpoon"):list():select(2)
+				end,
+				desc = "harpoon to file 2",
+			},
+			{
+				"<leader>3",
+				function()
+					require("harpoon"):list():select(3)
+				end,
+				desc = "harpoon to file 3",
+			},
+			{
+				"<leader>4",
+				function()
+					require("harpoon"):list():select(4)
+				end,
+				desc = "harpoon to file 4",
+			},
+			{
+				"<leader>5",
+				function()
+					require("harpoon"):list():select(5)
+				end,
+				desc = "harpoon to file 5",
+			},
+			{
+				"<leader>6",
+				function()
+					require("harpoon"):list():select(6)
+				end,
+				desc = "harpoon to file 6",
+			},
+		},
 	},
 
 	-- prefered way of taking notes
@@ -388,6 +441,7 @@ require("lazy").setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
+vim.opt.title = true
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -411,6 +465,7 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.opt.scrolloff = 8
 
 -- Save undo history
 vim.o.undofile = true
@@ -463,6 +518,8 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+vim.keymap.set("n", "<leader>x", ":bd!<CR>", { desc = "Close current buffer" })
+
 -- When look previous and next occurence for searching with /something
 -- center the buffer view.
 vim.keymap.set("n", "n", "nzzzv")
@@ -510,19 +567,23 @@ end, { range = true, desc = "Format current buffer with LSP" })
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
+local trouble = require("trouble.providers.telescope")
 require("telescope").setup({
 	defaults = {
 		mappings = {
 			i = {
 				["<C-u>"] = false,
 				["<C-d>"] = false,
+				["<c-t>"] = trouble.open_with_trouble,
 			},
+			n = { ["<c-t>"] = trouble.open_with_trouble },
 		},
 	},
 })
 
 -- Enable telescope fzf native, if installed
 pcall(require("telescope").load_extension, "fzf")
+pcall(require("telescope").load_extension, "harpoon")
 
 -- See `:help telescope.builtin`
 vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
