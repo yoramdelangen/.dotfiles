@@ -1,6 +1,6 @@
 [user]
 	email = yoramdelangen@gmail.com
-	name = Yoram de Langen
+	name = Yoram
 [core]
 	quotepath = false
 	excludesfile = /Users/Yoram/.gitignore_global
