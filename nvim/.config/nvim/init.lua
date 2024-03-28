@@ -218,15 +218,23 @@ require("lazy").setup({
 	--     vim.cmd.colorscheme 'onedark'
 	--   end,
 	-- },
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			vim.cmd.colorscheme("catppuccin")
-		end,
-	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("catppuccin")
+	-- 	end,
+	-- },
 
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+		config = true,
+		opts = {
+			terminal_colors = true,
+		},
+	},
 	{
 		-- Set lualine as statusline
 		"nvim-lualine/lualine.nvim",
@@ -234,7 +242,7 @@ require("lazy").setup({
 		opts = {
 			options = {
 				icons_enabled = false,
-				theme = "catppuccin",
+				theme = "gruvbox",
 				component_separators = "|",
 				section_separators = "",
 			},
@@ -305,109 +313,48 @@ require("lazy").setup({
 		"theprimeagen/harpoon",
 		branch = "harpoon2",
 		config = function()
-			require("harpoon"):setup()
+			local harpoon = require("harpoon")
+
+			harpoon:setup()
+
+			vim.keymap.set("n", "<leader>a", function()
+				harpoon:list():append()
+			end)
+			vim.keymap.set("n", "<C-e>", function()
+				harpoon.ui:toggle_quick_menu(harpoon:list())
+			end)
+
+			vim.keymap.set("n", "<C-1>", function()
+				harpoon:list():select(1)
+			end)
+			vim.keymap.set("n", "<C-2>", function()
+				harpoon:list():select(2)
+			end)
+			vim.keymap.set("n", "<C-3>", function()
+				harpoon:list():select(3)
+			end)
+			vim.keymap.set("n", "<C-4>", function()
+				harpoon:list():select(4)
+			end)
+			vim.keymap.set("n", "<C-5>", function()
+				harpoon:list():select(5)
+			end)
+			vim.keymap.set("n", "<leader>1", function()
+				harpoon:list():select(1)
+			end)
+			vim.keymap.set("n", "<leader>2", function()
+				harpoon:list():select(2)
+			end)
+			vim.keymap.set("n", "<leader>3", function()
+				harpoon:list():select(3)
+			end)
+			vim.keymap.set("n", "<leader>4", function()
+				harpoon:list():select(4)
+			end)
+			vim.keymap.set("n", "<leader>5", function()
+				harpoon:list():select(5)
+			end)
 		end,
-		keys = {
-			{
-				"<leader>a",
-				function()
-					require("harpoon"):list():append()
-				end,
-				desc = "harpoon file",
-			},
-			{
-				"<C-e>",
-				function()
-					local harpoon = require("harpoon")
-					harpoon.ui:toggle_quick_menu(harpoon:list())
-				end,
-				desc = "harpoon quick menu",
-			},
-			{
-				"<C-1>",
-				function()
-					require("harpoon"):list():select(1)
-				end,
-				desc = "harpoon to file 1",
-			},
-			{
-				"<C-2>",
-				function()
-					require("harpoon"):list():select(2)
-				end,
-				desc = "harpoon to file 2",
-			},
-			{
-				"<C-3>",
-				function()
-					require("harpoon"):list():select(3)
-				end,
-				desc = "harpoon to file 3",
-			},
-			{
-				"<C-4>",
-				function()
-					require("harpoon"):list():select(4)
-				end,
-				desc = "harpoon to file 4",
-			},
-			{
-				"<C-5>",
-				function()
-					require("harpoon"):list():select(5)
-				end,
-				desc = "harpoon to file 5",
-			},
-			{
-				"<C-6>",
-				function()
-					require("harpoon"):list():select(6)
-				end,
-				desc = "harpoon to file 6",
-			},
-			{
-				"<leader>1",
-				function()
-					require("harpoon"):list():select(1)
-				end,
-				desc = "harpoon to file 1",
-			},
-			{
-				"<leader>2",
-				function()
-					require("harpoon"):list():select(2)
-				end,
-				desc = "harpoon to file 2",
-			},
-			{
-				"<leader>3",
-				function()
-					require("harpoon"):list():select(3)
-				end,
-				desc = "harpoon to file 3",
-			},
-			{
-				"<leader>4",
-				function()
-					require("harpoon"):list():select(4)
-				end,
-				desc = "harpoon to file 4",
-			},
-			{
-				"<leader>5",
-				function()
-					require("harpoon"):list():select(5)
-				end,
-				desc = "harpoon to file 5",
-			},
-			{
-				"<leader>6",
-				function()
-					require("harpoon"):list():select(6)
-				end,
-				desc = "harpoon to file 6",
-			},
-		},
 	},
 
 	-- prefered way of taking notes
@@ -525,15 +472,43 @@ vim.keymap.set("n", "<leader>x", ":bd!<CR>", { desc = "Close current buffer" })
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
+local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
+local highlight_group = augroup("YankHighlight", { clear = true })
+autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank()
 	end,
 	group = highlight_group,
 	pattern = "*",
+})
+
+-- Open a Terminal on the right tab
+autocmd("CmdlineEnter", {
+	command = "command! Term :botright vsplit term://$SHELL",
+})
+
+-- Enter insert mode when switching to terminal
+autocmd("TermOpen", {
+	callback = function()
+		vim.wo.number = false
+		vim.wo.relativenumber = false
+	end,
+	-- command = "setlocal listchars= nonumber norelativenumber nocursorline",
+})
+
+autocmd("TermOpen", {
+	pattern = "",
+	command = "startinsert",
+})
+
+-- Close terminal buffer on process exit
+autocmd("BufLeave", {
+	pattern = "term://*",
+	command = "stopinsert",
 })
 
 -- Make sure we can always exit properly!
