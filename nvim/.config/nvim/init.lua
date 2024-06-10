@@ -739,12 +739,10 @@ local function toggle_quickfix_menu()
 	local qf_exists = false
 	for _, win in pairs(vim.fn.getwininfo()) do
 		if win["quickfix"] == 1 then
-			print("qf it is open")
 			qf_exists = true
 		end
 	end
 	if qf_exists == true then
-		print("closing")
 		vim.cmd("cclose")
 		return
 	end
@@ -755,19 +753,42 @@ local function toggle_quickfix_menu()
 	end
 end
 
+local function call_silently(cmd)
+	local success, err = pcall(function()
+		vim.cmd(cmd) -- Executes :cnext
+		vim.cmd("normal! zz") -- Executes zz to center the cursor line in the screen
+	end)
+
+	if not success then
+		print("No more items in the quickfix list")
+	end
+end
+
 -- vim.keymap.set("n", "<C-[>", "<cmd>cprev<cr>zz", { noremap = true })
 -- vim.keymap.set("n", "<C-]>", "<cmd>cnext<cr>zz", { noremap = true })
 -- vim.keymap.set("n", "<leader>q", toggle_quickfix_menu, { noremap = true })
+local trouble = require("trouble")
 
-vim.keymap.set("n", "<leader>q", function()
-	require("trouble").toggle("quickfix")
+vim.keymap.set("n", "<leader>q", toggle_quickfix_menu, { noremap = true })
+vim.keymap.set("n", "<leader>t", function()
+	trouble.toggle("quickfix")
 end, { noremap = true })
+
 vim.keymap.set("n", "<C-[>", function()
-	require("trouble").previous({ skip_groups = true, jump = true })
-end, { noremap = true })
+	if trouble.is_open() then
+		trouble.previous({ skip_groups = true, jump = true })
+	else
+		call_silently("cprev")
+	end
+end, { noremap = true, silent = true })
+
 vim.keymap.set("n", "<C-]>", function()
-	require("trouble").next({ skip_groups = true, jump = true })
-end, { noremap = true })
+	if trouble.is_open() then
+		trouble.next({ skip_groups = true, jump = true })
+	else
+		call_silently("cnext")
+	end
+end, { noremap = true, silent = true })
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
@@ -793,6 +814,7 @@ local on_attach = function(_, bufnr)
 		vim.lsp.buf.definition()
 		vim.cmd.normal("zz")
 	end, "[G]oto [D]efinition")
+
 	nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 	nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
 	nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
