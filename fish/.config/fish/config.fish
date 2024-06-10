@@ -22,15 +22,15 @@ alias v="nvim"
 alias vim="nvim"
 alias subl="open -a Sublime\ Text"
 alias dotfiles="cd $HOME/workspace/repositories/github.com/yoramdelangen/dotfiles; nvim -n ."
-alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+# alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 # Notes
 alias notes='cd ~/.vimwiki/; nvim -n ~/.vimwiki/index.md'
 alias wiki='cd ~/.vimwiki/; nvim -n ~/.vimwiki/index.md'
-alias workspace='cd ~/workspace/'
-alias repo='cd ~/workspace/repositories'
-alias bitbucket='cd ~/workspace/repositories/bitbucket'
-alias github='cd ~/workspace/repositories/github.com'
+# alias workspace='cd ~/workspace/'
+# alias repo='cd ~/workspace/repositories'
+# alias bitbucket='cd ~/workspace/repositories/bitbucket'
+# alias github='cd ~/workspace/repositories/github.com'
 
 alias tunnel_sydl="ssh -L 3333:localhost:3306 -N yoram@admin.sydl.nl"
 alias tunnel_sydl_mongo="ssh -L 27017:localhost:27017 -N yoram@admin.sydl.nl"
@@ -38,31 +38,31 @@ alias tunnel_sydl_mongo="ssh -L 27017:localhost:27017 -N yoram@admin.sydl.nl"
 # Development
 alias a="php artisan"
 alias art="php artisan"
-alias cdu="composer dump-autoload"
-alias c="composer"
-alias comp="composer"
-alias phpfix='php-cs-fixer fix . --config=/Users/yoram/.dotfiles/scripts/.php_cs.dist'
-alias y='yarn'
-alias ya='yarn add'
+# alias cdu="composer dump-autoload"
+# alias c="composer"
+# alias comp="composer"
+# alias phpfix='php-cs-fixer fix . --config=/Users/yoram/.dotfiles/scripts/.php_cs.dist'
+# alias y='yarn'
+# alias ya='yarn add'
 alias dockerclean='docker image prune -a -f; docker volume prune -f; docker network prune -f'
 
 # Git
-alias gs="git status"
-alias gd="git diff"
-alias gb="git branch"
-alias gc="git commit"
-alias gaa="git add --all"
-alias gco="git checkout"
-alias stash='git stash'
+# alias gs="git status"
+# alias gd="git diff"
+# alias gb="git branch"
+# alias gc="git commit"
+# alias gaa="git add --all"
+# alias gco="git checkout"
+# alias stash='git stash'
 alias size='du -hs * | sort -h'
 alias lg='CONFIG_DIR="$HOME/.config/lazygit" lazygit'
 alias ld='lazydocker'
-alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
+# alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
 
 # Applications & Tunnels
-alias tableau="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
-alias tableau_2019="open /Applications/Tableau\ Desktop\ 2019.1.app --args --remote-debugging-port=8696"
-alias tableau_beta="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
+# alias tableau="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
+# alias tableau_2019="open /Applications/Tableau\ Desktop\ 2019.1.app --args --remote-debugging-port=8696"
+# alias tableau_beta="open /Applications/Tableau\ Desktop\ 2020.2.app --args --remote-debugging-port=8696"
 alias tunnel_sydl="ssh -L 3333:localhost:3306 -N yoram@admin.sydl.nl"
 alias tunnel_sydl_mongo="ssh -L 27017:localhost:27017 -N yoram@admin.sydl.nl"
 
@@ -70,7 +70,7 @@ alias tunnel_sydl_mongo="ssh -L 27017:localhost:27017 -N yoram@admin.sydl.nl"
 alias cc="clear"
 alias myip='ifconfig | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'
 alias myssh='cat ~/.ssh/id_rsa.pub'
-alias wm='~/.scripts/wm-control.sh'
+# alias wm='~/.scripts/wm-control.sh'
 
 function git_pull -d "Pull from current GIT repository"
    if test "$argv" != ""
