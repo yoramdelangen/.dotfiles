@@ -160,6 +160,20 @@ require("lazy").setup({
 	},
 
 	{
+		"stevearc/oil.nvim",
+		opts = {},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("oil").setup({
+				view_options = {
+					show_hidden = true,
+				},
+			})
+		end,
+	},
+
+	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
 		-- build = ":Copilot setup",
@@ -488,30 +502,57 @@ autocmd("TextYankPost", {
 	pattern = "*",
 })
 
--- Open a Terminal on the right tab
-autocmd("CmdlineEnter", {
-	command = "command! Term :botright vsplit term://$SHELL",
-})
+-- Terminal setup. inspired by Teeeeeeejjeeee
+-- https://github.com/tjdevries/config.nvim/blob/c48edd3572c7b68b356ef7c54c41167b1f46e47c/plugin/terminal.lua
 
--- Enter insert mode when switching to terminal
-autocmd("TermOpen", {
+local set = vim.opt_local
+
+-- Set local settings for terminal buffers
+vim.api.nvim_create_autocmd("TermOpen", {
+	group = vim.api.nvim_create_augroup("custom-term-open", {}),
 	callback = function()
-		vim.wo.number = false
-		vim.wo.relativenumber = false
+		set.number = false
+		set.relativenumber = false
+		set.scrolloff = 0
 	end,
-	-- command = "setlocal listchars= nonumber norelativenumber nocursorline",
 })
 
-autocmd("TermOpen", {
-	pattern = "",
-	command = "startinsert",
-})
+-- Easily hit escape in terminal mode.
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
--- Close terminal buffer on process exit
-autocmd("BufLeave", {
-	pattern = "term://*",
-	command = "stopinsert",
-})
+-- Open a terminal at the bottom of the screen with a fixed height.
+vim.keymap.set("n", ",st", function()
+	vim.cmd.new()
+	vim.cmd.wincmd("J")
+	vim.api.nvim_win_set_height(0, 12)
+	vim.wo.winfixheight = true
+	vim.cmd.term()
+end)
+
+-- -- Open a Terminal on the right tab
+-- autocmd("CmdlineEnter", {
+-- 	command = "command! Term :botright vsplit term://$SHELL",
+-- })
+--
+-- -- Enter insert mode when switching to terminal
+-- autocmd("TermOpen", {
+-- 	callback = function()
+-- 		vim.wo.number = false
+-- 		vim.wo.relativenumber = false
+-- 	end,
+-- 	-- command = "setlocal listchars= nonumber norelativenumber nocursorline",
+-- })
+--
+-- autocmd("TermOpen", {
+-- 	pattern = "",
+-- 	command = "startinsert",
+-- })
+--
+-- -- Close terminal buffer on process exit
+-- autocmd("BufLeave", {
+-- 	pattern = "term://*",
+-- 	command = "stopinsert",
+-- })
 
 -- Make sure we can always exit properly!
 local command = vim.api.nvim_create_user_command
@@ -580,7 +621,7 @@ vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" 
 vim.keymap.set("n", "<leader>gs", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
 vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-vim.keymap.set("n", "<leader>pv", "<cmd>Ex<cr>", { desc = "Neovim File Explorer" })
+vim.keymap.set("n", "<leader>pv", "<CMD>Oil<cr>", { desc = "Neovim File Explorer" })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
