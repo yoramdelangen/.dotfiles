@@ -12,10 +12,10 @@ My new setup on MacOS.
 
 ## Tools
 - karabiner-elements
-- 1Password 
+- 1Password
 
-## Browsers 
-- Brave 
+## Browsers
+- Brave
 - ArcBrowser
 
 ## Devtools
@@ -33,7 +33,8 @@ brew install --cask \
     arc \
     karabiner-elements \
     orbstack \
-    sequel-ace
+    whatsapp \
+    figma
 
 # Non-cask
 brew install \
@@ -42,11 +43,22 @@ brew install \
     starship \
     git \
     golang \
-    rust \
+    rustup \
+    x86_64-linux-gnu-binutils \
     gleam \
     raycast \
     rectangle \
-    lazygit
+    lazygit \
+    spotify \
+    tart \
+    wget \
+    fzf \
+    ripgrep \
+    biome \
+    FiloSottile/musl-cross/musl-cross \
+    bun \
+    surrealdb/tap/surreal \
+    surrealist
 ```
 
  ## Programming languages
