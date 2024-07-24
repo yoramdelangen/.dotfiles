@@ -45,6 +45,7 @@ brew install \
     golang \
     rustup \
     x86_64-linux-gnu-binutils \
+    messense/macos-cross-toolchains/x86_64-unknown-linux-gnu \
     gleam \
     raycast \
     rectangle \
